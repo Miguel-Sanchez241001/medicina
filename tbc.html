@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Módulo Tuberculosis — Fisiopatología del granuloma, clasificación OMS 2023, diagnóstico GeneXpert y tratamiento HRZE. MediLearn." />
+  <title>Tuberculosis Pulmonar — MediLearn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+  <div id="scroll-progress" role="progressbar" aria-label="Progreso de página"></div>
+
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <a href="index.html" class="nav-logo" aria-label="MediLearn — Inicio">
+      <div class="nav-logo-icon">M</div>
+      <span class="nav-logo-text">Medi<span>Learn</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="asma.html" class="nav-link">Asma</a>
+      <a href="epoc.html" class="nav-link">EPOC</a>
+      <a href="tbc.html" class="nav-link active">TBC</a>
+      <a href="colecistitis.html" class="nav-link">Colecistitis</a>
+      <a href="quiz.html" class="nav-link nav-cta">Quiz Clínico</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menú móvil">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-mobile">
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="asma.html" class="nav-link">Asma Bronquial</a>
+    <a href="epoc.html" class="nav-link">EPOC</a>
+    <a href="tbc.html" class="nav-link">Tuberculosis</a>
+    <a href="colecistitis.html" class="nav-link">Colecistitis</a>
+    <a href="quiz.html" class="nav-link">Quiz Clínico</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Módulo Tuberculosis">
+    <canvas id="tbc-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge" style="color: var(--red); border-color: rgba(255,71,87,0.3); background: rgba(255,71,87,0.1);">
+        <div class="hero-badge-dot" style="background: var(--red);"></div>
+        Módulo — Patología Infecciosa
+      </div>
+      <h1 class="hero-title" style="background: linear-gradient(135deg, #E8F4FD, #FF4757, #7B2FBE); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+        Tuberculosis Pulmonar
+      </h1>
+      <p class="hero-subtitle">CIE-10: A15&nbsp;&nbsp;|&nbsp;&nbsp;OMS 2023</p>
+      <div class="hero-cta-group">
+        <a href="#module-content" class="btn btn-primary" style="background: linear-gradient(135deg, #FF4757, #7B2FBE);">Explorar Contenido</a>
+        <a href="quiz.html" class="btn btn-secondary">Casos Clínicos</a>
+      </div>
+    </div>
+  </section>
+
+  <main id="module-content">
+    <div class="container" style="padding-top: var(--space-3xl); padding-bottom: var(--space-4xl);">
+
+      <div class="tabs-container" role="tablist" aria-label="Secciones del módulo Tuberculosis">
+        <div class="tabs-header">
+          <button class="tab-btn active">Fisiopatología</button>
+          <button class="tab-btn">Tipos y Clasificación</button>
+          <button class="tab-btn">Diagnóstico</button>
+          <button class="tab-btn">Tratamiento</button>
+          <button class="tab-btn">Ciclo de la Enfermedad</button>
+        </div>
+
+        <!-- TAB 1: FISIOPATOLOGÍA -->
+        <div class="tab-panel active">
+          <h2 style="color: var(--red); margin-bottom: var(--space-xl);">Fisiopatología de la Tuberculosis</h2>
+
+          <div class="patho-flow">
+            <div class="patho-step">M. tb inhalado</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Macrófagos Alveolares</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Fagocitosis</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Supervivencia Intracelular</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Reclutamiento LT CD4+</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">IFN-γ</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Activación Macrofágica</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Granuloma</div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Granuloma structure -->
+          <h3 style="margin-bottom: var(--space-lg);">Estructura del Granuloma Tuberculoso</h3>
+          <div style="display: flex; gap: var(--space-xl); align-items: flex-start; flex-wrap: wrap; margin-bottom: var(--space-2xl);">
+            <!-- Visual diagram -->
+            <div style="flex: 0 0 auto;">
+              <div style="width: 240px; height: 240px; position: relative; margin: 0 auto;" role="img" aria-label="Diagrama del granuloma tuberculoso">
+                <svg width="240" height="240" viewBox="0 0 240 240" aria-hidden="true">
+                  <!-- Fibrosis outer ring -->
+                  <circle cx="120" cy="120" r="110" fill="none" stroke="rgba(136,136,136,0.5)" stroke-width="12" stroke-dasharray="8 4"/>
+                  <text x="80" y="18" font-size="8" fill="#888888" font-family="monospace">Fibrosis (gris)</text>
+
+                  <!-- Lymphocytes ring -->
+                  <circle cx="120" cy="120" r="85" fill="none" stroke="rgba(68,136,221,0.2)" stroke-width="16"/>
+                  <!-- Lymphocyte dots -->
+                  <circle cx="120" cy="37" r="6" fill="#4488DD" opacity="0.8"/>
+                  <circle cx="171" cy="57" r="6" fill="#4488DD" opacity="0.8"/>
+                  <circle cx="199" cy="108" r="6" fill="#4488DD" opacity="0.8"/>
+                  <circle cx="186" cy="162" r="6" fill="#4488DD" opacity="0.8"/>
+                  <circle cx="148" cy="198" r="6" fill="#4488DD" opacity="0.8"/>
+                  <circle cx="92" cy="200" r="6" fill="#4488DD" opacity="0.8"/>
+                  <circle cx="53" cy="168" r="6" fill="#4488DD" opacity="0.8"/>
+                  <circle cx="40" cy="113" r="6" fill="#4488DD" opacity="0.8"/>
+                  <circle cx="60" cy="60" r="6" fill="#4488DD" opacity="0.8"/>
+                  <circle cx="155" cy="39" r="6" fill="#4488DD" opacity="0.8"/>
+                  <circle cx="196" cy="82" r="6" fill="#4488DD" opacity="0.8"/>
+                  <circle cx="198" cy="140" r="6" fill="#4488DD" opacity="0.8"/>
+                  <circle cx="167" cy="186" r="6" fill="#4488DD" opacity="0.8"/>
+                  <circle cx="119" cy="207" r="6" fill="#4488DD" opacity="0.8"/>
+                  <circle cx="71" cy="192" r="6" fill="#4488DD" opacity="0.8"/>
+                  <circle cx="38" cy="148" r="6" fill="#4488DD" opacity="0.8"/>
+
+                  <!-- Macrophage ring -->
+                  <circle cx="120" cy="120" r="55" fill="none" stroke="rgba(221,184,140,0.2)" stroke-width="20"/>
+                  <!-- Macrophage dots -->
+                  <circle cx="120" cy="67" r="9" fill="#DDB88C" opacity="0.9"/>
+                  <circle cx="162" cy="82" r="9" fill="#DDB88C" opacity="0.9"/>
+                  <circle cx="173" cy="130" r="9" fill="#DDB88C" opacity="0.9"/>
+                  <circle cx="148" cy="168" r="9" fill="#DDB88C" opacity="0.9"/>
+                  <circle cx="105" cy="174" r="9" fill="#DDB88C" opacity="0.9"/>
+                  <circle cx="69" cy="152" r="9" fill="#DDB88C" opacity="0.9"/>
+                  <circle cx="64" cy="107" r="9" fill="#DDB88C" opacity="0.9"/>
+                  <circle cx="90" cy="70" r="9" fill="#DDB88C" opacity="0.9"/>
+
+                  <!-- Necrosis center -->
+                  <circle cx="120" cy="120" r="32" fill="rgba(200,160,50,0.4)" stroke="#CCA433" stroke-width="2"/>
+                  <text x="98" y="118" font-size="7" fill="#CCA433" font-family="monospace">Necrosis</text>
+                  <text x="100" y="127" font-size="7" fill="#CCA433" font-family="monospace">Caseosa</text>
+
+                  <!-- Labels -->
+                  <text x="132" y="225" font-size="7" fill="#4488DD" font-family="monospace">Linfocitos CD4+</text>
+                  <text x="5" y="90" font-size="7" fill="#DDB88C" font-family="monospace">Macrófagos</text>
+                  <text x="5" y="100" font-size="7" fill="#DDB88C" font-family="monospace">Epitelioides</text>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div style="flex: 1; min-width: 250px;">
+              <h4 style="margin-bottom: var(--space-md);">Componentes del Granuloma</h4>
+              <div class="grid-2" style="gap: var(--space-md);">
+                <div class="cell-card" style="border-top-color: #CCA433;">
+                  <div class="cell-name" style="color: #CCA433;">Centro: Necrosis Caseosa</div>
+                  <div class="cell-role">Material amorfo, acelular, amarillo cremoso (como queso = caseum). Contiene bacilos muertos y vivos. pH ácido: activa Pirazinamida.</div>
+                </div>
+                <div class="cell-card" style="border-top-color: #DDB88C;">
+                  <div class="cell-name" style="color: #DDB88C;">Anillo 1: Macrófagos Epitelioides</div>
+                  <div class="cell-role">Macrófagos activados que adoptan morfología elongada. Fusión → Células Gigantes de Langhans (núcleos en herradura). Principal barrera contra M. tb.</div>
+                </div>
+                <div class="cell-card" style="border-top-color: #4488DD;">
+                  <div class="cell-name" style="color: #4488DD;">Anillo 2: Linfocitos T CD4+</div>
+                  <div class="cell-role">Producen IFN-γ (activa macrófagos), TNF-α e IL-2. Su depleción (VIH, TNF-inhibidores) permite reactivación. PPD/IGRA mide respuesta.</div>
+                </div>
+                <div class="cell-card" style="border-top-color: #888888;">
+                  <div class="cell-name" style="color: #888888;">Exterior: Fibrosis</div>
+                  <div class="cell-role">Cápsula fibrosa de colágeno. El complejo fibrocalcificado puede persistir décadas. En Rx: nódulo calcificado (complejo de Ranke = Ghon + adenopatía calcificada).</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Virulence factors -->
+          <h3 style="margin-bottom: var(--space-md);">Factores de Virulencia — M. tuberculosis</h3>
+          <div class="mediators">
+            <span class="tag tag-red" data-tooltip="Cord Factor (Trehalosa Dimicolato de Micol - TDM): inhibe fagosoma-lisosoma fusión, induce granuloma, toxicidad directa.">Cord Factor (TDM)</span>
+            <span class="tag tag-red" data-tooltip="Lipoarabinomanano (LAM): inhibe activación macrofágica por IFN-γ, bloquea fosfolipasa D, suprime respuesta inmune.">Lipoarabinomanano (LAM)</span>
+            <span class="tag tag-red" data-tooltip="ESAT-6 y CFP-10: proteínas del sistema de secreción ESX-1. ESAT-6 rompe la membrana del fagosoma. Detectados por IGRA.">ESAT-6 / CFP-10</span>
+            <span class="tag tag-red" data-tooltip="Ácidos micólicos: ácidos grasos de cadena muy larga en pared celular. Confieren resistencia ácido-alcohol (BAAR). Diana de Isoniazida.">Ácidos Micólicos</span>
+            <span class="tag tag-red" data-tooltip="Catalasa-peroxidasa (KatG): neutraliza radicales de oxígeno de macrófagos. Mutación KatG → resistencia Isoniazida.">KatG (Catalasa)</span>
+            <span class="tag tag-purple" data-tooltip="Membrana de doble lípido: protege del ambiente ácido del lisosoma. Base del BAAR (Bacilo Ácido-Alcohol Resistente).">Pared Micólica</span>
+          </div>
+        </div>
+
+        <!-- TAB 2: TIPOS -->
+        <div class="tab-panel">
+          <h2 style="color: var(--red); margin-bottom: var(--space-xl);">Tipos y Clasificación</h2>
+
+          <div class="grid-2" style="margin-bottom: var(--space-2xl);">
+            <div class="info-card" style="border-left-color: var(--accent);">
+              <h4 class="info-card-title">TB Primaria</h4>
+              <p>Primera exposición a M. tb en individuo no inmune. <strong>Complejo de Ghon:</strong> foco pulmonar (generalmente lóbulos inferiores o medios, zona mejor ventilada) + adenopatía hiliar ipsilateral. 90% se contiene con inmunidad → TB latente. Rx: nódulo pequeño + adenopatía.</p>
+            </div>
+            <div class="info-card" style="border-left-color: #F39C12;">
+              <h4 class="info-card-title">TB Post-Primaria (Reactivación)</h4>
+              <p>Reactivación de bacilos latentes en individuos previamente sensibilizados. Predominio en <strong>apices pulmonares</strong> (alta PO2 favorece bacilo aerobio). Cavernas, broncorrea, hemoptisis. Más contagiosa (BAAR+). Causa inmunosupresión: VIH, TNF-inhibidores, diabetes, desnutrición.</p>
+            </div>
+            <div class="info-card" style="border-left-color: var(--red);">
+              <h4 class="info-card-title">TB Miliar</h4>
+              <p>Diseminación hematógena generalizada. Produce innumerables <strong>nódulos &lt; 3mm</strong> en todos los órganos (imagen "semillas de mijo" en Rx). Cuadro febril prolongado, deterioro general. Mayor mortalidad. Puede afectar meninges simultáneamente.</p>
+            </div>
+            <div class="info-card" style="border-left-color: var(--green);">
+              <h4 class="info-card-title">TB Latente</h4>
+              <p>PPD/IGRA positivo sin síntomas ni hallazgos radiológicos activos. <strong>No es contagiosa.</strong> Riesgo de reactivación: 5-10% en lifetime (10% anual si VIH no tratado). Tratamiento preventivo en grupos de riesgo.</p>
+            </div>
+          </div>
+
+          <!-- TB extrapulmonar -->
+          <h3 style="margin-bottom: var(--space-lg);">TB Extrapulmonar</h3>
+          <div class="info-grid" style="margin-bottom: var(--space-2xl);">
+            <div class="info-card" style="border-left-color: #CC44AA;">
+              <h4 class="info-card-title" style="color: #CC44AA;">TB Pleural</h4>
+              <p>Derrame pleural exudado linfocítico (proteínas elevadas, LDH alta, glucosa baja). ADA &gt; 40 U/L muy sugestivo. Puede ser la primera manifestación de TB primaria.</p>
+            </div>
+            <div class="info-card" style="border-left-color: #F39C12;">
+              <h4 class="info-card-title" style="color: #F39C12;">TB Ganglionar</h4>
+              <p>Adenopatía caseificante, más frecuente cervical (escrófula). Puede fistulizar. TC con refuerzo en anillo. La más frecuente en VIH (linfadenopatía generalizada).</p>
+            </div>
+            <div class="info-card" style="border-left-color: var(--red);">
+              <h4 class="info-card-title" style="color: var(--red);">TB Meníngea</h4>
+              <p>Meningitis linfocítica subaguda. Alta mortalidad si no se trata. LCR: glucosa baja, proteínas altas, linfocitos. Tratamiento 9-12 meses + corticoides (dexametasona). Secuelas neurológicas frecuentes.</p>
+            </div>
+            <div class="info-card" style="border-left-color: #4488DD;">
+              <h4 class="info-card-title" style="color: #4488DD;">TB Renal (Uro-TB)</h4>
+              <p>Piuria estéril (leucocitos en orina sin crecimiento bacteriano habitual). Cultivo Löwenstein de orina de madrugada (3 muestras). Puede producir estenosis ureteral.</p>
+            </div>
+            <div class="info-card" style="border-left-color: #888888;">
+              <h4 class="info-card-title" style="color: #888888;">Mal de Pott (TB Ósea)</h4>
+              <p>Espondilodiscitis tuberculosa. Afecta típicamente vértebras D10-L2. Destrucción discal + aplastamiento vertebral → cifosis (giba de Pott). Absceso paravertebral "frío" (sin calor local). Puede comprimir médula.</p>
+            </div>
+          </div>
+
+          <!-- Resistance -->
+          <h3 style="margin-bottom: var(--space-lg);">TB Resistente</h3>
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Tipo</th>
+                  <th>Definición</th>
+                  <th>Tratamiento</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="tag tag-cyan">TB Monoresistente</span></td>
+                  <td>Resistencia a 1 fármaco de primera línea</td>
+                  <td>Ajuste con otros 3 fármacos sensibles</td>
+                </tr>
+                <tr>
+                  <td><span class="tag" style="background: rgba(243,156,18,0.15); color: #F39C12;">TB-MDR</span></td>
+                  <td>Resistencia a Isoniazida (H) Y Rifampicina (R)</td>
+                  <td>BPaL (Bedaquilina+Pretomanida+Linezolid) 6-9m o esquemas 18-24m</td>
+                </tr>
+                <tr>
+                  <td><span class="tag tag-red">TB-XDR</span></td>
+                  <td>MDR + resistencia a fluoroquinolonas + inyectable de 2da línea</td>
+                  <td>BPaL + otros activos. Muy limitadas opciones. Alta mortalidad</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 3: DIAGNÓSTICO -->
+        <div class="tab-panel">
+          <h2 style="color: var(--red); margin-bottom: var(--space-xl);">Diagnóstico de la Tuberculosis</h2>
+
+          <div class="grid-2" style="margin-bottom: var(--space-2xl);">
+            <div>
+              <h3 style="margin-bottom: var(--space-lg);">Métodos Microbiológicos</h3>
+
+              <div class="stepper" style="margin-bottom: var(--space-xl);">
+                <div class="stepper-item" data-step="1">
+                  <div class="stepper-title">Baciloscopía (BAAR)</div>
+                  <div class="stepper-content">3 muestras de esputo (2 matutinas + 1 en consulta). Tinción de Ziehl-Neelsen. Sensibilidad 60-70%. Rapidez: resultado en horas. Positivo: ≥ 3 BAAR/100 campos. No diferencia M. tb de NTM.</div>
+                </div>
+                <div class="stepper-item" data-step="2">
+                  <div class="stepper-title">Cultivo Löwenstein-Jensen</div>
+                  <div class="stepper-content">Gold standard microbiológico. Sensibilidad 98%. Demora 6-8 semanas (M. tb crece lento). Permite antibiograma. Cultivo en medios líquidos (BACTEC) reduce a 2-3 semanas.</div>
+                </div>
+                <div class="stepper-item" data-step="3">
+                  <div class="stepper-title">GeneXpert MTB/RIF (PCR)</div>
+                  <div class="stepper-content">PCR semicuantitativa automatizada. Resultado en 2 horas. Detecta M. tb Y resistencia a Rifampicina simultáneamente. Sensibilidad 89% (vs 65% baciloscopía). Recomendado por OMS como prueba inicial.</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3 style="margin-bottom: var(--space-lg);">Métodos Inmunológicos</h3>
+              <div class="comparison-grid" style="margin-bottom: var(--space-lg);">
+                <div class="comparison-card">
+                  <div class="comparison-title" style="color: #F39C12;">PPD (Mantoux)</div>
+                  <ul class="comparison-list">
+                    <li>5 UI tuberculina intradérmica</li>
+                    <li>Lectura a 48-72h (induración)</li>
+                    <li>Positivo: ≥ 10mm (5mm en VIH)</li>
+                    <li>Afectado por vacuna BCG</li>
+                    <li>Bajo costo, ampliamente disponible</li>
+                    <li>Falsos + en exposición NTM/BCG</li>
+                  </ul>
+                </div>
+                <div class="comparison-card">
+                  <div class="comparison-title" style="color: var(--accent);">IGRA (QuantiFERON-TB Gold)</div>
+                  <ul class="comparison-list">
+                    <li>Detecta IFN-γ vs ESAT-6/CFP-10</li>
+                    <li>No afectado por BCG</li>
+                    <li>Mayor especificidad (97%)</li>
+                    <li>Resultado en 24h</li>
+                    <li>Preferido en vacunados con BCG</li>
+                    <li>Mayor costo</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="diagnosis-card">
+                <div class="diagnosis-image xray-effect">
+                  <div class="diagnosis-placeholder">
+                    <svg width="160" height="110" viewBox="0 0 160 110" aria-hidden="true">
+                      <ellipse cx="80" cy="55" rx="55" ry="48" fill="none" stroke="rgba(148,180,201,0.3)" stroke-width="1.5"/>
+                      <ellipse cx="48" cy="55" rx="24" ry="36" fill="none" stroke="rgba(148,180,201,0.4)" stroke-width="1"/>
+                      <ellipse cx="112" cy="55" rx="24" ry="36" fill="none" stroke="rgba(148,180,201,0.4)" stroke-width="1"/>
+                      <!-- Apical infiltrates -->
+                      <ellipse cx="48" cy="25" rx="12" ry="8" fill="rgba(255,71,87,0.2)" stroke="rgba(255,71,87,0.5)" stroke-width="1"/>
+                      <ellipse cx="112" cy="22" rx="14" ry="9" fill="rgba(255,71,87,0.25)" stroke="rgba(255,71,87,0.5)" stroke-width="1"/>
+                      <!-- Cavern -->
+                      <circle cx="45" cy="28" r="4" fill="none" stroke="rgba(255,71,87,0.8)" stroke-width="1.5"/>
+                      <!-- Nodes -->
+                      <circle cx="80" cy="60" r="5" fill="rgba(255,71,87,0.3)" stroke="rgba(255,71,87,0.5)" stroke-width="1"/>
+                      <text x="2" y="105" font-size="5.5" fill="rgba(255,71,87,0.8)" font-family="monospace">Caverna + infiltrado apical</text>
+                    </svg>
+                    <div class="diagnosis-placeholder-label">Rx Tórax TB activa<br>Infiltrado apical bilateral<br>Caverna lóbulo superior izq</div>
+                  </div>
+                </div>
+                <div class="diagnosis-info">
+                  <div class="diagnosis-title">Rx Tórax — TB Activa</div>
+                  <div class="diagnosis-desc">Infiltrados en vértices, cavernas, nódulos satélites. Árbol en brote en TC (diseminación bronquiolar). Adenopatías hiliares en TB primaria.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="info-card" style="border-left-color: var(--green);">
+            <h4 class="info-card-title" style="color: var(--green);">ADA (Adenosina Desaminasa) en Líquidos</h4>
+            <p>ADA en líquido pleural &gt; 40 U/L: sensibilidad 92%, especificidad 90% para TB pleural. También útil en LCR (TB meníngea) y líquido peritoneal. Rápido, económico, no requiere cultivo.</p>
+          </div>
+        </div>
+
+        <!-- TAB 4: TRATAMIENTO -->
+        <div class="tab-panel">
+          <h2 style="color: var(--red); margin-bottom: var(--space-xl);">Tratamiento de la Tuberculosis</h2>
+
+          <div class="info-card" style="border-left-color: #F39C12; margin-bottom: var(--space-xl);">
+            <h4 class="info-card-title" style="color: #F39C12;">Esquema Estándar OMS — TB Pulmonar Sensible</h4>
+            <p>
+              <strong>Fase Intensiva (2 meses):</strong> 2HRZE — Isoniazida + Rifampicina + Pirazinamida + Etambutol<br>
+              <strong>Fase de Continuación (4 meses):</strong> 4HR — Isoniazida + Rifampicina<br>
+              <strong>Total: 6 meses.</strong> TB grave/meníngea/ósea: 9-12 meses<br>
+              <strong>DOT</strong> (Directly Observed Therapy): supervisión de administración → reduce resistencia
+            </p>
+          </div>
+
+          <h3 style="margin-bottom: var(--space-lg);">Fármacos de Primera Línea — Mecanismos</h3>
+          <div class="drug-cards">
+            <div class="drug-card" aria-label="Isoniazida">
+              <div class="drug-icon">H</div>
+              <div class="drug-name">Isoniazida (H)</div>
+              <div class="drug-class">Bactericida — Bacterias en fase de crecimiento rápido</div>
+              <div class="drug-detail">
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Mecanismo:</span>
+                  <span>Profármaco activado por KatG → Inhibe InhA (enoil-ACP-reductasa) → bloquea síntesis de ácidos micólicos → destrucción pared celular</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Dosis:</span>
+                  <span>5 mg/kg/día (max 300mg)</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">EA:</span>
+                  <span>Hepatotoxicidad (vigilar TGO/TGP), neuropatía periférica (suplementar Vit B6/Piridoxina 25-50 mg/día), neuritis óptica</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="drug-card" aria-label="Rifampicina">
+              <div class="drug-icon">R</div>
+              <div class="drug-name">Rifampicina (R)</div>
+              <div class="drug-class">Bactericida — Efecto esterilizante superior</div>
+              <div class="drug-detail">
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Mecanismo:</span>
+                  <span>Inhibe ARN polimerasa dependiente de ADN (subunidad β, gen rpoB) → bloquea síntesis de ARNm → muerte bacteriana</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Dosis:</span>
+                  <span>10 mg/kg/día (max 600mg)</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">EA:</span>
+                  <span>Hepatotoxicidad, coloración naranja de fluidos (orina, lágrimas), potente inductor CYP450 (interacciones), síndrome gripal</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="drug-card" aria-label="Pirazinamida">
+              <div class="drug-icon">Z</div>
+              <div class="drug-name">Pirazinamida (Z)</div>
+              <div class="drug-class">Bactericida — Activo en pH ácido (macrófagos)</div>
+              <div class="drug-detail">
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Mecanismo:</span>
+                  <span>Activo en ambiente ácido del fagolisosoma → mata bacilos intracelulares en macrófagos. Acorta la duración del tratamiento de 9 a 6 meses</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">EA:</span>
+                  <span>Hepatotoxicidad (principal), hiperuricemia (artralgias), náuseas, rash. Evitar en embarazo (1er trimestre)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="drug-card" aria-label="Etambutol">
+              <div class="drug-icon">E</div>
+              <div class="drug-name">Etambutol (E)</div>
+              <div class="drug-class">Bacteriostático — Inhibe síntesis pared</div>
+              <div class="drug-detail">
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Mecanismo:</span>
+                  <span>Inhibe arabinosailtransferasas (EmbA/B/C) → bloquea síntesis de arabinoglucano → desorganiza pared celular micobacteriana</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">EA:</span>
+                  <span><strong>Neuritis óptica retrobulbar dosis-dependiente</strong> (discromatopsia rojo-verde, ↓agudeza visual). Examen oftalmológico basal y mensual obligatorio</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h3 style="margin-bottom: var(--space-lg);">TB-MDR: Régimen BPaL</h3>
+          <div class="grid-3">
+            <div class="info-card" style="border-left-color: #CC44AA;">
+              <h4 class="info-card-title" style="color: #CC44AA;">Bedaquilina</h4>
+              <p>Inhibe ATP sintetasa de M. tb (diana única). Bactericida potente. Primera nueva clase de antituberculoso en 40 años. EA: prolongación QT, hepatotoxicidad. Duración: 6-9 meses.</p>
+            </div>
+            <div class="info-card" style="border-left-color: #F39C12;">
+              <h4 class="info-card-title" style="color: #F39C12;">Pretomanida</h4>
+              <p>Nitroimidazole. Activo en aerobiosis y anaerobiosis. Produce radicales reactivos de oxígeno. Aprobada FDA 2019. Parte del régimen ZeNix/BPaL. Eficaz en XDR-TB.</p>
+            </div>
+            <div class="info-card" style="border-left-color: var(--green);">
+              <h4 class="info-card-title" style="color: var(--green);">Linezolid</h4>
+              <p>Oxazolidinona. Inhibe síntesis proteica (50S subunit). Bactericida en MDR/XDR. EA: mielosupresión (anemia, trombopenia), neuropatía periférica, acidosis láctica. Monitorizar hemograma.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: CICLO -->
+        <div class="tab-panel">
+          <h2 style="color: var(--red); margin-bottom: var(--space-xl);">Ciclo de la Enfermedad</h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Exposición</div>
+                <div class="timeline-desc">Gotitas de Flügge (&lt; 5 μm) → inhalación de 1-10 bacilos = suficiente para infección</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Implantación</div>
+                <div class="timeline-desc">Los bacilos alcanzan alvéolos → captados por macrófagos alveolares</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Diseminación Inicial</div>
+                <div class="timeline-desc">Diseminación linfática y hematógena silente. Siembra de órganos. Semanas 2-8</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">TB Latente (90%)</div>
+                <div class="timeline-desc">Respuesta inmune contiene infección → granuloma formado → PPD/IGRA positivo, Rx normal</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot warning"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Reactivación</div>
+                <div class="timeline-desc">VIH, TNF-inhibidores, DM, desnutrición, edad avanzada → falla inmune → bacilos se replican</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot danger"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">TB Activa (10%)</div>
+                <div class="timeline-desc">Tos &gt; 3 sem, hemoptisis, fiebre, sudoración nocturna, pérdida de peso. BAAR +</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot danger"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Contagio</div>
+                <div class="timeline-desc">1 paciente bacilifero contagia 10-15 personas/año. Cierra el ciclo epidemiológico</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h3 style="margin-bottom: var(--space-lg);">Prevención</h3>
+          <div class="grid-3">
+            <div class="info-card animated" style="border-left-color: var(--accent);">
+              <h4 class="info-card-title">Vacuna BCG</h4>
+              <p>Bacilo Calmette-Guérin. Vacunación neonatal. Previene formas graves en niños (TB miliar, meníngea). Protección parcial (50-80%). No previene TB pulmonar del adulto. Se administra en zona endémica al nacer.</p>
+            </div>
+            <div class="info-card animated" style="border-left-color: #F39C12;">
+              <h4 class="info-card-title">Tratamiento Preventivo</h4>
+              <p>Isoniazida 9 meses (INH9M) o Rifampicina 4 meses (4RIF) en contactos con TB latente. Reduce riesgo de reactivación en 60-90%. Prioritario en contactos VIH, niños &lt; 5 años y conversores recientes.</p>
+            </div>
+            <div class="info-card animated" style="border-left-color: var(--red);">
+              <h4 class="info-card-title">Control de Infecciones</h4>
+              <p>Ventilación natural (ventilar espacios cerrados), luz UV germicida, mascarilla N95 para personal de salud, aislamiento respiratorio en hospitalizados durante primeras 2 semanas de tratamiento eficaz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- References -->
+      <section class="references mt-2xl">
+        <div class="references-title">Referencias</div>
+        <ol class="references-list">
+          <li class="reference-item">
+            <span class="reference-num">[1]</span>
+            <span>World Health Organization. <em>Global Tuberculosis Report 2023.</em> Geneva: WHO; 2023. <a href="https://www.who.int/teams/global-tuberculosis-programme/tb-reports" class="reference-link" target="_blank" rel="noopener">who.int</a></span>
+          </li>
+          <li class="reference-item">
+            <span class="reference-num">[2]</span>
+            <span>Nahid P, et al. Official American Thoracic Society/CDC/IDSA Clinical Practice Guidelines: Treatment of Drug-Susceptible Tuberculosis. <em>Clin Infect Dis.</em> 2016;63(7):e147–e195.</span>
+          </li>
+          <li class="reference-item">
+            <span class="reference-num">[3]</span>
+            <span>Pai M, et al. Tuberculosis. <em>Nat Rev Dis Primers.</em> 2016;2:16076. doi:10.1038/nrdp.2016.76</span>
+          </li>
+          <li class="reference-item">
+            <span class="reference-num">[4]</span>
+            <span>Dye C, et al. Consensus statement: Global burden of tuberculosis. <em>JAMA.</em> 1999;282(7):677–686.</span>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-logo">Medi<span>Learn</span></div>
+      <p class="footer-text">Plataforma de aprendizaje médico · Contenido basado en guías internacionales · Para uso educativo</p>
+      <nav class="footer-links">
+        <a href="index.html" class="footer-link">Inicio</a>
+        <a href="asma.html" class="footer-link">Asma</a>
+        <a href="epoc.html" class="footer-link">EPOC</a>
+        <a href="colecistitis.html" class="footer-link">Colecistitis</a>
+        <a href="quiz.html" class="footer-link">Quiz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="js/three-engine.js"></script>
+  <script src="js/tbc-3d.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

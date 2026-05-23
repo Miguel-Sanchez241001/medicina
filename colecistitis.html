@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Módulo Colecistitis Aguda — Fisiopatología, clasificación Tokyo TG18, diagnóstico ecográfico y manejo quirúrgico. MediLearn." />
+  <title>Colecistitis Aguda — MediLearn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+  <div id="scroll-progress" role="progressbar" aria-label="Progreso de página"></div>
+
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <a href="index.html" class="nav-logo" aria-label="MediLearn — Inicio">
+      <div class="nav-logo-icon">M</div>
+      <span class="nav-logo-text">Medi<span>Learn</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="asma.html" class="nav-link">Asma</a>
+      <a href="epoc.html" class="nav-link">EPOC</a>
+      <a href="tbc.html" class="nav-link">TBC</a>
+      <a href="colecistitis.html" class="nav-link active">Colecistitis</a>
+      <a href="quiz.html" class="nav-link nav-cta">Quiz Clínico</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menú móvil">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-mobile">
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="asma.html" class="nav-link">Asma Bronquial</a>
+    <a href="epoc.html" class="nav-link">EPOC</a>
+    <a href="tbc.html" class="nav-link">Tuberculosis</a>
+    <a href="colecistitis.html" class="nav-link">Colecistitis</a>
+    <a href="quiz.html" class="nav-link">Quiz Clínico</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Módulo Colecistitis">
+    <canvas id="colecistitis-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge" style="color: var(--green); border-color: rgba(46,204,113,0.3); background: rgba(46,204,113,0.1);">
+        <div class="hero-badge-dot" style="background: var(--green);"></div>
+        Módulo — Cirugía General / Gastroenterología
+      </div>
+      <h1 class="hero-title" style="background: linear-gradient(135deg, #E8F4FD, #2ECC71, #F39C12); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+        Colecistitis Aguda
+      </h1>
+      <p class="hero-subtitle">CIE-10: K81&nbsp;&nbsp;|&nbsp;&nbsp;Tokyo Guidelines TG18 — 2018</p>
+      <div class="hero-cta-group">
+        <a href="#module-content" class="btn btn-primary" style="background: linear-gradient(135deg, #2ECC71, #1A8F4E);">Explorar Contenido</a>
+        <a href="quiz.html" class="btn btn-secondary">Casos Clínicos</a>
+      </div>
+    </div>
+  </section>
+
+  <main id="module-content">
+    <div class="container" style="padding-top: var(--space-3xl); padding-bottom: var(--space-4xl);">
+
+      <div class="tabs-container" role="tablist" aria-label="Secciones del módulo Colecistitis">
+        <div class="tabs-header">
+          <button class="tab-btn active">Fisiopatología</button>
+          <button class="tab-btn">Tipos y Clasificación</button>
+          <button class="tab-btn">Diagnóstico</button>
+          <button class="tab-btn">Tratamiento</button>
+          <button class="tab-btn">Ciclo de la Enfermedad</button>
+        </div>
+
+        <!-- TAB 1: FISIOPATOLOGÍA -->
+        <div class="tab-panel active">
+          <h2 style="color: var(--green); margin-bottom: var(--space-xl);">Fisiopatología de la Colecistitis</h2>
+
+          <!-- Two pathways -->
+          <div class="grid-2" style="margin-bottom: var(--space-xl);">
+            <div>
+              <h3 style="margin-bottom: var(--space-md); color: var(--text-primary);">Vía Calculosa (90%)</h3>
+              <div class="patho-flow" style="flex-direction: column; align-items: flex-start;">
+                <div class="patho-step" style="background: rgba(46,204,113,0.1); border-color: rgba(46,204,113,0.3);">Cálculo obstruye conducto cístico</div>
+                <div class="patho-arrow" style="transform: rotate(90deg);">→</div>
+                <div class="patho-step">Éstasis biliar → Distensión vesicular</div>
+                <div class="patho-arrow" style="transform: rotate(90deg);">→</div>
+                <div class="patho-step">Isquemia pared vesicular</div>
+                <div class="patho-arrow" style="transform: rotate(90deg);">→</div>
+                <div class="patho-step">Invasión bacteriana secundaria</div>
+                <div class="patho-arrow" style="transform: rotate(90deg);">→</div>
+                <div class="patho-step" style="background: rgba(255,71,87,0.1); border-color: rgba(255,71,87,0.3); color: var(--red);">Inflamación transmural</div>
+              </div>
+            </div>
+            <div>
+              <h3 style="margin-bottom: var(--space-md); color: var(--text-primary);">Vía Acalculosa (10%)</h3>
+              <div class="patho-flow" style="flex-direction: column; align-items: flex-start;">
+                <div class="patho-step" style="background: rgba(243,156,18,0.1); border-color: rgba(243,156,18,0.3);">Isquemia directa (hipoperfusión)</div>
+                <div class="patho-arrow" style="transform: rotate(90deg);">→</div>
+                <div class="patho-step">Éstasis biliar (ayuno/NPT)</div>
+                <div class="patho-arrow" style="transform: rotate(90deg);">→</div>
+                <div class="patho-step">Espesamiento y concentración bilis</div>
+                <div class="patho-arrow" style="transform: rotate(90deg);">→</div>
+                <div class="patho-step">Toxicidad directa pared vesicular</div>
+                <div class="patho-arrow" style="transform: rotate(90deg);">→</div>
+                <div class="patho-step" style="background: rgba(255,71,87,0.1); border-color: rgba(255,71,87,0.3); color: var(--red);">Colecistitis sin cálculos</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Inflammation cascade -->
+          <h3 style="margin-bottom: var(--space-lg);">Cascada Inflamatoria</h3>
+          <div class="mediators" style="margin-bottom: var(--space-xl);">
+            <span class="tag tag-red" data-tooltip="PGE2: Prostaglandina E2. Potente mediador inflamatorio. Causa dolor, fiebre y edema en colecistitis aguda.">PGE2 (Prostaglandinas)</span>
+            <span class="tag tag-red" data-tooltip="PAF: Factor Activador de Plaquetas. Activa neutrófilos y macrófagos. Aumenta permeabilidad vascular. Importante en colecistitis grave.">PAF (Factor activador plaquetas)</span>
+            <span class="tag tag-red" data-tooltip="TNF-α: Factor de Necrosis Tumoral alfa. Induce apoptosis de células vesiculares. Mediador clave en sepsis biliar.">TNF-α</span>
+            <span class="tag tag-cyan" data-tooltip="IL-6: Biomarcador de respuesta inflamatoria sistémica. Correlaciona con severidad en TG18. CAT test.">IL-6</span>
+            <span class="tag tag-cyan" data-tooltip="PCR: Proteína C Reactiva. Biomarcador inflamatorio. En TG18: PCR > 3mg/dL criterio de inflamación sistémica para diagnóstico.">PCR</span>
+            <span class="tag tag-red" data-tooltip="Lisofosfolipasa: acción lisolecitina sobre mucosa vesicular → daño epitelial directo. Mecanismo secundario en colecistitis calculosa.">Lisolecitina</span>
+          </div>
+
+          <!-- Bacteria -->
+          <h3 style="margin-bottom: var(--space-lg);">Gérmenes Implicados</h3>
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Bacteria</th>
+                  <th>Frecuencia</th>
+                  <th>Características</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Escherichia coli</strong></td>
+                  <td>25-30%</td>
+                  <td>Gram negativo más frecuente. Resistencia ampicilina común</td>
+                </tr>
+                <tr>
+                  <td><strong>Klebsiella spp.</strong></td>
+                  <td>20-25%</td>
+                  <td>Gram negativo. Betalactamasas de espectro extendido (BLEE) en UCI</td>
+                </tr>
+                <tr>
+                  <td><strong>Enterococcus faecalis</strong></td>
+                  <td>15-20%</td>
+                  <td>Gram positivo. Resistente a cefalosporinas. Tratar con ampicilina o vancomicina</td>
+                </tr>
+                <tr>
+                  <td><strong>Bacteroides fragilis</strong></td>
+                  <td>10-15%</td>
+                  <td>Anaerobio. Importante en complicaciones (perforación). Cubrir con metronidazol</td>
+                </tr>
+                <tr>
+                  <td><strong>Clostridium spp.</strong></td>
+                  <td>5-10%</td>
+                  <td>Anaerobio. Especialmente en colecistitis enfisematosa (gas en pared)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Stones types -->
+          <h3 style="margin-bottom: var(--space-lg);">Tipos de Cálculos Biliares</h3>
+          <div class="grid-3">
+            <div class="info-card" style="border-left-color: #F39C12;">
+              <h4 class="info-card-title" style="color: #F39C12;">Colesterol (80%)</h4>
+              <p>Supersaturación de colesterol en bilis. Factores: obesidad, multiparidad, dieta, estrógenos. <strong>Regla 4F:</strong> Female, Fat, Forty, Fertile. Piedritas amarillentas. Tratamiento: ácido ursodesoxicólico (solo &lt;1cm, radiotransparentes).</p>
+            </div>
+            <div class="info-card" style="border-left-color: var(--red);">
+              <h4 class="info-card-title" style="color: var(--red);">Pigmento Negro</h4>
+              <p>Hemólisis crónica (anemia hemolítica, esferocitosis, drepanocitosis) → exceso bilirrubina → bilirrubinato de calcio. También cirrosis y nutrición parenteral. Cálculos irregulares, duros y negros.</p>
+            </div>
+            <div class="info-card" style="border-left-color: #CC7700;">
+              <h4 class="info-card-title" style="color: #CC7700;">Pigmento Marrón</h4>
+              <p>Infección de la vía biliar (bacterias producen glucuronidasas → desconjugan bilirrubina) + estasis biliar. Asociado a parásitos (Ascaris, Fasciola). Frecuente en Asia. Se forman en conductos biliares (coledocolitiasis primaria).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: TIPOS Y CLASIFICACIÓN -->
+        <div class="tab-panel">
+          <h2 style="color: var(--green); margin-bottom: var(--space-xl);">Tipos y Clasificación TG18</h2>
+
+          <!-- Types -->
+          <div class="info-grid" style="margin-bottom: var(--space-2xl);">
+            <div class="info-card animated" style="border-left-color: var(--green);">
+              <h4 class="info-card-title">Colecistitis Calculosa Aguda (90-95%)</h4>
+              <p>Obstrucción por cálculo del conducto cístico. Factores de riesgo: <strong>4F</strong> (Female: 2:1, Fat: obesidad, Forty: &gt;40 años, Fertile: multiparidad). Cuadro agudo, dolor en hipocondrio derecho, fiebre, leucocitosis. Murphy +.</p>
+            </div>
+            <div class="info-card animated" style="border-left-color: #F39C12;">
+              <h4 class="info-card-title" style="color: #F39C12;">Colecistitis Acalculosa (5-10%)</h4>
+              <p>Sin cálculos. Paciente crítico: UCI, postoperatorio mayor, trauma, quemados, nutrición parenteral prolongada. Patogenia: éstasis biliar + isquemia. Mayor mortalidad (20-30%). Diagnóstico ecográfico (distensión sin cálculos + edema).</p>
+            </div>
+            <div class="info-card animated" style="border-left-color: #888888;">
+              <h4 class="info-card-title">Colecistitis Crónica</h4>
+              <p>Episodios recurrentes de cólico biliar/colecistitis leve. Pared vesicular engrosada y fibrótica, reducción de capacidad. Síntomas más solapados. Requiere colecistectomía electiva para prevenir recurrencias.</p>
+            </div>
+            <div class="info-card animated" style="border-left-color: var(--red);">
+              <h4 class="info-card-title" style="color: var(--red);">Colecistitis Gangrenosa</h4>
+              <p>Necrosis isquémica de pared vesicular. Alta mortalidad (15-25%). Factores de riesgo: diabetes, aterosclerosis, retraso diagnóstico. Eco: irregularidad pared, gas intraluminal. Cirugía urgente.</p>
+            </div>
+            <div class="info-card animated" style="border-left-color: #CC44AA;">
+              <h4 class="info-card-title" style="color: #CC44AA;">Colecistitis Enfisematosa</h4>
+              <p>Gas en pared vesicular por Clostridium o E. coli. Casi exclusiva de diabéticos (microangiopatía → isquemia → anaerobios). Rx/TC: gas en lumen y pared. Cirugía urgente + ATB anti-anaerobios.</p>
+            </div>
+          </div>
+
+          <!-- Tokyo TG18 -->
+          <h3 style="margin-bottom: var(--space-lg);">Clasificación de Severidad — Tokyo TG18</h3>
+          <div class="table-wrapper">
+            <table class="data-table" aria-label="Clasificación Tokyo TG18 de colecistitis aguda">
+              <thead>
+                <tr>
+                  <th>Grado</th>
+                  <th>Severidad</th>
+                  <th>Criterios</th>
+                  <th>Manejo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="tag tag-green">Grado I</span></td>
+                  <td>Leve</td>
+                  <td>Colecistitis aguda que NO cumple criterios de Grado II o III. Inflamación leve sin disfunción orgánica</td>
+                  <td>Colecistectomía laparoscópica temprana (24-72h) segura y preferida</td>
+                </tr>
+                <tr>
+                  <td><span class="tag" style="background: rgba(243,156,18,0.15); color: #F39C12;">Grado II</span></td>
+                  <td>Moderado</td>
+                  <td>≥ 1 de: leucocitos &gt;18.000, masa palpable, síntomas &gt; 72h, inflamación local marcada</td>
+                  <td>Colecistectomía temprana si equipo experto, o diferida tras control infeccioso</td>
+                </tr>
+                <tr>
+                  <td><span class="tag tag-red">Grado III</span></td>
+                  <td>Grave</td>
+                  <td>Disfunción orgánica: hipotensión, alteración neurológica, insuf. respiratoria, renal, hepática o hematológica</td>
+                  <td>Control infeccioso urgente + ATB → Colecistostomía percutánea O cirugía urgente si estable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 3: DIAGNÓSTICO -->
+        <div class="tab-panel">
+          <h2 style="color: var(--green); margin-bottom: var(--space-xl);">Diagnóstico de la Colecistitis</h2>
+
+          <div class="grid-2" style="margin-bottom: var(--space-2xl);">
+            <div>
+              <h3 style="margin-bottom: var(--space-lg);">Criterios Diagnósticos Tokyo TG18</h3>
+              <div class="stepper">
+                <div class="stepper-item" data-step="A">
+                  <div class="stepper-title">A — Signos Locales de Inflamación</div>
+                  <div class="stepper-content">
+                    Signo de Murphy positivo (suspensión inspiratoria al comprimir HD)<br>
+                    Masa, dolor o hipersensibilidad en HD
+                  </div>
+                </div>
+                <div class="stepper-item" data-step="B">
+                  <div class="stepper-title">B — Signos Sistémicos de Inflamación</div>
+                  <div class="stepper-content">
+                    Fiebre &gt; 38°C<br>
+                    PCR elevada (&gt; 3 mg/dL)<br>
+                    Leucocitosis &gt; 10.000 /μL
+                  </div>
+                </div>
+                <div class="stepper-item" data-step="C">
+                  <div class="stepper-title">C — Hallazgos de Imagen</div>
+                  <div class="stepper-content">
+                    Signos ecográficos de colecistitis aguda (ver abajo)<br>
+                    <strong>Diagnóstico:</strong> A + B = sospecha | A + B + C = confirmado
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-card mt-xl" style="border-left-color: var(--green);">
+                <h4 class="info-card-title" style="color: var(--green);">Laboratorio</h4>
+                <p>
+                  <strong>Leucocitosis</strong> &gt; 10.000/μL (hasta 20.000 en grave)<br>
+                  <strong>PCR</strong> &gt; 3 mg/dL<br>
+                  <strong>Bilirrubina</strong> leve ↑ (si obstrucción coledocal: sospecha coledocolitiasis)<br>
+                  <strong>FA y GGT</strong>: elevadas en obstrucción biliar<br>
+                  <strong>Amilasa/lipasa</strong>: descartar pancreatitis asociada
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3 style="margin-bottom: var(--space-lg);">Ecografía — Primera Línea</h3>
+              <div class="diagnosis-grid" style="grid-template-columns: 1fr;">
+                <div class="diagnosis-card">
+                  <div class="diagnosis-image" style="background: #030a14;">
+                    <div class="diagnosis-placeholder">
+                      <svg width="200" height="140" viewBox="0 0 200 140" aria-hidden="true">
+                        <!-- Ultrasound sector shape -->
+                        <path d="M100 10 L20 130 L180 130 Z" fill="none" stroke="rgba(148,180,201,0.15)" stroke-width="1"/>
+                        <!-- Gallbladder body -->
+                        <ellipse cx="90" cy="75" rx="35" ry="28" fill="rgba(100,150,100,0.15)" stroke="rgba(100,200,100,0.6)" stroke-width="2"/>
+                        <!-- Thickened wall -->
+                        <ellipse cx="90" cy="75" rx="35" ry="28" fill="none" stroke="rgba(255,200,100,0.8)" stroke-width="4"/>
+                        <!-- Stones with acoustic shadow -->
+                        <ellipse cx="85" cy="95" rx="8" ry="5" fill="#888" stroke="rgba(255,255,255,0.5)" stroke-width="1"/>
+                        <line x1="77" y1="100" x2="70" y2="130" stroke="rgba(0,0,0,0.8)" stroke-width="4"/>
+                        <line x1="93" y1="100" x2="100" y2="130" stroke="rgba(0,0,0,0.8)" stroke-width="4"/>
+                        <!-- Murphy ecography point -->
+                        <circle cx="90" cy="50" r="3" fill="rgba(255,71,87,0.8)" stroke="none"/>
+                        <!-- Perivesicular fluid -->
+                        <path d="M55 60 Q45 75 55 95" fill="none" stroke="rgba(0,150,255,0.4)" stroke-width="2" stroke-dasharray="3 2"/>
+                        <!-- Labels -->
+                        <text x="115" y="60" font-size="6" fill="rgba(255,200,100,0.9)" font-family="monospace">Pared &gt;4mm</text>
+                        <text x="115" y="95" font-size="6" fill="rgba(255,255,255,0.6)" font-family="monospace">Cálculo</text>
+                        <text x="30" y="80" font-size="6" fill="rgba(0,150,255,0.7)" font-family="monospace">Líquido</text>
+                        <text x="30" y="90" font-size="6" fill="rgba(0,150,255,0.7)" font-family="monospace">perivesic.</text>
+                        <text x="60" y="48" font-size="6" fill="rgba(255,71,87,0.9)" font-family="monospace">Murphy+</text>
+                      </svg>
+                      <div class="diagnosis-placeholder-label">
+                        Ecografía abdominal<br>
+                        Murphy ecográfico positivo<br>
+                        Pared &gt; 4mm + líquido perivesicular<br>
+                        Cálculo con sombra acústica
+                      </div>
+                    </div>
+                  </div>
+                  <div class="diagnosis-info">
+                    <div class="diagnosis-title">Hallazgos Ecográficos — Colecistitis Aguda</div>
+                    <div class="diagnosis-desc">
+                      <strong>Específicos:</strong> Signo de Murphy ecográfico (dolor durante compresión con transductor), engrosamiento pared &gt; 4mm, líquido perivesicular.<br>
+                      <strong>Adicionales:</strong> Cálculos con sombra acústica posterior, vesícula distendida (&gt;8x4cm), barro biliar.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-card mt-md">
+                <h4 class="info-card-title">TC Abdominal — Casos Complicados</h4>
+                <p>Indicado cuando: sospecha de perforación, absceso, gangrena o empiema. Hallazgos: pared engrosada con refuerzo, gas en pared (enfisematosa), líquido perivesicular/peritoneal libre, absceso adyacente.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h3 style="margin-bottom: var(--space-lg);">Diagnóstico Diferencial</h3>
+          <div class="table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Diagnóstico</th>
+                  <th>Síntomas diferenciadores</th>
+                  <th>Clave diagnóstica</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Cólico biliar simple</strong></td>
+                  <td>Dolor sin fiebre ni leucocitosis. Autolimitado (1-6h)</td>
+                  <td>Sin signos inflamatorios sistémicos, ecografía sin pared engrosada</td>
+                </tr>
+                <tr>
+                  <td><strong>Hepatitis aguda</strong></td>
+                  <td>Ictericia, transaminasas muy elevadas, hepatomegalia dolorosa</td>
+                  <td>ALT/AST &gt;&gt; 500 UI/L, serología viral, Murphy negativo</td>
+                </tr>
+                <tr>
+                  <td><strong>Úlcera péptica</strong></td>
+                  <td>Dolor epigástrico, ritmo horario, pirosis, AINE o H. pylori</td>
+                  <td>Endoscopia, test H. pylori, Murphy negativo, eco normal</td>
+                </tr>
+                <tr>
+                  <td><strong>IAM inferior</strong></td>
+                  <td>Dolor referido HD, náuseas, diaforesis, factor de riesgo CV</td>
+                  <td>ECG (elevación ST II, III, aVF), troponinas, sin fiebre</td>
+                </tr>
+                <tr>
+                  <td><strong>Apendicitis atípica</strong></td>
+                  <td>Dolor migra a FID, Mc Burney, Rovsing, fiebre</td>
+                  <td>Eco/TC: apéndice &gt; 6mm sin compresibilidad en FID</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 4: TRATAMIENTO -->
+        <div class="tab-panel">
+          <h2 style="color: var(--green); margin-bottom: var(--space-xl);">Tratamiento de la Colecistitis</h2>
+
+          <!-- Management by grade -->
+          <div class="stepper" style="margin-bottom: var(--space-2xl);">
+            <div class="stepper-item" data-step="I">
+              <div class="stepper-title" style="color: var(--green);">Grado I (Leve) — Manejo</div>
+              <div class="stepper-content">
+                <strong>Colecistectomía laparoscópica temprana</strong> (dentro de 24-72h del diagnóstico)<br>
+                Estudios muestran que la cirugía temprana es igual de segura que la diferida y reduce la estancia hospitalaria total<br>
+                ATB perioperatorio: Cefazolina 1-2g IV<br>
+                Si el paciente rechaza la cirugía o hay contraindicación: tratamiento médico + colecistectomía electiva posterior
+              </div>
+            </div>
+            <div class="stepper-item" data-step="II">
+              <div class="stepper-title" style="color: #F39C12;">Grado II (Moderado) — Manejo</div>
+              <div class="stepper-content">
+                <strong>Si cirujano experto disponible:</strong> Colecistectomía laparoscópica temprana<br>
+                <strong>Si no:</strong> Control infeccioso médico → ATB + hidratación → Colecistectomía diferida (semanas 4-6)<br>
+                ATB: Ceftriaxona 2g/día + Metronidazol 500mg c/8h IV (cubrir gram negativos y anaerobios)<br>
+                Vigilar progresión a Grado III
+              </div>
+            </div>
+            <div class="stepper-item" data-step="III">
+              <div class="stepper-title" style="color: var(--red);">Grado III (Grave) — Manejo</div>
+              <div class="stepper-content">
+                <strong>1. Estabilización hemodinámica:</strong> Fluidos IV, vasopresores si shock, control séptico<br>
+                <strong>2. ATB empírico:</strong> Piperacilina-Tazobactam 4.5g c/8h IV o Carbapenémico si resistencia<br>
+                <strong>3. Drenaje urgente:</strong><br>
+                — <strong>Colecistostomía percutánea</strong> (CP): 1ª elección en alto riesgo quirúrgico (guiada por eco o TC)<br>
+                — <strong>Colecistectomía urgente</strong>: si el paciente puede tolerar la cirugía y no mejora con CP<br>
+                <strong>4. Cirugía definitiva:</strong> Tras recuperación clínica (semanas-meses)
+              </div>
+            </div>
+          </div>
+
+          <!-- Antibiotics -->
+          <h3 style="margin-bottom: var(--space-lg);">Antibioticoterapia en Colecistitis</h3>
+          <div class="drug-cards">
+            <div class="drug-card">
+              <div class="drug-icon">💉</div>
+              <div class="drug-name">Ceftriaxona</div>
+              <div class="drug-class">Cefalosporina 3ª generación</div>
+              <div class="drug-detail">
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Espectro:</span>
+                  <span>Excelente cobertura gram negativos (E. coli, Klebsiella). No cubre Enterococcus ni anaerobios</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Dosis:</span>
+                  <span>1-2g IV/día (dosis única diaria, eliminación biliar)</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Uso:</span>
+                  <span>Siempre combinar con Metronidazol para cobertura anaerobia</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="drug-card">
+              <div class="drug-icon">💊</div>
+              <div class="drug-name">Metronidazol</div>
+              <div class="drug-class">Nitroimidazol — Anti-anaerobio</div>
+              <div class="drug-detail">
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Mecanismo:</span>
+                  <span>Reducción anaerobia del grupo nitro → radicales libres → daño ADN bacteriano</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Dosis:</span>
+                  <span>500mg IV c/8h o 1g c/12h</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">EA:</span>
+                  <span>Náuseas, efecto antabuse (alcohol), neuropatía periférica (uso prolongado)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="drug-card">
+              <div class="drug-icon">🔬</div>
+              <div class="drug-name">Pip-Tazobactam</div>
+              <div class="drug-class">Penicilina + Inhibidor β-lactamasa</div>
+              <div class="drug-detail">
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Espectro:</span>
+                  <span>Amplio: gram +, gram -, anaerobios, Pseudomonas. Monoterapia en Grado III</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Dosis:</span>
+                  <span>4.5g IV c/8h (preferir infusión extendida 4h en sepsis grave)</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Indicación:</span>
+                  <span>Grado III, inmunodeprimidos, UCI, sospecha BLEE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Complications -->
+          <h3 style="margin-bottom: var(--space-lg);">Complicaciones</h3>
+          <div class="info-grid">
+            <div class="info-card" style="border-left-color: var(--red);">
+              <h4 class="info-card-title" style="color: var(--red);">Perforación Vesicular</h4>
+              <p>Complicación más temida. Tipos: cubierta (absceso), libre (peritonitis) o fistulizada (fístula bilioentérica). Mortalidad: 30-40%. Indicación de cirugía urgente. Peritonitis biliar = emergencia quirúrgica.</p>
+            </div>
+            <div class="info-card" style="border-left-color: #F39C12;">
+              <h4 class="info-card-title" style="color: #F39C12;">Empiema Vesicular</h4>
+              <p>Acumulación de pus en vesícula. Fiebre alta, deterioro sistémico. Eco: vesícula con contenido denso. Drenaje urgente (colecistostomía percutánea) + ATB. Riesgo de perforación si no se drena.</p>
+            </div>
+            <div class="info-card" style="border-left-color: #888888;">
+              <h4 class="info-card-title">Síndrome de Mirizzi</h4>
+              <p>Cálculo enclavado en cuello vesicular o cístico que comprime el conducto hepático común → ictericia obstructiva + inflamación. TC/CRMN diagnóstico. Tratamiento quirúrgico complejo.</p>
+            </div>
+            <div class="info-card" style="border-left-color: #CC7700;">
+              <h4 class="info-card-title" style="color: #CC7700;">Íleo Biliar</h4>
+              <p>Fístula bilioentérica (habitualmente colecisto-duodenal) → cálculo grande migra al intestino → obstrucción mecánica en válvula ileocecal. Rx: aerobilia + oclusión. Cirugía: enterolitotomía + cierre fístula.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: CICLO -->
+        <div class="tab-panel">
+          <h2 style="color: var(--green); margin-bottom: var(--space-xl);">Ciclo Natural de la Enfermedad</h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Factores de Riesgo</div>
+                <div class="timeline-desc">4F: Female, Fat, Forty, Fertile. Dieta hipercalórica, pérdida de peso rápida, ayuno prolongado</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Formación Cálculos</div>
+                <div class="timeline-desc">Supersaturación biliar → nucleación → litogénesis. Proceso silente durante años</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Cólico Biliar</div>
+                <div class="timeline-desc">Obstrucción transitoria del cística → dolor cólico 1-6h → autolimitado si el cálculo regresa</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot warning"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Obstrucción Persistente</div>
+                <div class="timeline-desc">Cálculo impactado &gt; 6h → éstasis biliar → distensión → isquemia</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot danger"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Colecistitis Aguda</div>
+                <div class="timeline-desc">Inflamación transmural, fiebre, leucocitosis, Murphy +. Diagnóstico clínico-ecográfico</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot danger"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Complicaciones</div>
+                <div class="timeline-desc">Empiema, gangrena, perforación → peritonitis biliar → shock séptico (30-40% mortalidad)</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Resolución / Crónica</div>
+                <div class="timeline-desc">Con tratamiento: resolución. Sin cirugía definitiva: colecistitis crónica con episodios recurrentes</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h3 style="margin-bottom: var(--space-lg);">Prevención</h3>
+          <div class="grid-3">
+            <div class="info-card animated" style="border-left-color: var(--green);">
+              <h4 class="info-card-title">Dieta y Estilo de Vida</h4>
+              <p>Dieta baja en grasas saturadas, rica en fibra. Pérdida de peso gradual (no &gt; 1.5 kg/semana — la pérdida rápida aumenta la litogenicidad biliar). Actividad física regular. Evitar ayuno prolongado.</p>
+            </div>
+            <div class="info-card animated" style="border-left-color: #F39C12;">
+              <h4 class="info-card-title">Ácido Ursodesoxicólico</h4>
+              <p>Reduce saturación biliar de colesterol. Indicado en: pérdida de peso rápida post-cirugía bariátrica, cálculos de colesterol &lt; 1cm, pacientes de alto riesgo quirúrgico. Dosis: 300-600mg/día.</p>
+            </div>
+            <div class="info-card animated" style="border-left-color: var(--accent);">
+              <h4 class="info-card-title">Colecistectomía Profiláctica</h4>
+              <p>Discutida. Indicada en: pacientes con cálculos asintomáticos + programados para cirugía bariátrica, inmunodeprimidos, drepanocitosis, vesícula "en porcelana" con displasia, adenomas vesiculares &gt; 1cm.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- References -->
+      <section class="references mt-2xl">
+        <div class="references-title">Referencias</div>
+        <ol class="references-list">
+          <li class="reference-item">
+            <span class="reference-num">[1]</span>
+            <span>Yokoe M, et al. Tokyo Guidelines 2018: diagnostic criteria and severity grading of acute cholecystitis (with videos). <em>J Hepatobiliary Pancreat Sci.</em> 2018;25(1):41–54. doi:10.1002/jhbp.515</span>
+          </li>
+          <li class="reference-item">
+            <span class="reference-num">[2]</span>
+            <span>Miura F, et al. Tokyo Guidelines 2018: initial management of acute biliary infection and flowchart for acute cholangitis. <em>J Hepatobiliary Pancreat Sci.</em> 2018;25(1):31–40.</span>
+          </li>
+          <li class="reference-item">
+            <span class="reference-num">[3]</span>
+            <span>Lammert F, et al. Gallstones. <em>Nat Rev Dis Primers.</em> 2016;2:16024. doi:10.1038/nrdp.2016.24</span>
+          </li>
+          <li class="reference-item">
+            <span class="reference-num">[4]</span>
+            <span>Huffman JL, Schenker S. Acute acalculous cholecystitis: a review. <em>Clin Gastroenterol Hepatol.</em> 2010;8(1):15–22. doi:10.1016/j.cgh.2009.08.034</span>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-logo">Medi<span>Learn</span></div>
+      <p class="footer-text">Plataforma de aprendizaje médico · Contenido basado en guías internacionales · Para uso educativo</p>
+      <nav class="footer-links">
+        <a href="index.html" class="footer-link">Inicio</a>
+        <a href="asma.html" class="footer-link">Asma</a>
+        <a href="epoc.html" class="footer-link">EPOC</a>
+        <a href="tbc.html" class="footer-link">TBC</a>
+        <a href="quiz.html" class="footer-link">Quiz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="js/three-engine.js"></script>
+  <script src="js/colecistitis-3d.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

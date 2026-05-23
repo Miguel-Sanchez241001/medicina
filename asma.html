@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Módulo Asma Bronquial — Fisiopatología, clasificación GINA 2024, diagnóstico y tratamiento escalonado. MediLearn." />
+  <title>Asma Bronquial — MediLearn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+  <div id="scroll-progress" role="progressbar" aria-label="Progreso de página"></div>
+
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <a href="index.html" class="nav-logo" aria-label="MediLearn — Inicio">
+      <div class="nav-logo-icon">M</div>
+      <span class="nav-logo-text">Medi<span>Learn</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="asma.html" class="nav-link active">Asma</a>
+      <a href="epoc.html" class="nav-link">EPOC</a>
+      <a href="tbc.html" class="nav-link">TBC</a>
+      <a href="colecistitis.html" class="nav-link">Colecistitis</a>
+      <a href="quiz.html" class="nav-link nav-cta">Quiz Clínico</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menú móvil">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-mobile">
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="asma.html" class="nav-link">Asma Bronquial</a>
+    <a href="epoc.html" class="nav-link">EPOC</a>
+    <a href="tbc.html" class="nav-link">Tuberculosis</a>
+    <a href="colecistitis.html" class="nav-link">Colecistitis</a>
+    <a href="quiz.html" class="nav-link">Quiz Clínico</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Módulo Asma Bronquial">
+    <canvas id="asma-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        Módulo — Patología Respiratoria
+      </div>
+      <h1 class="hero-title">Asma Bronquial</h1>
+      <p class="hero-subtitle">CIE-10: J45&nbsp;&nbsp;|&nbsp;&nbsp;GINA 2024</p>
+      <div class="hero-cta-group">
+        <a href="#module-content" class="btn btn-primary">Explorar Contenido</a>
+        <a href="quiz.html" class="btn btn-secondary">Casos Clínicos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Module Content -->
+  <main id="module-content">
+    <div class="container" style="padding-top: var(--space-3xl); padding-bottom: var(--space-4xl);">
+
+      <div class="tabs-container" role="tablist" aria-label="Secciones del módulo Asma">
+        <div class="tabs-header">
+          <button class="tab-btn active" role="tab" aria-selected="true">Fisiopatología</button>
+          <button class="tab-btn" role="tab" aria-selected="false">Tipos y Clasificación</button>
+          <button class="tab-btn" role="tab" aria-selected="false">Diagnóstico</button>
+          <button class="tab-btn" role="tab" aria-selected="false">Tratamiento</button>
+          <button class="tab-btn" role="tab" aria-selected="false">Ciclo de la Enfermedad</button>
+        </div>
+
+        <!-- TAB 1: FISIOPATOLOGÍA -->
+        <div class="tab-panel active" role="tabpanel">
+          <h2 style="color: var(--accent); margin-bottom: var(--space-xl);">Fisiopatología del Asma</h2>
+
+          <!-- Cascade flow -->
+          <div class="patho-flow" aria-label="Cascada fisiopatológica">
+            <div class="patho-step">Exposición Alergeno</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Sensibilización</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Producción IgE</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Degranulación Mastocitos</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Histamina / Leucotrienos</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Inflamación Eosinofílica</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Hiperreactividad Bronquial</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Broncoespasmo</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Síntomas</div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Key cells -->
+          <h3 style="margin-bottom: var(--space-lg); font-size: var(--font-size-xl);">Células Clave en el Asma</h3>
+          <div class="grid-3" style="margin-bottom: var(--space-2xl);">
+            <div class="cell-card animated">
+              <div class="cell-name">Eosinófilos</div>
+              <div class="cell-role">Células inflamatorias predominantes. Liberan proteínas citotóxicas (MBP, ECP) que dañan el epitelio bronquial. Activados por IL-5. Marcador de inflamación tipo 2.</div>
+            </div>
+            <div class="cell-card animated" style="border-top-color: #CC44AA;">
+              <div class="cell-name" style="color: #CC44AA;">Mastocitos</div>
+              <div class="cell-role">Residen en la mucosa bronquial. Se degranula al unirse IgE a FcεRI → libera histamina, triptasa, prostaglandinas (PGD2), leucotrienos. Respuesta temprana (minutos).</div>
+            </div>
+            <div class="cell-card animated" style="border-top-color: #4488DD;">
+              <div class="cell-name" style="color: #4488DD;">Linfocitos Th2</div>
+              <div class="cell-role">Orquestadores de la respuesta alérgica. Producen IL-4 (cambio de clase a IgE), IL-5 (maduración eosinófilos), IL-13 (hiperreactividad, moco), IL-33 estimula ILC2.</div>
+            </div>
+            <div class="cell-card animated" style="border-top-color: #F39C12;">
+              <div class="cell-name" style="color: #F39C12;">Células Dendríticas</div>
+              <div class="cell-role">Células presentadoras de antígeno. Capturan alérgenos en la mucosa, migran a ganglios linfáticos y presentan antígenos a linfocitos T vírgenes → polarización Th2.</div>
+            </div>
+            <div class="cell-card animated" style="border-top-color: var(--green);">
+              <div class="cell-name" style="color: var(--green);">ILC2 (Innate Lymphoid Cells tipo 2)</div>
+              <div class="cell-role">Linfocitos innatos que amplifican la respuesta Th2 sin necesitar presentación antigénica. Activadas por IL-33, TSLP y IL-25 (alarminas epiteliales). Importantes en asma no alérgica.</div>
+            </div>
+            <div class="cell-card animated" style="border-top-color: #CC44AA;">
+              <div class="cell-name" style="color: #CC44AA;">Músculo Liso Bronquial</div>
+              <div class="cell-role">Hipertrofia e hiperplasia en asma crónica (remodelado). Responde a broncoconstrictores (histamina, leucotrienos, metacolina) y a broncodilatadores (β2-agonistas).</div>
+            </div>
+          </div>
+
+          <!-- Mediadores -->
+          <h3 style="margin-bottom: var(--space-md);">Mediadores Inflamatorios Principales</h3>
+          <div class="mediators" aria-label="Mediadores inflamatorios">
+            <span class="tag tag-cyan" data-tooltip="Induce cambio de clase a IgE en linfocitos B. Fundamental para el fenotipo alérgico.">IL-4</span>
+            <span class="tag tag-red" data-tooltip="Citocina de supervivencia de eosinófilos. Diana de Mepolizumab y Benralizumab.">IL-5</span>
+            <span class="tag tag-purple" data-tooltip="Induce hiperreactividad bronquial, hipersecreción de moco y fibrosis subepitelial. Diana de Dupilumab.">IL-13</span>
+            <span class="tag tag-cyan" data-tooltip="Alarmina epitelial. Activa ILC2 y mastocitos. Elevada en asma grave.">IL-33</span>
+            <span class="tag tag-cyan" data-tooltip="Thymic Stromal Lymphopoietin. Activa DCs y ILC2. Dianada de Tezepelumab.">TSLP</span>
+            <span class="tag tag-red" data-tooltip="Broncoconstrictor potente. Aumenta permeabilidad vascular. Liberada por mastocitos.">Histamina</span>
+            <span class="tag tag-red" data-tooltip="CysLT1 y CysLT2. Potentes broncoconstrictores con efecto más prolongado que histamina.">Leucotrienos (CysLT)</span>
+            <span class="tag tag-purple" data-tooltip="Eotaxina-1/2/3: quimiocinas que reclutan eosinófilos al pulmón.">Eotaxina</span>
+            <span class="tag tag-green" data-tooltip="Inmunoglobulina E. Se une a FcεRI en mastocitos. Nivel sérico correlaciona con atopia.">IgE</span>
+            <span class="tag tag-cyan" data-tooltip="Prostaglandina D2. Potente broncoconstrictora producida por mastocitos. Activa receptor CRTH2.">PGD2</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Bronchial animation -->
+          <h3 style="margin-bottom: var(--space-lg);">Vía Aérea: Normal vs Asma</h3>
+          <div class="bronchial-animation" aria-label="Comparación de vía aérea normal y asmática">
+            <div class="bronchial-tube">
+              <div class="bronchial-tube-visual tube-normal anim-breathe" aria-hidden="true"></div>
+              <div class="tube-label">Vía aérea normal<br><small style="color: var(--accent); font-size: 0.7rem;">Luz amplia</small></div>
+            </div>
+            <div class="bronchial-tube">
+              <div class="bronchial-tube-visual tube-asma" aria-hidden="true"></div>
+              <div class="tube-label">Vía aérea asmática<br><small style="color: var(--red); font-size: 0.7rem;">Edema + moco + espasmo</small></div>
+            </div>
+          </div>
+
+          <!-- Remodelado -->
+          <div class="info-card mt-xl">
+            <h4 class="info-card-title">Remodelado Bronquial (Asma Crónica Grave)</h4>
+            <p>La inflamación crónica no controlada produce cambios estructurales irreversibles: <strong>fibrosis subepitelial</strong> (depósito de colágeno bajo membrana basal), <strong>hipertrofia/hiperplasia del músculo liso</strong> (aumenta masa muscular bronquial), <strong>metaplasia de células caliciformes</strong> (hipersecreción de moco), <strong>neoangiogénesis</strong> y <strong>hiperplasia de glándulas submucosas</strong>. En casos severos puede producir obstrucción fija similar a EPOC.</p>
+          </div>
+        </div>
+
+        <!-- TAB 2: TIPOS Y CLASIFICACIÓN -->
+        <div class="tab-panel" role="tabpanel">
+          <h2 style="color: var(--accent); margin-bottom: var(--space-xl);">Tipos y Clasificación del Asma</h2>
+
+          <!-- Clasificación GINA -->
+          <h3 style="margin-bottom: var(--space-lg);">Clasificación GINA por Nivel de Control</h3>
+          <div class="table-wrapper mb-xl">
+            <table class="data-table" aria-label="Clasificación GINA de control del asma">
+              <thead>
+                <tr>
+                  <th>Parámetro</th>
+                  <th style="color: var(--green);">Controlada</th>
+                  <th style="color: #F39C12;">Parcialmente Controlada</th>
+                  <th style="color: var(--red);">No Controlada</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Síntomas diurnos</td>
+                  <td>Ninguno o ≤ 2 días/semana</td>
+                  <td>&gt; 2 días/semana</td>
+                  <td>≥ 3 características de parcialmente controlada</td>
+                </tr>
+                <tr>
+                  <td>Limitación actividades</td>
+                  <td>Ninguna</td>
+                  <td>Alguna</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Síntomas nocturnos</td>
+                  <td>Ninguno</td>
+                  <td>Alguno</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Necesidad SABA</td>
+                  <td>≤ 2 días/semana</td>
+                  <td>&gt; 2 días/semana</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Función pulmonar (VEF1)</td>
+                  <td>Normal</td>
+                  <td>&lt; 80% predicho</td>
+                  <td>—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Fenotipos -->
+          <h3 style="margin-bottom: var(--space-lg);">Fenotipos de Asma</h3>
+          <div class="info-grid">
+            <div class="info-card animated">
+              <h4 class="info-card-title">Asma Alérgica (Atópica)</h4>
+              <p>Fenotipo más frecuente (60-70%). Inicio en infancia. Asociada a atopia (eccema, rinitis). IgE elevada. Sensibilización a alérgenos (ácaros, pólenes, epitelios). Eosinófilos en esputo. Excelente respuesta a ICS y biológicos anti-IgE/IL-5.</p>
+            </div>
+            <div class="info-card animated" style="border-left-color: #F39C12;">
+              <h4 class="info-card-title" style="color: #F39C12;">Asma No Alérgica</h4>
+              <p>Sin atopia ni sensibilización alérgica. Inicio en adultos. Desencadenantes: AINE, fármacos, estrés, irritantes. Puede tener eosinofilia sin IgE elevada. Respuesta variable a ICS. Más difícil de controlar.</p>
+            </div>
+            <div class="info-card animated" style="border-left-color: var(--accent2);">
+              <h4 class="info-card-title" style="color: var(--accent2);">Asma por Ejercicio (AIE)</h4>
+              <p>Broncoespasmo inducido por ejercicio intenso. Mecanismo: hiperventilación → enfriamiento/deshidratación de mucosa → liberación mediadores mastocitos. Inicio 5-10 min post-ejercicio. Prevención: SABA previo, calentamiento progresivo, montelukast.</p>
+            </div>
+            <div class="info-card animated" style="border-left-color: var(--red);">
+              <h4 class="info-card-title" style="color: var(--red);">Síndrome de Samter</h4>
+              <p><strong>Tríada:</strong> Asma + Poliposis nasal + Intolerancia a AINEs (COX-1). Mecanismo: bloqueo COX-1 → desvío AA hacia lipoxigenasa → exceso leucotrienos. CONTRAINDICADOS: Aspirina, Ibuprofeno, Diclofenaco. Tratamiento: antileucotrienos + biológicos.</p>
+            </div>
+            <div class="info-card animated" style="border-left-color: var(--green);">
+              <h4 class="info-card-title" style="color: var(--green);">Asma Ocupacional</h4>
+              <p>Causada por exposición laboral: isocianatos (pintores), harina (panaderos), látex (sanitarios), animales de laboratorio. Criterio diagnóstico: mejoría en vacaciones/fin de semana, prueba de provocación específica. Manejo: retirar exposición.</p>
+            </div>
+            <div class="info-card animated" style="border-left-color: #CC44AA;">
+              <h4 class="info-card-title" style="color: #CC44AA;">Asma de Inicio Tardío</h4>
+              <p>Debut en mayores de 40 años, frecuentemente mujeres, no atópica. Puede ser eosinofílica (con eosinófilos en sangre/esputo). Peor pronóstico y menor reversibilidad. Asociada a obesidad. Frecuentemente requiere terapia biológica (Mepolizumab).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: DIAGNÓSTICO -->
+        <div class="tab-panel" role="tabpanel">
+          <h2 style="color: var(--accent); margin-bottom: var(--space-xl);">Diagnóstico del Asma</h2>
+
+          <div class="grid-2" style="margin-bottom: var(--space-2xl);">
+            <div>
+              <h3 style="margin-bottom: var(--space-lg);">Criterios Clínicos</h3>
+              <ul class="comparison-list" style="margin-bottom: var(--space-xl);">
+                <li>Episodios recurrentes de tos, sibilancias, disnea y opresión torácica</li>
+                <li>Variabilidad: síntomas peores de noche o madrugada</li>
+                <li>Desencadenantes: ejercicio, alérgenos, frío, infecciones, estrés</li>
+                <li>Reversibilidad espontánea o con broncodilatadores</li>
+                <li>Historia personal o familiar de atopia (rinitis, eccema)</li>
+              </ul>
+
+              <h3 style="margin-bottom: var(--space-lg);">Espirometría</h3>
+              <div class="info-card">
+                <h4 class="info-card-title">Parámetros diagnósticos</h4>
+                <p>
+                  <strong class="text-accent">VEF1/CVF &lt; 0.70</strong> → obstrucción del flujo aéreo<br>
+                  <strong class="text-accent">Reversibilidad positiva:</strong> aumento VEF1 ≥ 12% Y ≥ 200 mL tras salbutamol<br>
+                  <strong>Variabilidad diurna:</strong> &gt; 10% en FEM (flujo espiratorio máximo)<br>
+                  <strong class="text-accent">FeNO &gt; 25 ppb</strong> → inflamación eosinofílica activa
+                </p>
+              </div>
+            </div>
+
+            <!-- Diagnosis image cards -->
+            <div>
+              <h3 style="margin-bottom: var(--space-lg);">Imágenes Diagnósticas</h3>
+              <div class="diagnosis-grid" style="grid-template-columns: 1fr;">
+                <div class="diagnosis-card" role="img" aria-label="Radiografía de tórax en crisis asmática">
+                  <div class="diagnosis-image xray-effect">
+                    <div class="diagnosis-placeholder">
+                      <svg width="120" height="100" viewBox="0 0 120 100" aria-hidden="true">
+                        <ellipse cx="60" cy="50" rx="45" ry="42" fill="none" stroke="rgba(148,180,201,0.3)" stroke-width="1.5"/>
+                        <ellipse cx="35" cy="50" rx="20" ry="32" fill="none" stroke="rgba(148,180,201,0.5)" stroke-width="1"/>
+                        <ellipse cx="85" cy="50" rx="20" ry="32" fill="none" stroke="rgba(148,180,201,0.5)" stroke-width="1"/>
+                        <line x1="60" y1="12" x2="60" y2="88" stroke="rgba(148,180,201,0.4)" stroke-width="1.5"/>
+                        <text x="20" y="80" font-size="7" fill="rgba(148,180,201,0.6)" font-family="monospace">HIPER</text>
+                        <text x="68" y="80" font-size="7" fill="rgba(148,180,201,0.6)" font-family="monospace">INSUFL</text>
+                        <line x1="30" y1="25" x2="50" y2="22" stroke="rgba(0,212,255,0.5)" stroke-width="1" stroke-dasharray="2 2"/>
+                        <line x1="90" y1="25" x2="70" y2="22" stroke="rgba(0,212,255,0.5)" stroke-width="1" stroke-dasharray="2 2"/>
+                      </svg>
+                      <div class="diagnosis-placeholder-label">
+                        Rx Tórax — Crisis asmática<br>
+                        Hiperinsuflación bilateral<br>
+                        Atrapamiento aéreo<br>
+                        Diafragmas descendidos y planos
+                      </div>
+                    </div>
+                  </div>
+                  <div class="diagnosis-info">
+                    <div class="diagnosis-title">Radiografía en Crisis Asmática</div>
+                    <div class="diagnosis-desc">Hiperinsuflación bilateral, atrapamiento aéreo, aplanamiento diafragmático, aumento diámetro anteroposterior. En crisis moderada-grave puede verse atelectasias.</div>
+                  </div>
+                </div>
+
+                <div class="diagnosis-card" role="img" aria-label="Espirometría con obstrucción reversible">
+                  <div class="diagnosis-image" style="background: #040c1a;">
+                    <div class="diagnosis-placeholder">
+                      <svg width="180" height="100" viewBox="0 0 180 100" aria-hidden="true">
+                        <line x1="15" y1="85" x2="170" y2="85" stroke="rgba(148,180,201,0.4)" stroke-width="1"/>
+                        <line x1="15" y1="85" x2="15" y2="10" stroke="rgba(148,180,201,0.4)" stroke-width="1"/>
+                        <text x="80" y="95" font-size="6" fill="rgba(148,180,201,0.6)" font-family="monospace">Volumen (L)</text>
+                        <text x="2" y="50" font-size="5" fill="rgba(148,180,201,0.6)" font-family="monospace" transform="rotate(-90 8 50)">Flujo</text>
+                        <path d="M20 85 Q40 15 80 20 Q120 25 155 75" fill="none" stroke="#F39C12" stroke-width="2"/>
+                        <path d="M20 85 Q40 10 85 12 Q130 14 160 70" fill="none" stroke="var(--accent)" stroke-width="2"/>
+                        <text x="100" y="18" font-size="6" fill="var(--accent)" font-family="monospace">Post-BD</text>
+                        <text x="100" y="28" font-size="6" fill="#F39C12" font-family="monospace">Pre-BD</text>
+                      </svg>
+                      <div class="diagnosis-placeholder-label">
+                        Curva flujo-volumen<br>
+                        Aumento ≥12% Y ≥200mL post-BD
+                      </div>
+                    </div>
+                  </div>
+                  <div class="diagnosis-info">
+                    <div class="diagnosis-title">Espirometría — Obstrucción Reversible</div>
+                    <div class="diagnosis-desc">La reversibilidad significativa post-broncodilatador (VEF1 ≥12% y ≥200mL) confirma diagnóstico de asma. La curva flujo-volumen muestra concavidad en la porción espiratoria.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Differential -->
+          <h3 style="margin-bottom: var(--space-lg);">Diagnóstico Diferencial</h3>
+          <div class="table-wrapper">
+            <table class="data-table" aria-label="Diagnóstico diferencial del asma">
+              <thead>
+                <tr>
+                  <th>Diagnóstico</th>
+                  <th>Características Diferenciadoras</th>
+                  <th>Clave Diagnóstica</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>EPOC</strong></td>
+                  <td>Fumador, inicio en adulto mayor, obstrucción fija, disnea persistente</td>
+                  <td>VEF1/CVF &lt; 0.70 sin reversibilidad significativa</td>
+                </tr>
+                <tr>
+                  <td><strong>ICC</strong></td>
+                  <td>Ortopnea, edemas, distensión yugular, crepitantes basales</td>
+                  <td>Ecocardiograma, BNP elevado, Rx congestión vascular</td>
+                </tr>
+                <tr>
+                  <td><strong>ERGE</strong></td>
+                  <td>Tos post-prandial, nocturna, pirosis, sin sibilancias típicas</td>
+                  <td>pH-metría, respuesta a IBP</td>
+                </tr>
+                <tr>
+                  <td><strong>Disfunción cuerdas vocales</strong></td>
+                  <td>Estridor inspiratorio, jóvenes, atletas, desencadenante psicológico</td>
+                  <td>Laringoscopía durante síntomas</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 4: TRATAMIENTO -->
+        <div class="tab-panel" role="tabpanel">
+          <h2 style="color: var(--accent); margin-bottom: var(--space-xl);">Tratamiento del Asma — Escalera GINA</h2>
+
+          <div class="stepper" aria-label="Escalera terapéutica GINA 5 escalones">
+            <div class="stepper-item" data-step="1">
+              <div class="stepper-title">Escalón 1 — Síntomas ocasionales</div>
+              <div class="stepper-content">
+                <strong>SABA a demanda:</strong> Salbutamol (Albuterol) 100-200 μg inhalado ante síntomas. No requiere tratamiento de mantenimiento diario si síntomas &lt; 2 veces/semana. Alternativa: ICS-formoterol a bajas dosis en modo MART.
+              </div>
+            </div>
+            <div class="stepper-item" data-step="2">
+              <div class="stepper-title">Escalón 2 — Síntomas persistentes leves</div>
+              <div class="stepper-content">
+                <strong>+ ICS dosis bajas:</strong> Budesonida 200-400 μg/día, Beclometasona 200-500 μg/día, Fluticasona 100-250 μg/día. Control de la inflamación eosinofílica. Alternativa: antileucotrienos (Montelukast) si no tolera ICS.
+              </div>
+            </div>
+            <div class="stepper-item" data-step="3">
+              <div class="stepper-title">Escalón 3 — Síntomas persistentes moderados</div>
+              <div class="stepper-content">
+                <strong>Opción preferida:</strong> ICS bajas dosis + LABA (Formoterol 9-18 μg/día, Salmeterol 50-100 μg/día)<br>
+                <strong>Alternativa:</strong> ICS dosis medias (Budesonida 400-800 μg/día)<br>
+                Estrategia MART: ICS/Formoterol como mantenimiento Y alivio.
+              </div>
+            </div>
+            <div class="stepper-item" data-step="4">
+              <div class="stepper-title">Escalón 4 — Síntomas persistentes graves</div>
+              <div class="stepper-content">
+                <strong>ICS altas dosis + LABA</strong> (Budesonida 800-1600 μg + Formoterol)<br>
+                + Considerar <strong>Tiotropio</strong> (LAMA) como add-on en mayores de 18 años con historia de exacerbaciones<br>
+                + Roflumilast si eosinófilos &gt; 300 cél/μL
+              </div>
+            </div>
+            <div class="stepper-item" data-step="5">
+              <div class="stepper-title">Escalón 5 — Terapia Biológica</div>
+              <div class="stepper-content">
+                <strong>Anti-IgE:</strong> Omalizumab (asma alérgica, IgE 30-1500 UI/mL)<br>
+                <strong>Anti-IL-5:</strong> Mepolizumab (eosinófilos ≥ 150-300 cél/μL)<br>
+                <strong>Anti-IL-5Rα:</strong> Benralizumab (eosinofílica, depleción total eosinófilos)<br>
+                <strong>Anti-IL-4/IL-13:</strong> Dupilumab (asma eosinofílica o dependiente de corticoides)<br>
+                <strong>Anti-TSLP:</strong> Tezepelumab (todos los fenotipos, incluso no eosinofílicos)
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Drug cards -->
+          <h3 style="margin-bottom: var(--space-lg);">Fármacos Clave</h3>
+          <div class="drug-cards">
+            <div class="drug-card" aria-label="Salbutamol — SABA">
+              <div class="drug-icon" aria-hidden="true">💨</div>
+              <div class="drug-name">Salbutamol</div>
+              <div class="drug-class">SABA — Broncodilatador de rescate</div>
+              <div class="drug-detail">
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Mecanismo:</span>
+                  <span>Agonista β2 selectivo → ↑AMPc → relajación músculo liso bronquial</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Dosis:</span>
+                  <span>100-200 μg MDI; 2.5-5mg nebulizado en crisis</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Inicio:</span>
+                  <span>2-5 minutos, duración 4-6 horas</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">EA:</span>
+                  <span>Taquicardia, temblor fino, hipopotasemia (altas dosis)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="drug-card" aria-label="Budesonida — ICS">
+              <div class="drug-icon" aria-hidden="true">💊</div>
+              <div class="drug-name">Budesonida</div>
+              <div class="drug-class">ICS — Corticoide Inhalado</div>
+              <div class="drug-detail">
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Mecanismo:</span>
+                  <span>Se une a GR nuclear → inhibe síntesis de citocinas proinflamatorias (IL-4, IL-5, IL-13, GM-CSF)</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Dosis:</span>
+                  <span>200-400 μg/día (bajas), hasta 1600 μg/día (altas)</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">EA:</span>
+                  <span>Candidiasis orofaríngea (usar espaciador + enjuague bucal), disfonía</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="drug-card" aria-label="Omalizumab — Anti-IgE">
+              <div class="drug-icon" aria-hidden="true">🧬</div>
+              <div class="drug-name">Omalizumab</div>
+              <div class="drug-class">Biológico Anti-IgE</div>
+              <div class="drug-detail">
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Mecanismo:</span>
+                  <span>Anticuerpo monoclonal anti-IgE libre → impide unión a FcεRI en mastocitos/basófilos → bloquea degranulación</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Indicación:</span>
+                  <span>Asma alérgica grave no controlada, IgE 30-1500 UI/mL</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">Dosis:</span>
+                  <span>Subcutáneo c/2-4 sem según peso e IgE basal</span>
+                </div>
+                <div class="drug-detail-row">
+                  <span class="drug-detail-label">EA:</span>
+                  <span>Reacciones en sitio inyección, raramente anafilaxia</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Crisis management -->
+          <h3 style="margin-bottom: var(--space-lg);">Manejo de la Crisis Asmática</h3>
+          <div class="grid-3">
+            <div class="info-card" style="border-left-color: var(--red);">
+              <h4 class="info-card-title" style="color: var(--red);">Evaluación Inicial</h4>
+              <p>FC, FR, SaO2, uso musculatura accesoria, capacidad para hablar en oraciones completas. FEM &lt; 40% predicho = grave. FEM &lt; 25% = peligro vital.</p>
+            </div>
+            <div class="info-card" style="border-left-color: #F39C12;">
+              <h4 class="info-card-title" style="color: #F39C12;">Tratamiento Primera Línea</h4>
+              <p>Salbutamol nebulizado 2.5mg c/20min x3. O2 suplementario (SaO2 ≥ 93%). Corticoide sistémico (prednisona 40-60mg VO o metilprednisolona IV).</p>
+            </div>
+            <div class="info-card" style="border-left-color: var(--red);">
+              <h4 class="info-card-title" style="color: var(--red);">Crisis Grave / Refractaria</h4>
+              <p>+ Ipratropio nebulizado. Mg SO4 IV (2g en 20 min). Heliox. Considerar intubación orotraqueal si deterioro neurológico, hipercapnia progresiva, fatiga respiratoria.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: CICLO DE LA ENFERMEDAD -->
+        <div class="tab-panel" role="tabpanel">
+          <h2 style="color: var(--accent); margin-bottom: var(--space-xl);">Ciclo Natural de la Enfermedad</h2>
+
+          <div class="timeline" aria-label="Ciclo temporal del asma">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Exposición</div>
+                <div class="timeline-desc">Contacto con alérgenos (ácaros, pólenes, animales) o irritantes</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Sensibilización</div>
+                <div class="timeline-desc">Días-semanas: DCs procesan antígeno, polarización Th2, producción IgE</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Re-exposición</div>
+                <div class="timeline-desc">Antígeno → Unión IgE a mastocitos (FcεRI)</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot warning"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Respuesta Temprana</div>
+                <div class="timeline-desc">0-30 min: Degranulación mastocitos → histamina → broncoespasmo agudo</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot warning"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Respuesta Tardía</div>
+                <div class="timeline-desc">4-8h: Reclutamiento eosinófilos → inflamación sostenida</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot danger"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Remodelado</div>
+                <div class="timeline-desc">Meses-años: Fibrosis, hipertrofia muscular, pérdida función pulmonar</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot danger"></div>
+              <div class="timeline-content">
+                <div class="timeline-title">Asma Grave</div>
+                <div class="timeline-desc">Obstrucción fija similar a EPOC, dependencia de corticoides</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h3 style="margin-bottom: var(--space-lg);">Prevención Primaria y Secundaria</h3>
+          <div class="grid-3">
+            <div class="info-card animated">
+              <h4 class="info-card-title">Control Ambiental</h4>
+              <p>Protectores de colchón anti-ácaros, HEPA para mascotas, evitar humo de tabaco (activo y pasivo), control humedad interior (&lt; 50%), ventilación adecuada. Reduce exacerbaciones en 20-40%.</p>
+            </div>
+            <div class="info-card animated" style="border-left-color: var(--accent2);">
+              <h4 class="info-card-title">Vacunación</h4>
+              <p>Gripe anual (riesgo de exacerbaciones por influenza). Antineumocócica (previene neumonías). COVID-19 (reduce hospitalizaciones en asmáticos). Evitar vacunas con polisorbato 80 en alérgicos.</p>
+            </div>
+            <div class="info-card animated" style="border-left-color: var(--green);">
+              <h4 class="info-card-title">Inmunoterapia Específica</h4>
+              <p>Subcutánea (SCIT) o sublingual (SLIT) con extractos de alérgenos. Único tratamiento que modifica la historia natural del asma alérgica. Duración: 3-5 años. Eficaz en asma leve-moderada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- References -->
+      <section class="references mt-2xl" aria-label="Referencias bibliográficas">
+        <div class="references-title">Referencias</div>
+        <ol class="references-list">
+          <li class="reference-item">
+            <span class="reference-num">[1]</span>
+            <span>Global Initiative for Asthma (GINA). <em>Global Strategy for Asthma Management and Prevention.</em> Updated 2024. <a href="https://ginasthma.org" class="reference-link" target="_blank" rel="noopener">ginasthma.org</a></span>
+          </li>
+          <li class="reference-item">
+            <span class="reference-num">[2]</span>
+            <span>Barnes PJ. Cellular and molecular mechanisms of asthma and COPD. <em>Clin Sci.</em> 2017;131(13):1541–1558. doi:10.1042/CS20170015</span>
+          </li>
+          <li class="reference-item">
+            <span class="reference-num">[3]</span>
+            <span>Holgate ST, et al. Asthma. <em>Nat Rev Dis Primers.</em> 2015;1:15025. doi:10.1038/nrdp.2015.25</span>
+          </li>
+          <li class="reference-item">
+            <span class="reference-num">[4]</span>
+            <span>Reddel HK, et al. An official ATS/ERS workshop report: novel risk factors and the global burden of asthma. <em>Eur Respir J.</em> 2022;60(3):2101994. doi:10.1183/13993003.01994-2021</span>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-logo">Medi<span>Learn</span></div>
+      <p class="footer-text">
+        Plataforma de aprendizaje médico · Contenido basado en guías internacionales · Para uso educativo
+      </p>
+      <nav class="footer-links">
+        <a href="index.html" class="footer-link">Inicio</a>
+        <a href="epoc.html" class="footer-link">EPOC</a>
+        <a href="tbc.html" class="footer-link">TBC</a>
+        <a href="colecistitis.html" class="footer-link">Colecistitis</a>
+        <a href="quiz.html" class="footer-link">Quiz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="js/three-engine.js"></script>
+  <script src="js/asma-3d.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
