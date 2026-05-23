@@ -41,7 +41,6 @@
     <a href="quiz.html" class="nav-link">Quiz Clínico</a>
   </div>
 
-  <!-- Hero -->
   <section class="hero" aria-label="Módulo EPOC">
     <canvas id="epoc-canvas" class="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero-overlay"></div>
@@ -50,9 +49,7 @@
         <div class="hero-badge-dot" style="background: #F39C12;"></div>
         Módulo — Patología Respiratoria
       </div>
-      <h1 class="hero-title" style="background: linear-gradient(135deg, #E8F4FD, #F39C12, #FF4757); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-        EPOC
-      </h1>
+      <h1 class="hero-title" style="background: linear-gradient(135deg, #E8F4FD, #F39C12, #FF4757); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">EPOC</h1>
       <p class="hero-subtitle">Enfermedad Pulmonar Obstructiva Crónica&nbsp;&nbsp;|&nbsp;&nbsp;CIE-10: J44&nbsp;&nbsp;|&nbsp;&nbsp;GOLD 2024</p>
       <div class="hero-cta-group">
         <a href="#module-content" class="btn btn-primary" style="background: linear-gradient(135deg, #F39C12, #E74C3C);">Explorar Contenido</a>
@@ -63,7 +60,6 @@
 
   <main id="module-content">
     <div class="container" style="padding-top: var(--space-3xl); padding-bottom: var(--space-4xl);">
-
       <div class="tabs-container" role="tablist" aria-label="Secciones del módulo EPOC">
         <div class="tabs-header">
           <button class="tab-btn active">Fisiopatología</button>
@@ -73,10 +69,8 @@
           <button class="tab-btn">Ciclo de la Enfermedad</button>
         </div>
 
-        <!-- TAB 1: FISIOPATOLOGÍA -->
         <div class="tab-panel active">
           <h2 style="color: #F39C12; margin-bottom: var(--space-xl);">Fisiopatología de la EPOC</h2>
-
           <div class="patho-flow" aria-label="Cascada fisiopatológica EPOC">
             <div class="patho-step">Tabaco / Noxas</div>
             <div class="patho-arrow">→</div>
@@ -101,9 +95,7 @@
             <div class="patho-arrow">→</div>
             <div class="patho-step">Bronquitis Crónica</div>
           </div>
-
           <div class="divider"></div>
-
           <h3 style="margin-bottom: var(--space-lg);">Células Clave en EPOC</h3>
           <div class="grid-3" style="margin-bottom: var(--space-2xl);">
             <div class="cell-card animated" style="border-top-color: #F39C12;">
@@ -119,7 +111,6 @@
               <div class="cell-role">Células T citotóxicas aumentadas en EPOC (a diferencia del asma con Th2). Inducen apoptosis de neumocitos. Su abundancia correlaciona con la severidad del enfisema y la pérdida de VEF1.</div>
             </div>
           </div>
-
           <h3 style="margin-bottom: var(--space-lg);">Desequilibrio Proteasa / Antiproteasa</h3>
           <div class="comparison-grid" style="margin-bottom: var(--space-xl);">
             <div class="comparison-card">
@@ -143,10 +134,7 @@
               </ul>
             </div>
           </div>
-
           <div class="divider"></div>
-
-          <!-- Pink Puffer vs Blue Bloater -->
           <h3 style="margin-bottom: var(--space-lg);">Fenotipos Clínicos: Pink Puffer vs Blue Bloater</h3>
           <div class="comparison-grid">
             <div class="comparison-card" style="border: 2px solid rgba(255,182,100,0.3);">
@@ -176,11 +164,8 @@
           </div>
         </div>
 
-        <!-- TAB 2: TIPOS Y CLASIFICACIÓN -->
         <div class="tab-panel">
           <h2 style="color: #F39C12; margin-bottom: var(--space-xl);">Tipos y Clasificación GOLD 2024</h2>
-
-          <!-- Enfisema types -->
           <h3 style="margin-bottom: var(--space-lg);">Tipos de Enfisema</h3>
           <div class="comparison-grid" style="margin-bottom: var(--space-2xl);">
             <div class="comparison-card">
@@ -204,53 +189,24 @@
               </ul>
             </div>
           </div>
-
           <div class="info-card" style="border-left-color: var(--red); margin-bottom: var(--space-xl);">
             <h4 class="info-card-title" style="color: var(--red);">Déficit de Alfa-1 Antitripsina (DAAT)</h4>
-            <p>Sospechar en: EPOC &lt; 45 años, no fumadores, enfisema panacinar basal, hepatopatía crónica (cirrosis), historia familiar. Genotipo PiMM (normal) → PiMZ (heterocigoto, riesgo moderado) → PiZZ (deficiencia grave, AAT &lt; 11 μmol/L). Tratamiento: terapia de aumento con concentrado de AAT IV semanal (nebulización investigacional).</p>
+            <p>Sospechar en: EPOC &lt; 45 años, no fumadores, enfisema panacinar basal, hepatopatía crónica (cirrosis), historia familiar. Genotipo PiMM (normal) → PiMZ (heterocigoto, riesgo moderado) → PiZZ (deficiencia grave, AAT &lt; 11 μmol/L). Tratamiento: terapia de aumento con concentrado de AAT IV semanal.</p>
           </div>
-
-          <!-- GOLD classification -->
           <h3 style="margin-bottom: var(--space-lg);">Clasificación GOLD por VEF1</h3>
           <div class="table-wrapper" style="margin-bottom: var(--space-xl);">
             <table class="data-table" aria-label="Clasificación GOLD EPOC por VEF1">
               <thead>
-                <tr>
-                  <th>Grado</th>
-                  <th>Severidad</th>
-                  <th>VEF1 post-BD (con VEF1/CVF &lt; 0.70)</th>
-                  <th>Síntomas típicos</th>
-                </tr>
+                <tr><th>Grado</th><th>Severidad</th><th>VEF1 post-BD (con VEF1/CVF &lt; 0.70)</th><th>Síntomas típicos</th></tr>
               </thead>
               <tbody>
-                <tr>
-                  <td><span class="tag tag-green">GOLD 1</span></td>
-                  <td>Leve</td>
-                  <td>VEF1 ≥ 80% predicho</td>
-                  <td>Puede ser asintomático o tos crónica</td>
-                </tr>
-                <tr>
-                  <td><span class="tag tag-cyan">GOLD 2</span></td>
-                  <td>Moderado</td>
-                  <td>VEF1 50 – 79% predicho</td>
-                  <td>Disnea de esfuerzo, tos, esputo</td>
-                </tr>
-                <tr>
-                  <td><span class="tag" style="background: rgba(243,156,18,0.15); color: #F39C12;">GOLD 3</span></td>
-                  <td>Grave</td>
-                  <td>VEF1 30 – 49% predicho</td>
-                  <td>Disnea intensa, exacerbaciones frecuentes</td>
-                </tr>
-                <tr>
-                  <td><span class="tag tag-red">GOLD 4</span></td>
-                  <td>Muy Grave</td>
-                  <td>VEF1 &lt; 30% predicho</td>
-                  <td>Insuficiencia respiratoria, cor pulmonale</td>
-                </tr>
+                <tr><td><span class="tag tag-green">GOLD 1</span></td><td>Leve</td><td>VEF1 ≥ 80% predicho</td><td>Puede ser asintomático o tos crónica</td></tr>
+                <tr><td><span class="tag tag-cyan">GOLD 2</span></td><td>Moderado</td><td>VEF1 50 – 79% predicho</td><td>Disnea de esfuerzo, tos, esputo</td></tr>
+                <tr><td><span class="tag" style="background: rgba(243,156,18,0.15); color: #F39C12;">GOLD 3</span></td><td>Grave</td><td>VEF1 30 – 49% predicho</td><td>Disnea intensa, exacerbaciones frecuentes</td></tr>
+                <tr><td><span class="tag tag-red">GOLD 4</span></td><td>Muy Grave</td><td>VEF1 &lt; 30% predicho</td><td>Insuficiencia respiratoria, cor pulmonale</td></tr>
               </tbody>
             </table>
           </div>
-
           <h3 style="margin-bottom: var(--space-lg);">Grupos GOLD A/B/E</h3>
           <div class="grid-3">
             <div class="info-card animated" style="border-left-color: var(--green);">
@@ -268,32 +224,19 @@
           </div>
         </div>
 
-        <!-- TAB 3: DIAGNÓSTICO -->
         <div class="tab-panel">
           <h2 style="color: #F39C12; margin-bottom: var(--space-xl);">Diagnóstico de la EPOC</h2>
-
           <div class="grid-2">
             <div>
               <h3 style="margin-bottom: var(--space-lg);">Criterio Diagnóstico Principal</h3>
               <div class="info-card" style="border-left-color: #F39C12; margin-bottom: var(--space-xl);">
                 <h4 class="info-card-title" style="color: #F39C12;">Espirometría Post-Broncodilatador</h4>
-                <p>
-                  <strong class="text-accent">VEF1/CVF &lt; 0.70</strong> post-BD (criterio diagnóstico de obstrucción fija)<br>
-                  VEF1 determina severidad (Grados GOLD 1-4)<br>
-                  Reversibilidad &lt; 12% o &lt; 200mL (diferencia clave con asma)<br>
-                  <span class="tag tag-red" style="margin-top: 8px; display: inline-block;">Sin reversibilidad significativa = EPOC</span>
-                </p>
+                <p><strong class="text-accent">VEF1/CVF &lt; 0.70</strong> post-BD (criterio diagnóstico de obstrucción fija)<br>VEF1 determina severidad (Grados GOLD 1-4)<br>Reversibilidad &lt; 12% o &lt; 200mL (diferencia clave con asma)<br><span class="tag tag-red" style="margin-top: 8px; display: inline-block;">Sin reversibilidad significativa = EPOC</span></p>
               </div>
-
               <h3 style="margin-bottom: var(--space-lg);">Escalas Funcionales</h3>
               <div class="table-wrapper">
                 <table class="data-table" aria-label="Escala de disnea mMRC">
-                  <thead>
-                    <tr>
-                      <th>mMRC</th>
-                      <th>Descripción</th>
-                    </tr>
-                  </thead>
+                  <thead><tr><th>mMRC</th><th>Descripción</th></tr></thead>
                   <tbody>
                     <tr><td>Grado 0</td><td>Disnea solo con ejercicio intenso</td></tr>
                     <tr><td>Grado 1</td><td>Disnea al caminar rápido o cuesta arriba</td></tr>
@@ -304,7 +247,6 @@
                 </table>
               </div>
             </div>
-
             <div>
               <h3 style="margin-bottom: var(--space-lg);">Imágenes y Laboratorio</h3>
               <div class="diagnosis-grid" style="grid-template-columns: 1fr;">
@@ -316,21 +258,12 @@
                         <ellipse cx="45" cy="55" rx="25" ry="36" fill="none" stroke="rgba(148,180,201,0.4)" stroke-width="1"/>
                         <ellipse cx="115" cy="55" rx="25" ry="36" fill="none" stroke="rgba(148,180,201,0.4)" stroke-width="1"/>
                         <ellipse cx="80" cy="55" rx="8" ry="38" fill="none" stroke="rgba(148,180,201,0.3)" stroke-width="1.5"/>
-                        <!-- Flat diaphragm -->
                         <line x1="20" y1="92" x2="140" y2="92" stroke="#F39C12" stroke-width="1.5"/>
-                        <!-- Hyperinflated lungs -->
                         <circle cx="40" cy="40" r="6" fill="none" stroke="rgba(148,180,201,0.2)" stroke-width="0.8"/>
                         <circle cx="120" cy="40" r="7" fill="none" stroke="rgba(148,180,201,0.2)" stroke-width="0.8"/>
-                        <circle cx="35" cy="55" r="5" fill="none" stroke="rgba(148,180,201,0.15)" stroke-width="0.8"/>
-                        <circle cx="125" cy="55" r="5" fill="none" stroke="rgba(148,180,201,0.15)" stroke-width="0.8"/>
                         <text x="45" y="105" font-size="6" fill="#F39C12" font-family="monospace">Diafragma plano</text>
                       </svg>
-                      <div class="diagnosis-placeholder-label">
-                        Rx Tórax EPOC grave<br>
-                        Hiperinsuflación<br>
-                        Diafragmas planos y bajos<br>
-                        Espacio retroesternal aumentado
-                      </div>
+                      <div class="diagnosis-placeholder-label">Rx Tórax EPOC grave<br>Hiperinsuflación<br>Diafragmas planos y bajos<br>Espacio retroesternal aumentado</div>
                     </div>
                   </div>
                   <div class="diagnosis-info">
@@ -339,100 +272,57 @@
                   </div>
                 </div>
               </div>
-
               <div class="info-card mt-md" style="border-left-color: var(--accent);">
                 <h4 class="info-card-title">Test de 6 Minutos Marcha (6MWT)</h4>
                 <p>Evaluación funcional objetiva. Distancia &lt; 350m asocia mayor mortalidad. Se usa para indicar O2 domiciliario (desaturación &lt; 88% durante el test) y evaluar trasplante pulmonar.</p>
               </div>
             </div>
           </div>
-
           <div class="divider"></div>
-
           <h3 style="margin-bottom: var(--space-lg);">Diagnóstico Diferencial</h3>
           <div class="table-wrapper">
-            <table class="data-table" aria-label="Diagnóstico diferencial EPOC">
-              <thead>
-                <tr>
-                  <th>Diagnóstico</th>
-                  <th>Diferencias clave vs EPOC</th>
-                </tr>
-              </thead>
+            <table class="data-table">
+              <thead><tr><th>Diagnóstico</th><th>Diferencias clave vs EPOC</th></tr></thead>
               <tbody>
-                <tr>
-                  <td><strong>Asma</strong></td>
-                  <td>Inicio joven, atopia, reversibilidad &gt; 12%, eosinofilia, respuesta completa a ICS</td>
-                </tr>
-                <tr>
-                  <td><strong>ICC</strong></td>
-                  <td>Ortopnea, edemas, BNP elevado, crepitantes basales, Rx congestión vascular</td>
-                </tr>
-                <tr>
-                  <td><strong>Bronquiectasias</strong></td>
-                  <td>Expectoración purulenta abundante, infecciones recurrentes, imagen TC patognomónica</td>
-                </tr>
-                <tr>
-                  <td><strong>Fibrosis Pulmonar</strong></td>
-                  <td>Patrón restrictivo (CVF↓, VEF1/CVF normal), crepitantes teleinspiratorios (velcro)</td>
-                </tr>
+                <tr><td><strong>Asma</strong></td><td>Inicio joven, atopia, reversibilidad &gt; 12%, eosinofilia, respuesta completa a ICS</td></tr>
+                <tr><td><strong>ICC</strong></td><td>Ortopnea, edemas, BNP elevado, crepitantes basales, Rx congestión vascular</td></tr>
+                <tr><td><strong>Bronquiectasias</strong></td><td>Expectoración purulenta abundante, infecciones recurrentes, imagen TC patognomónica</td></tr>
+                <tr><td><strong>Fibrosis Pulmonar</strong></td><td>Patrón restrictivo (CVF↓, VEF1/CVF normal), crepitantes teleinspiratorios (velcro)</td></tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- TAB 4: TRATAMIENTO -->
         <div class="tab-panel">
           <h2 style="color: #F39C12; margin-bottom: var(--space-xl);">Tratamiento de la EPOC</h2>
-
           <div class="info-card" style="border-left-color: var(--green); margin-bottom: var(--space-2xl);">
             <h4 class="info-card-title" style="color: var(--green);">Cesación Tabáquica — La medida más importante</h4>
             <p>Único tratamiento que modifica la historia natural de la EPOC y enlentece la pérdida de VEF1. Vareniclina (Champix) es el tratamiento más eficaz (OR 3.6 vs placebo). También: bupropión, TRN (parches, chicles), apoyo conductual. La pérdida anual de VEF1 se reduce de ~55 mL/año a ~25 mL/año post-cesación.</p>
           </div>
-
           <h3 style="margin-bottom: var(--space-lg);">Escalada Terapéutica</h3>
           <div class="stepper">
             <div class="stepper-item" data-step="1">
               <div class="stepper-title">Broncodilatadores — Grupo A</div>
-              <div class="stepper-content">
-                <strong>SABA a demanda:</strong> Salbutamol, Ipratropio (SAMA). Usar según síntomas. Si síntomas leves con buen control: solo rescate.
-              </div>
+              <div class="stepper-content"><strong>SABA a demanda:</strong> Salbutamol, Ipratropio (SAMA). Usar según síntomas. Si síntomas leves con buen control: solo rescate.</div>
             </div>
             <div class="stepper-item" data-step="2">
               <div class="stepper-title">LAMA o LABA — Grupo B</div>
-              <div class="stepper-content">
-                <strong>LAMA preferido:</strong> Tiotropio 18 μg/día (HandiHaler) o 5 μg (Respimat) — reduce exacerbaciones vs LABA<br>
-                <strong>LABA:</strong> Indacaterol 150-300 μg/día (Onbrez), Salmeterol, Formoterol<br>
-                Si no hay control: subir a LAMA + LABA
-              </div>
+              <div class="stepper-content"><strong>LAMA preferido:</strong> Tiotropio 18 μg/día (HandiHaler) o 5 μg (Respimat) — reduce exacerbaciones vs LABA<br><strong>LABA:</strong> Indacaterol 150-300 μg/día (Onbrez), Salmeterol, Formoterol<br>Si no hay control: subir a LAMA + LABA</div>
             </div>
             <div class="stepper-item" data-step="3">
               <div class="stepper-title">LAMA + LABA — Doble Broncodilatación</div>
-              <div class="stepper-content">
-                <strong>Combinaciones fijas:</strong> Indacaterol/Glicopirronio (Ultibro), Umeclidinium/Vilanterol (Anoro), Tiotropio/Olodaterol (Spiolto)<br>
-                Superior a monoterapia en todos los parámetros. Estándar en Grupo E.
-              </div>
+              <div class="stepper-content"><strong>Combinaciones fijas:</strong> Indacaterol/Glicopirronio (Ultibro), Umeclidinium/Vilanterol (Anoro), Tiotropio/Olodaterol (Spiolto)<br>Superior a monoterapia en todos los parámetros. Estándar en Grupo E.</div>
             </div>
             <div class="stepper-item" data-step="4">
               <div class="stepper-title">+ ICS — Triple Terapia</div>
-              <div class="stepper-content">
-                <strong>Indicación de ICS:</strong> Eosinófilos ≥ 300 cél/μL O frecuentes exacerbaciones bajo LAMA+LABA<br>
-                <strong>Triple terapia:</strong> Fluticasona/Umeclidinium/Vilanterol (Trelegy)<br>
-                <strong>Precaución:</strong> ICS aumenta riesgo de neumonía en EPOC (OR 1.6)
-              </div>
+              <div class="stepper-content"><strong>Indicación de ICS:</strong> Eosinófilos ≥ 300 cél/μL O frecuentes exacerbaciones bajo LAMA+LABA<br><strong>Triple terapia:</strong> Fluticasona/Umeclidinium/Vilanterol (Trelegy)<br><strong>Precaución:</strong> ICS aumenta riesgo de neumonía en EPOC (OR 1.6)</div>
             </div>
             <div class="stepper-item" data-step="5">
               <div class="stepper-title">Tratamientos Adicionales</div>
-              <div class="stepper-content">
-                <strong>Roflumilast (IPDe4):</strong> En bronquitis crónica con FEV1 &lt; 50% y ≥ 2 exacerbaciones<br>
-                <strong>Oxigenoterapia domiciliaria:</strong> PaO2 ≤ 55 mmHg o SaO2 ≤ 88%<br>
-                <strong>Rehabilitación pulmonar:</strong> Mejora calidad de vida y tolerancia al ejercicio (no modifica VEF1)<br>
-                <strong>Cirugía:</strong> Bullectomía, Reducción de Volumen (LVRS), Trasplante pulmonar
-              </div>
+              <div class="stepper-content"><strong>Roflumilast (IPDe4):</strong> En bronquitis crónica con FEV1 &lt; 50% y ≥ 2 exacerbaciones<br><strong>Oxigenoterapia domiciliaria:</strong> PaO2 ≤ 55 mmHg o SaO2 ≤ 88%<br><strong>Rehabilitación pulmonar:</strong> Mejora calidad de vida y tolerancia al ejercicio<br><strong>Cirugía:</strong> Bullectomía, Reducción de Volumen (LVRS), Trasplante pulmonar</div>
             </div>
           </div>
-
           <div class="divider"></div>
-
           <h3 style="margin-bottom: var(--space-lg);">Fármacos Clave</h3>
           <div class="drug-cards">
             <div class="drug-card">
@@ -440,152 +330,57 @@
               <div class="drug-name">Tiotropio</div>
               <div class="drug-class">LAMA — Anticolinérgico de Larga Duración</div>
               <div class="drug-detail">
-                <div class="drug-detail-row">
-                  <span class="drug-detail-label">Mecanismo:</span>
-                  <span>Antagonista muscarínico selectivo M3 → inhibe broncoconstricción colinérgica → broncodilatación mantenida</span>
-                </div>
-                <div class="drug-detail-row">
-                  <span class="drug-detail-label">Dosis:</span>
-                  <span>18 μg/día (HandiHaler) o 5 μg/día (Respimat)</span>
-                </div>
-                <div class="drug-detail-row">
-                  <span class="drug-detail-label">Duración:</span>
-                  <span>24 horas — administración una vez al día</span>
-                </div>
-                <div class="drug-detail-row">
-                  <span class="drug-detail-label">EA:</span>
-                  <span>Sequedad bucal, retención urinaria (contraindicado en HBP), estreñimiento</span>
-                </div>
+                <div class="drug-detail-row"><span class="drug-detail-label">Mecanismo:</span><span>Antagonista muscarínico selectivo M3 → inhibe broncoconstricción colinérgica → broncodilatación mantenida</span></div>
+                <div class="drug-detail-row"><span class="drug-detail-label">Dosis:</span><span>18 μg/día (HandiHaler) o 5 μg/día (Respimat)</span></div>
+                <div class="drug-detail-row"><span class="drug-detail-label">Duración:</span><span>24 horas — administración una vez al día</span></div>
+                <div class="drug-detail-row"><span class="drug-detail-label">EA:</span><span>Sequedad bucal, retención urinaria (contraindicado en HBP), estreñimiento</span></div>
               </div>
             </div>
-
             <div class="drug-card">
               <div class="drug-icon">💊</div>
               <div class="drug-name">Indacaterol</div>
               <div class="drug-class">LABA — Beta-2 Agonista de Larga Duración</div>
               <div class="drug-detail">
-                <div class="drug-detail-row">
-                  <span class="drug-detail-label">Mecanismo:</span>
-                  <span>Agonista β2 adrenérgico de acción ultra-prolongada → ↑AMPc → relajación músculo liso 24h</span>
-                </div>
-                <div class="drug-detail-row">
-                  <span class="drug-detail-label">Dosis:</span>
-                  <span>150-300 μg/día vía Breezhaler</span>
-                </div>
-                <div class="drug-detail-row">
-                  <span class="drug-detail-label">EA:</span>
-                  <span>Taquicardia, hipopotasemia, temblor. No usar en hipertiroidismo no controlado</span>
-                </div>
+                <div class="drug-detail-row"><span class="drug-detail-label">Mecanismo:</span><span>Agonista β2 adrenérgico de acción ultra-prolongada → ↑AMPc → relajación músculo liso 24h</span></div>
+                <div class="drug-detail-row"><span class="drug-detail-label">Dosis:</span><span>150-300 μg/día vía Breezhaler</span></div>
+                <div class="drug-detail-row"><span class="drug-detail-label">EA:</span><span>Taquicardia, hipopotasemia, temblor. No usar en hipertiroidismo no controlado</span></div>
               </div>
             </div>
-
             <div class="drug-card">
               <div class="drug-icon">🔬</div>
               <div class="drug-name">Roflumilast</div>
               <div class="drug-class">IPDe4 — Inhibidor Fosfodiesterasa-4</div>
               <div class="drug-detail">
-                <div class="drug-detail-row">
-                  <span class="drug-detail-label">Mecanismo:</span>
-                  <span>Inhibe PDE4 → ↑AMPc intracelular → reduce inflamación neutrofílica → ↓exacerbaciones en bronquitis crónica</span>
-                </div>
-                <div class="drug-detail-row">
-                  <span class="drug-detail-label">Dosis:</span>
-                  <span>500 μg/día VO. Iniciar con 250 μg las primeras 4 semanas</span>
-                </div>
-                <div class="drug-detail-row">
-                  <span class="drug-detail-label">EA:</span>
-                  <span>Náuseas, diarrea, pérdida de peso, cefalea. Contraindicado en depresión grave</span>
-                </div>
+                <div class="drug-detail-row"><span class="drug-detail-label">Mecanismo:</span><span>Inhibe PDE4 → ↑AMPc intracelular → reduce inflamación neutrofílica → ↓exacerbaciones en bronquitis crónica</span></div>
+                <div class="drug-detail-row"><span class="drug-detail-label">Dosis:</span><span>500 μg/día VO. Iniciar con 250 μg las primeras 4 semanas</span></div>
+                <div class="drug-detail-row"><span class="drug-detail-label">EA:</span><span>Náuseas, diarrea, pérdida de peso, cefalea. Contraindicado en depresión grave</span></div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- TAB 5: CICLO -->
         <div class="tab-panel">
           <h2 style="color: #F39C12; margin-bottom: var(--space-xl);">Ciclo Natural de la EPOC</h2>
-
           <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <div class="timeline-title">Inicio Tabaquismo</div>
-                <div class="timeline-desc">Exposición a noxas inhaladas. Pérdida fisiológica de VEF1: ~30 mL/año</div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <div class="timeline-title">Inflamación Subclínica</div>
-                <div class="timeline-desc">Años: Inflamación neutrofílica silente, destrucción parénquima asintomática</div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot warning"></div>
-              <div class="timeline-content">
-                <div class="timeline-title">Pérdida VEF1</div>
-                <div class="timeline-desc">Pérdida acelerada: 60-80 mL/año en susceptibles (vs 25 mL/año normal)</div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot warning"></div>
-              <div class="timeline-content">
-                <div class="timeline-title">Primeros Síntomas</div>
-                <div class="timeline-desc">Disnea de esfuerzo, tos crónica, esputo matutino. GOLD 2</div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot danger"></div>
-              <div class="timeline-content">
-                <div class="timeline-title">1ra Exacerbación</div>
-                <div class="timeline-desc">Evento centinela: anticipa deterioro funcional acelerado. Hospitalización necesaria</div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot danger"></div>
-              <div class="timeline-content">
-                <div class="timeline-title">Espiral Deterioro</div>
-                <div class="timeline-desc">Exacerbaciones frecuentes → pérdida funcional → sedentarismo → peor calidad de vida</div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot danger"></div>
-              <div class="timeline-content">
-                <div class="timeline-title">Cor Pulmonale</div>
-                <div class="timeline-desc">Hipertensión pulmonar por hipoxia crónica → fallo VD → edemas, ingurgitación yugular</div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot danger"></div>
-              <div class="timeline-content">
-                <div class="timeline-title">Insuf. Respiratoria</div>
-                <div class="timeline-desc">PaO2 &lt; 55 mmHg, PCO2 elevada. Necesidad de O2 domiciliario. GOLD 4. Trasplante</div>
-              </div>
-            </div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-title">Inicio Tabaquismo</div><div class="timeline-desc">Exposición a noxas inhaladas. Pérdida fisiológica de VEF1: ~30 mL/año</div></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><div class="timeline-title">Inflamación Subclínica</div><div class="timeline-desc">Años: Inflamación neutrofílica silente, destrucción parénquima asintomática</div></div></div>
+            <div class="timeline-item"><div class="timeline-dot warning"></div><div class="timeline-content"><div class="timeline-title">Pérdida VEF1</div><div class="timeline-desc">Pérdida acelerada: 60-80 mL/año en susceptibles (vs 25 mL/año normal)</div></div></div>
+            <div class="timeline-item"><div class="timeline-dot warning"></div><div class="timeline-content"><div class="timeline-title">Primeros Síntomas</div><div class="timeline-desc">Disnea de esfuerzo, tos crónica, esputo matutino. GOLD 2</div></div></div>
+            <div class="timeline-item"><div class="timeline-dot danger"></div><div class="timeline-content"><div class="timeline-title">1ra Exacerbación</div><div class="timeline-desc">Evento centinela: anticipa deterioro funcional acelerado. Hospitalización necesaria</div></div></div>
+            <div class="timeline-item"><div class="timeline-dot danger"></div><div class="timeline-content"><div class="timeline-title">Espiral Deterioro</div><div class="timeline-desc">Exacerbaciones frecuentes → pérdida funcional → sedentarismo → peor calidad de vida</div></div></div>
+            <div class="timeline-item"><div class="timeline-dot danger"></div><div class="timeline-content"><div class="timeline-title">Cor Pulmonale</div><div class="timeline-desc">Hipertensión pulmonar por hipoxia crónica → fallo VD → edemas, ingurgitación yugular</div></div></div>
+            <div class="timeline-item"><div class="timeline-dot danger"></div><div class="timeline-content"><div class="timeline-title">Insuf. Respiratoria</div><div class="timeline-desc">PaO2 &lt; 55 mmHg, PCO2 elevada. Necesidad de O2 domiciliario. GOLD 4. Trasplante</div></div></div>
           </div>
         </div>
       </div>
 
-      <!-- References -->
       <section class="references mt-2xl">
         <div class="references-title">Referencias</div>
         <ol class="references-list">
-          <li class="reference-item">
-            <span class="reference-num">[1]</span>
-            <span>Global Initiative for Chronic Obstructive Lung Disease (GOLD). <em>Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report.</em> <a href="https://goldcopd.org" class="reference-link" target="_blank" rel="noopener">goldcopd.org</a></span>
-          </li>
-          <li class="reference-item">
-            <span class="reference-num">[2]</span>
-            <span>Vestbo J, et al. Global Strategy for the Diagnosis, Management, and Prevention of COPD. <em>Am J Respir Crit Care Med.</em> 2013;187(4):347–365.</span>
-          </li>
-          <li class="reference-item">
-            <span class="reference-num">[3]</span>
-            <span>Agustí A, et al. Treatable traits: toward precision medicine of chronic airway diseases. <em>Eur Respir J.</em> 2016;47(2):410–419.</span>
-          </li>
-          <li class="reference-item">
-            <span class="reference-num">[4]</span>
-            <span>Anthonisen NR, et al. Effects of smoking intervention and the use of an inhaled anticholinergic bronchodilator on the rate of decline of FEV1. <em>JAMA.</em> 1994;272(19):1497–505.</span>
-          </li>
+          <li class="reference-item"><span class="reference-num">[1]</span><span>Global Initiative for Chronic Obstructive Lung Disease (GOLD). <em>Global Strategy for Prevention, Diagnosis and Management of COPD: 2024 Report.</em> <a href="https://goldcopd.org" class="reference-link" target="_blank" rel="noopener">goldcopd.org</a></span></li>
+          <li class="reference-item"><span class="reference-num">[2]</span><span>Vestbo J, et al. Global Strategy for the Diagnosis, Management, and Prevention of COPD. <em>Am J Respir Crit Care Med.</em> 2013;187(4):347–365.</span></li>
+          <li class="reference-item"><span class="reference-num">[3]</span><span>Agustí A, et al. Treatable traits: toward precision medicine of chronic airway diseases. <em>Eur Respir J.</em> 2016;47(2):410–419.</span></li>
+          <li class="reference-item"><span class="reference-num">[4]</span><span>Anthonisen NR, et al. Effects of smoking intervention and the use of an inhaled anticholinergic bronchodilator on the rate of decline of FEV1. <em>JAMA.</em> 1994;272(19):1497–505.</span></li>
         </ol>
       </section>
     </div>
