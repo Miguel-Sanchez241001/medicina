@@ -11,64 +11,12 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/animations.css" />
   <style>
-    .quiz-hero {
-      padding: calc(72px + var(--space-4xl)) var(--space-xl) var(--space-3xl);
-      text-align: center;
-      background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-      border-bottom: 1px solid var(--glass-border);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .quiz-hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(0,212,255,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .quiz-hero-title {
-      font-size: var(--font-size-4xl);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: var(--space-md);
-      background: linear-gradient(135deg, var(--text-primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .quiz-hero-subtitle {
-      font-size: var(--font-size-lg);
-      color: var(--text-secondary);
-      margin-bottom: var(--space-xl);
-    }
-
-    .quiz-stats {
-      display: flex;
-      gap: var(--space-xl);
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .quiz-stat {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      font-size: var(--font-size-sm);
-      color: var(--text-secondary);
-    }
-
-    .quiz-stat-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-    }
+    .quiz-hero { padding: calc(72px + var(--space-4xl)) var(--space-xl) var(--space-3xl); text-align: center; background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); border-bottom: 1px solid var(--glass-border); }
+    .quiz-hero-title { font-size: var(--font-size-4xl); font-weight: 800; letter-spacing: -0.03em; margin-bottom: var(--space-md); background: linear-gradient(135deg, var(--text-primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .quiz-hero-subtitle { font-size: var(--font-size-lg); color: var(--text-secondary); margin-bottom: var(--space-xl); }
+    .quiz-stats { display: flex; gap: var(--space-xl); justify-content: center; flex-wrap: wrap; }
+    .quiz-stat { display: flex; align-items: center; gap: var(--space-sm); font-size: var(--font-size-sm); color: var(--text-secondary); }
+    .quiz-stat-dot { width: 8px; height: 8px; border-radius: 50%; }
   </style>
 </head>
 <body>
@@ -87,9 +35,7 @@
       <a href="colecistitis.html" class="nav-link">Colecistitis</a>
       <a href="quiz.html" class="nav-link active nav-cta">Quiz Clínico</a>
     </div>
-    <button class="nav-hamburger" aria-label="Menú móvil">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-hamburger" aria-label="Menú móvil"><span></span><span></span><span></span></button>
   </nav>
 
   <div class="nav-mobile">
@@ -101,37 +47,21 @@
     <a href="quiz.html" class="nav-link">Quiz Clínico</a>
   </div>
 
-  <!-- Quiz Hero -->
   <header class="quiz-hero" role="banner">
     <div class="quiz-hero-title">Quiz Clínico</div>
     <p class="quiz-hero-subtitle">20 casos clínicos reales con razonamiento diagnóstico detallado</p>
     <div class="quiz-stats">
-      <div class="quiz-stat">
-        <div class="quiz-stat-dot" style="background: var(--accent);"></div>
-        5 preguntas de Asma
-      </div>
-      <div class="quiz-stat">
-        <div class="quiz-stat-dot" style="background: #F39C12;"></div>
-        5 preguntas de EPOC
-      </div>
-      <div class="quiz-stat">
-        <div class="quiz-stat-dot" style="background: var(--red);"></div>
-        5 preguntas de Tuberculosis
-      </div>
-      <div class="quiz-stat">
-        <div class="quiz-stat-dot" style="background: var(--green);"></div>
-        5 preguntas de Colecistitis
-      </div>
+      <div class="quiz-stat"><div class="quiz-stat-dot" style="background: var(--accent);"></div>5 preguntas de Asma</div>
+      <div class="quiz-stat"><div class="quiz-stat-dot" style="background: #F39C12;"></div>5 preguntas de EPOC</div>
+      <div class="quiz-stat"><div class="quiz-stat-dot" style="background: var(--red);"></div>5 preguntas de Tuberculosis</div>
+      <div class="quiz-stat"><div class="quiz-stat-dot" style="background: var(--green);"></div>5 preguntas de Colecistitis</div>
     </div>
   </header>
 
-  <!-- Quiz Main -->
   <main>
     <section class="section" id="quiz-section" aria-label="Quiz de casos clínicos">
       <div class="container">
         <div class="quiz-container">
-
-          <!-- Filters -->
           <div class="quiz-filters" role="group" aria-label="Filtrar preguntas por enfermedad">
             <button class="quiz-filter-btn active" data-filter="todos" aria-pressed="true">Todos (20)</button>
             <button class="quiz-filter-btn" data-filter="asma" aria-pressed="false">Asma (5)</button>
@@ -140,12 +70,10 @@
             <button class="quiz-filter-btn" data-filter="colecistitis" aria-pressed="false">Colecistitis (5)</button>
           </div>
 
-          <!-- Progress Bar -->
           <div class="quiz-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progreso del quiz">
             <div class="quiz-progress-fill" id="quiz-progress-fill" style="width: 0%;"></div>
           </div>
 
-          <!-- Header -->
           <div class="quiz-header">
             <div>
               <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">Puntuación</p>
@@ -154,109 +82,60 @@
             <div id="quiz-counter" class="quiz-counter" aria-live="polite">Pregunta 1 de 20</div>
           </div>
 
-          <!-- Question Container -->
-          <div id="quiz-question-container" aria-live="polite">
-            <!-- Rendered by quiz.js -->
-          </div>
+          <div id="quiz-question-container" aria-live="polite"></div>
+          <div id="quiz-results" style="display: none;" aria-live="polite"></div>
 
-          <!-- Results Container -->
-          <div id="quiz-results" style="display: none;" aria-live="polite">
-            <!-- Rendered by quiz.js -->
-          </div>
-
-          <!-- Navigation -->
           <div class="quiz-nav" id="quiz-nav">
-            <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">
-              Selecciona una opción para continuar
-            </div>
-            <button
-              class="btn btn-primary"
-              id="quiz-next-btn"
-              onclick="nextQuestion()"
-              disabled
-              aria-label="Siguiente pregunta"
-              style="opacity: 0.5;">
+            <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">Selecciona una opción para continuar</div>
+            <button class="btn btn-primary" id="quiz-next-btn" onclick="nextQuestion()" disabled aria-label="Siguiente pregunta" style="opacity: 0.5;">
               Siguiente
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- Tips Section -->
     <section class="section" style="background: var(--bg-secondary); padding: var(--space-2xl) 0;" aria-labelledby="tips-title">
       <div class="container">
-        <h2 class="section-title" id="tips-title" style="margin-bottom: var(--space-xl);">
-          Guía de <span class="accent-text">Estudio</span>
-        </h2>
+        <h2 class="section-title" id="tips-title" style="margin-bottom: var(--space-xl);">Guía de <span class="accent-text">Estudio</span></h2>
         <div class="grid-3">
           <article class="card card-accent animated">
-            <h3 style="font-size: var(--font-size-base); font-weight: 700; color: var(--accent); margin-bottom: var(--space-sm);">
-              Asma GINA 2024
-            </h3>
-            <p style="font-size: var(--font-size-sm); color: var(--text-secondary); line-height: 1.7;">
-              Énfasis en: fenotipos, clasificación por control, escalera terapéutica 5 escalones, terapia biológica (anti-IgE, anti-IL5, anti-IL4/13, anti-TSLP) y manejo de crisis aguda.
-            </p>
+            <h3 style="font-size: var(--font-size-base); font-weight: 700; color: var(--accent); margin-bottom: var(--space-sm);">Asma GINA 2024</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--text-secondary); line-height: 1.7;">Énfasis en: fenotipos, clasificación por control, escalera terapéutica 5 escalones, terapia biológica (anti-IgE, anti-IL5, anti-IL4/13, anti-TSLP) y manejo de crisis aguda.</p>
             <a href="asma.html" class="btn btn-sm btn-secondary mt-md">Ver módulo</a>
           </article>
-
           <article class="card card-accent-purple animated" style="transition-delay: 100ms;">
-            <h3 style="font-size: var(--font-size-base); font-weight: 700; color: var(--accent2); margin-bottom: var(--space-sm);">
-              EPOC GOLD 2024
-            </h3>
-            <p style="font-size: var(--font-size-sm); color: var(--text-secondary); line-height: 1.7;">
-              Criterio diagnóstico: VEF1/CVF &lt; 0.70 post-BD. Grupos ABCE. Déficit alfa-1 antitripsina. O2 controlado 88-92%. Fenotipos Pink Puffer vs Blue Bloater. Triple terapia.
-            </p>
+            <h3 style="font-size: var(--font-size-base); font-weight: 700; color: var(--accent2); margin-bottom: var(--space-sm);">EPOC GOLD 2024</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--text-secondary); line-height: 1.7;">Criterio diagnóstico: VEF1/CVF &lt; 0.70 post-BD. Grupos ABCE. Déficit alfa-1 antitripsina. O2 controlado 88-92%. Fenotipos Pink Puffer vs Blue Bloater. Triple terapia.</p>
             <a href="epoc.html" class="btn btn-sm btn-secondary mt-md">Ver módulo</a>
           </article>
-
           <article class="card card-accent-red animated" style="transition-delay: 200ms;">
-            <h3 style="font-size: var(--font-size-base); font-weight: 700; color: var(--red); margin-bottom: var(--space-sm);">
-              Tuberculosis OMS 2023
-            </h3>
-            <p style="font-size: var(--font-size-sm); color: var(--text-secondary); line-height: 1.7;">
-              Esquema HRZE 2 meses + HR 4 meses. Efectos adversos: Etambutol → neuritis óptica, Isoniazida → neuropatía (suplementar B6). TB-MDR: régimen BPaL (Bedaquilina+Pretomanida+Linezolid).
-            </p>
+            <h3 style="font-size: var(--font-size-base); font-weight: 700; color: var(--red); margin-bottom: var(--space-sm);">Tuberculosis OMS 2023</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--text-secondary); line-height: 1.7;">Esquema HRZE 2 meses + HR 4 meses. Etambutol → neuritis óptica. Isoniazida → neuropatía (suplementar B6). TB-MDR: régimen BPaL.</p>
             <a href="tbc.html" class="btn btn-sm btn-secondary mt-md">Ver módulo</a>
           </article>
-
           <article class="card card-accent-green animated" style="transition-delay: 300ms;">
-            <h3 style="font-size: var(--font-size-base); font-weight: 700; color: var(--green); margin-bottom: var(--space-sm);">
-              Colecistitis TG18
-            </h3>
-            <p style="font-size: var(--font-size-sm); color: var(--text-secondary); line-height: 1.7;">
-              Criterios A+B+C para diagnóstico. Grados I/II/III de severidad. Ecografía: Murphy eco + pared &gt;4mm + líquido perivesicular. Manejo escalonado según grado. Complicación fatal: perforación.
-            </p>
+            <h3 style="font-size: var(--font-size-base); font-weight: 700; color: var(--green); margin-bottom: var(--space-sm);">Colecistitis TG18</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--text-secondary); line-height: 1.7;">Criterios A+B+C para diagnóstico. Grados I/II/III de severidad. Ecografía: Murphy eco + pared &gt;4mm + líquido perivesicular. Manejo escalonado según grado.</p>
             <a href="colecistitis.html" class="btn btn-sm btn-secondary mt-md">Ver módulo</a>
           </article>
-
           <article class="card animated" style="transition-delay: 150ms;">
-            <h3 style="font-size: var(--font-size-base); font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-sm);">
-              Estrategia para el Quiz
-            </h3>
+            <h3 style="font-size: var(--font-size-base); font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-sm);">Estrategia para el Quiz</h3>
             <ul style="font-size: var(--font-size-sm); color: var(--text-secondary); line-height: 1.8; padding-left: var(--space-md);">
               <li>Lee el escenario clínico completo antes de ver las opciones</li>
               <li>Identifica el dato clave que orienta el diagnóstico</li>
               <li>Elimina opciones claramente incorrectas</li>
               <li>Lee la explicación aunque hayas acertado</li>
-              <li>Repite el quiz en otra sesión para reforzar</li>
             </ul>
           </article>
-
           <article class="card animated" style="transition-delay: 200ms;">
-            <h3 style="font-size: var(--font-size-base); font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-sm);">
-              Valores de Referencia
-            </h3>
+            <h3 style="font-size: var(--font-size-base); font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-sm);">Valores de Referencia</h3>
             <ul style="font-size: var(--font-size-sm); color: var(--text-secondary); line-height: 1.8;">
               <li><span style="color: var(--accent);">VEF1/CVF &lt; 0.70</span> → obstrucción</li>
               <li><span style="color: var(--accent);">Reversibilidad ≥ 12% + 200mL</span> → asma</li>
               <li><span style="color: var(--accent);">PPD ≥ 10mm</span> (5mm VIH) → TB latente</li>
               <li><span style="color: var(--accent);">Pared vesicular &gt; 4mm</span> → colecistitis</li>
-              <li><span style="color: var(--accent);">FeNO &gt; 25 ppb</span> → inflamación eosinofílica</li>
             </ul>
           </article>
         </div>
@@ -267,11 +146,7 @@
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-logo">Medi<span>Learn</span></div>
-      <p class="footer-text">
-        Plataforma de aprendizaje médico interactivo<br>
-        Contenido basado en: GINA 2024 · GOLD 2024 · OMS 2023 · Tokyo Guidelines TG18<br>
-        Para uso educativo exclusivamente
-      </p>
+      <p class="footer-text">Plataforma de aprendizaje médico interactivo<br>Para uso educativo exclusivamente</p>
       <nav class="footer-links">
         <a href="index.html" class="footer-link">Inicio</a>
         <a href="asma.html" class="footer-link">Asma</a>
@@ -285,9 +160,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="js/quiz.js"></script>
   <script src="js/main.js"></script>
-
   <script>
-    // Update quiz filter buttons aria-pressed state
     document.querySelectorAll('.quiz-filter-btn').forEach(btn => {
       btn.addEventListener('click', function() {
         document.querySelectorAll('.quiz-filter-btn').forEach(b => b.setAttribute('aria-pressed', 'false'));
