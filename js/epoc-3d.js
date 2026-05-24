@@ -29,7 +29,7 @@
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.setClearColor(0x0A1628, 1);
 
-      // ─── Lighting ────────────────────────────
+      // ─── Lighting ────────────────────────
       scene.add(new THREE.AmbientLight(0xffffff, 0.4));
 
       const keyLight = new THREE.DirectionalLight(0xFFCCBB, 1.2);
@@ -44,11 +44,10 @@
       groundLight.position.set(0, -6, 0);
       scene.add(groundLight);
 
-      // ─── Alveoli ─────────────────────────────
+      // ─── Alveoli ─────────────────────────
       const alveoli = [];
       const alveoliCount = 18;
 
-      // Grid arrangement
       const positions = [
         [-4, 2, -1], [-2, 2.5, 0], [0, 2, -0.5], [2, 2.3, 0], [4, 2, -1],
         [-3.5, 0, 0], [-1.5, 0.3, -0.5], [0.5, 0, 0], [2.5, 0.2, -0.5], [4, 0.1, 0],
@@ -96,7 +95,7 @@
         alveoli.push(mesh);
       });
 
-      // ─── Bronchus ────────────────────────────
+      // ─── Bronchus ────────────────────────
       const bronchusGeo = new THREE.CylinderGeometry(0.35, 0.45, 4, 12);
       const bronchusMat = new THREE.MeshPhongMaterial({
         color: 0xCC9988,
@@ -108,7 +107,6 @@
       bronchus.position.set(0, -4.5, 0);
       scene.add(bronchus);
 
-      // Mucus thickening: inner bronchus wall (darker ring)
       const mucusGeo = new THREE.CylinderGeometry(0.15, 0.18, 4.2, 12);
       const mucusMat = new THREE.MeshPhongMaterial({
         color: 0x88AA22,
@@ -120,12 +118,11 @@
       mucusTube.position.set(0, -4.5, 0);
       scene.add(mucusTube);
 
-      // ─── Smoke Particles ─────────────────────
+      // ─── Smoke Particles ───────────────────
       const smokeGeo = new THREE.BufferGeometry();
       const smokeCount = 200;
       const smokePosArr = new Float32Array(smokeCount * 3);
       const smokeVelArr = new Float32Array(smokeCount * 3);
-      const smokeOpacity = new Float32Array(smokeCount);
 
       for (let i = 0; i < smokeCount; i++) {
         smokePosArr[i * 3]     = (Math.random() - 0.5) * 4;
@@ -134,7 +131,6 @@
         smokeVelArr[i * 3]     = (Math.random() - 0.5) * 0.01;
         smokeVelArr[i * 3 + 1] = 0.015 + Math.random() * 0.02;
         smokeVelArr[i * 3 + 2] = (Math.random() - 0.5) * 0.008;
-        smokeOpacity[i]        = Math.random();
       }
 
       smokeGeo.setAttribute('position', new THREE.BufferAttribute(smokePosArr, 3));
@@ -149,14 +145,13 @@
       const smoke = new THREE.Points(smokeGeo, smokeMat);
       scene.add(smoke);
 
-      // ─── Background subtle field ──────────────
       const bgGeo = new THREE.BufferGeometry();
       const bgPos = new Float32Array(200 * 3);
       for (let i = 0; i < 200 * 3; i++) bgPos[i] = (Math.random() - 0.5) * 35;
       bgGeo.setAttribute('position', new THREE.BufferAttribute(bgPos, 3));
       scene.add(new THREE.Points(bgGeo, new THREE.PointsMaterial({ color: 0x334466, size: 0.05, transparent: true, opacity: 0.5, depthWrite: false })));
 
-      // ─── Resize ──────────────────────────────
+      // ─── Resize ──────────────────────────
       const resizeObs = new ResizeObserver(() => {
         const w = canvas.clientWidth, h = canvas.clientHeight;
         if (w > 0 && h > 0) {
@@ -167,7 +162,7 @@
       });
       resizeObs.observe(canvas);
 
-      // ─── Animation Loop ───────────────────────
+      // ─── Animation Loop ───────────────────
       let frameId;
       let time = 0;
       let totalInflation = 0;
@@ -177,51 +172,39 @@
         time += 0.016;
         totalInflation += 0.001;
 
-        // Alveoli: inflate slowly (emphysema progression)
         alveoli.forEach(mesh => {
           if (mesh.userData.destroyed) {
-            // Destroyed alveoli inflate quickly
             const inflated = Math.min(mesh.userData.maxScale, mesh.userData.currentScale + mesh.userData.inflateRate);
             mesh.userData.currentScale = inflated;
             mesh.scale.setScalar(inflated / mesh.userData.baseScale);
-
-            // Breathe pulse
             const breathe = 1 + 0.06 * Math.sin(time * 0.6 + mesh.userData.phase);
             mesh.scale.multiplyScalar(breathe);
           } else {
-            // Healthy alveoli: normal breathing
             const breathe = 1 + 0.08 * Math.sin(time * 1.2 + mesh.userData.phase);
             mesh.scale.setScalar(breathe);
           }
         });
 
-        // Mucus thickening over time
         const mucusScale = 1 + Math.min(totalInflation * 0.3, 0.5);
         mucusTube.scale.set(mucusScale, 1, mucusScale);
 
-        // Smoke rising
         const posArr = smoke.geometry.attributes.position.array;
         for (let i = 0; i < smokeCount; i++) {
           posArr[i * 3]     += smokeVelArr[i * 3];
           posArr[i * 3 + 1] += smokeVelArr[i * 3 + 1];
           posArr[i * 3 + 2] += smokeVelArr[i * 3 + 2];
 
-          // Reset when too high
           if (posArr[i * 3 + 1] > 6) {
             posArr[i * 3]     = (Math.random() - 0.5) * 4;
             posArr[i * 3 + 1] = -8;
             posArr[i * 3 + 2] = (Math.random() - 0.5) * 2;
           }
 
-          // Drift sideways
           posArr[i * 3] += Math.sin(time + i) * 0.003;
         }
         smoke.geometry.attributes.position.needsUpdate = true;
-
-        // Fade smoke opacity with height
         smokeMat.opacity = 0.3 + 0.1 * Math.sin(time * 0.5);
 
-        // Camera orbit
         camera.position.x = Math.sin(time * 0.07) * 2;
         camera.position.y = 2 + Math.cos(time * 0.05) * 0.5;
         camera.lookAt(0, 0, 0);

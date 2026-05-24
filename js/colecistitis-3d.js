@@ -29,7 +29,7 @@
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.setClearColor(0x0A1628, 1);
 
-      // ─── Lighting ────────────────────────────
+      // ─── Lighting ────────────────────────
       scene.add(new THREE.AmbientLight(0xffffff, 0.3));
 
       const mainLight = new THREE.DirectionalLight(0xFFEECC, 1.3);
@@ -42,22 +42,19 @@
 
       const inflam = new THREE.PointLight(0xFF3333, 0, 10);
       inflam.position.set(0, 0, 3);
-      scene.add(inflam); // animated
+      scene.add(inflam);
 
-      // ─── Gallbladder ─────────────────────────
-      // Flattened sphere (pear/teardrop shape)
+      // ─── Gallbladder ───────────────────────
       const gbGeo = new THREE.SphereGeometry(2.0, 24, 20);
 
-      // Deform vertices for pear shape
       const positions = gbGeo.attributes.position;
       for (let i = 0; i < positions.count; i++) {
         const x = positions.getX(i);
         const y = positions.getY(i);
         const z = positions.getZ(i);
-        // Flatten Y, elongate bottom, squeeze top
         const normalizedY = y / 2.0;
-        const newY = y * 0.7 - 0.3; // flatten and shift down
-        const scaleXZ = 1.0 + normalizedY * 0.3; // wider at bottom
+        const newY = y * 0.7 - 0.3;
+        const scaleXZ = 1.0 + normalizedY * 0.3;
         positions.setXYZ(i, x * scaleXZ, newY, z * scaleXZ);
       }
       gbGeo.computeVertexNormals();
@@ -74,7 +71,6 @@
       gallbladder.position.set(0, 0.5, 0);
       scene.add(gallbladder);
 
-      // Inner wall (inflammation layer)
       const innerGbGeo = new THREE.SphereGeometry(1.75, 20, 16);
       const innerGbMat = new THREE.MeshPhongMaterial({
         color: 0x885522,
@@ -87,7 +83,7 @@
       innerGb.position.copy(gallbladder.position);
       scene.add(innerGb);
 
-      // ─── Bile Duct ────────────────────────────
+      // ─── Bile Duct ────────────────────────
       const ductGeo = new THREE.CylinderGeometry(0.3, 0.35, 2.5, 10);
       const ductMat = new THREE.MeshPhongMaterial({
         color: 0xCC9944,
@@ -99,7 +95,7 @@
       bileduct.position.set(0, -2.5, 0);
       scene.add(bileduct);
 
-      // ─── Gallstones ───────────────────────────
+      // ─── Gallstones ───────────────────────
       const stones = [];
       const stonePositions = [
         [0, -1.2, 0.3],
@@ -113,7 +109,6 @@
         const size = 0.15 + Math.random() * 0.18;
         const geo = new THREE.SphereGeometry(size, 10, 8);
 
-        // Slightly deform stone geometry for natural look
         const stPos = geo.attributes.position;
         for (let j = 0; j < stPos.count; j++) {
           stPos.setX(j, stPos.getX(j) * (0.9 + Math.random() * 0.2));
@@ -154,7 +149,6 @@
         });
         const sphere = new THREE.Mesh(geo, mat);
 
-        // Orbit surface of gallbladder
         const theta = Math.random() * Math.PI * 2;
         const phi = Math.random() * Math.PI;
         const r = 2.2 + Math.random() * 0.3;
@@ -174,7 +168,6 @@
       }
       scene.add(inflParticles);
 
-      // ─── Subtle warm glow under gallbladder ───
       const bgGeo = new THREE.BufferGeometry();
       const bgPos = new Float32Array(200 * 3);
       for (let i = 0; i < 200 * 3; i++) bgPos[i] = (Math.random() - 0.5) * 28;
@@ -187,7 +180,7 @@
         depthWrite: false
       })));
 
-      // ─── Resize ──────────────────────────────
+      // ─── Resize ──────────────────────────
       const resizeObs = new ResizeObserver(() => {
         const w = canvas.clientWidth, h = canvas.clientHeight;
         if (w > 0 && h > 0) {
@@ -198,7 +191,7 @@
       });
       resizeObs.observe(canvas);
 
-      // ─── Animation Loop ───────────────────────
+      // ─── Animation Loop ───────────────────
       let frameId;
       let time = 0;
 
@@ -206,7 +199,6 @@
         frameId = requestAnimationFrame(animate);
         time += 0.016;
 
-        // Gallbladder inflammation pulse: red → normal
         const inflammCycle = (Math.sin(time * 1.5) + 1) * 0.5;
         const r = 0.67 + inflammCycle * 0.4;
         const g = 0.8 - inflammCycle * 0.5;
@@ -214,20 +206,16 @@
         gbMat.color.setRGB(r, g, b);
         gbMat.emissive.setRGB(inflammCycle * 0.15, 0, 0);
 
-        // Inflammation light
         inflam.intensity = inflammCycle * 2.0;
 
-        // Gallbladder pulse scale
         const pulse = 1 + 0.04 * Math.sin(time * 1.2);
         gallbladder.scale.set(pulse, pulse * 0.95, pulse);
         innerGb.scale.copy(gallbladder.scale);
 
-        // Stones: subtle settling movement
         stones.forEach((stone, i) => {
           stone.position.y += Math.sin(time * 0.5 + i) * 0.001;
         });
 
-        // Inflammatory particles orbit
         inflParticles.children.forEach(p => {
           p.userData.theta += p.userData.speed;
           p.userData.phi += p.userData.phiSpeed;
@@ -241,11 +229,9 @@
             r * Math.sin(ph) * Math.sin(t)
           );
 
-          // Pulsing opacity with inflammation
           p.material.opacity = 0.5 + inflammCycle * 0.5;
         });
 
-        // Camera gentle drift
         camera.position.x = Math.sin(time * 0.09) * 1.5;
         camera.position.y = 1 + Math.cos(time * 0.07) * 0.6;
         camera.lookAt(0, 0, 0);

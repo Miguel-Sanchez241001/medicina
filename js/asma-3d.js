@@ -28,7 +28,7 @@
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.setClearColor(0x0A1628, 1);
 
-      // ─── Lighting ────────────────────────────
+      // ─── Lighting ────────────────────────
       scene.add(new THREE.AmbientLight(0xffffff, 0.35));
 
       const cyanLight = new THREE.DirectionalLight(0x00D4FF, 1.2);
@@ -54,8 +54,7 @@
       const bgMat = new THREE.PointsMaterial({ color: 0x00D4FF, size: 0.04, transparent: true, opacity: 0.35, depthWrite: false });
       scene.add(new THREE.Points(bgGeo, bgMat));
 
-      // ─── Bronchial Tube ───────────────────────
-      // Custom elliptical tube using TubeGeometry
+      // ─── Bronchial Tube ─────────────────────
       class BronchialCurve extends THREE.Curve {
         getPoint(t) {
           const angle = t * Math.PI * 2 - Math.PI;
@@ -158,13 +157,10 @@
         const baseZ = (Math.random() - 0.5) * 3;
         const len = 0.4 + Math.random() * 0.2;
 
-        // Stem
         pts.push(new THREE.Vector3(baseX, baseY - len, baseZ));
         pts.push(new THREE.Vector3(baseX, baseY, baseZ));
-        // Left arm
         pts.push(new THREE.Vector3(baseX, baseY, baseZ));
         pts.push(new THREE.Vector3(baseX - len * 0.6, baseY + len * 0.6, baseZ));
-        // Right arm
         pts.push(new THREE.Vector3(baseX, baseY, baseZ));
         pts.push(new THREE.Vector3(baseX + len * 0.6, baseY + len * 0.6, baseZ));
 
@@ -201,7 +197,7 @@
       }
       scene.add(mucusGroup);
 
-      // ─── Resize handling ─────────────────────
+      // ─── Resize handling ─────────────────
       const resizeObs = new ResizeObserver(() => {
         const w = canvas.clientWidth, h = canvas.clientHeight;
         if (w > 0 && h > 0) {
@@ -212,7 +208,7 @@
       });
       resizeObs.observe(canvas);
 
-      // ─── Animation Loop ───────────────────────
+      // ─── Animation Loop ───────────────────
       let frameId;
       let time = 0;
 
@@ -238,7 +234,6 @@
           eosiPosArr[i * 3 + 1] += eosiVel[i * 3 + 1];
           eosiPosArr[i * 3 + 2] += eosiVel[i * 3 + 2];
 
-          // Wrap
           if (Math.abs(eosiPosArr[i * 3]) > 8) eosiVel[i * 3] *= -1;
           if (Math.abs(eosiPosArr[i * 3 + 1]) > 6) eosiVel[i * 3 + 1] *= -1;
           if (Math.abs(eosiPosArr[i * 3 + 2]) > 3) eosiVel[i * 3 + 2] *= -1;
@@ -268,7 +263,6 @@
 
       animate();
 
-      // Cleanup
       window.addEventListener('beforeunload', () => {
         cancelAnimationFrame(frameId);
         resizeObs.disconnect();

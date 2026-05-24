@@ -29,7 +29,7 @@
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.setClearColor(0x0A1628, 1);
 
-      // ─── Lighting ────────────────────────────
+      // ─── Lighting ────────────────────────
       scene.add(new THREE.AmbientLight(0xffffff, 0.35));
 
       const mainLight = new THREE.DirectionalLight(0xFFDDBB, 1.3);
@@ -44,9 +44,7 @@
       innerGlow.position.set(0, 0, 1);
       scene.add(innerGlow);
 
-      // ─── GRANULOMA ───────────────────────────
-
-      // Center: Caseous necrosis (dark yellow/caseous solid sphere)
+      // ─── GRANULOMA ───────────────────────
       const necrosisGeo = new THREE.SphereGeometry(0.8, 16, 16);
       const necrosisMat = new THREE.MeshPhongMaterial({
         color: 0xCCA433,
@@ -58,7 +56,7 @@
       const necrosis = new THREE.Mesh(necrosisGeo, necrosisMat);
       scene.add(necrosis);
 
-      // Ring 1: Epithelioid macrophages (beige, ~8)
+      // Ring 1: Epithelioid macrophages
       const macrophages = new THREE.Group();
       for (let i = 0; i < 8; i++) {
         const angle = (i / 8) * Math.PI * 2;
@@ -82,7 +80,7 @@
       }
       scene.add(macrophages);
 
-      // Ring 2: Lymphocytes (small blue, ~16)
+      // Ring 2: Lymphocytes
       const lymphocytes = new THREE.Group();
       for (let i = 0; i < 16; i++) {
         const angle = (i / 16) * Math.PI * 2;
@@ -107,7 +105,7 @@
       }
       scene.add(lymphocytes);
 
-      // Outer: Fibrosis shell (grey TorusGeometry)
+      // Outer: Fibrosis shell
       const fibrosisGeo = new THREE.TorusGeometry(3.4, 0.25, 12, 60);
       const fibrosisMat = new THREE.MeshPhongMaterial({
         color: 0x888888,
@@ -119,21 +117,18 @@
       fibrosis.rotation.x = Math.PI / 2;
       scene.add(fibrosis);
 
-      // Second fibrosis ring (rotated)
       const fibrosis2 = fibrosis.clone();
       fibrosis2.rotation.x = Math.PI / 3;
       fibrosis2.rotation.y = Math.PI / 4;
       scene.add(fibrosis2);
 
       // ─── M. tuberculosis bacteria ─────────────
-      // Rod-shaped: Cylinder + two hemisphere caps
       const bacteria = new THREE.Group();
       const bacteriaData = [];
 
       for (let i = 0; i < 20; i++) {
         const bacterium = new THREE.Group();
 
-        // Body (cylinder)
         const bodyGeo = new THREE.CylinderGeometry(0.06, 0.06, 0.35, 8);
         const bodyMat = new THREE.MeshPhongMaterial({
           color: 0x8B1A1A,
@@ -142,7 +137,6 @@
         });
         bacterium.add(new THREE.Mesh(bodyGeo, bodyMat));
 
-        // Caps (hemisphere approximation with sphere clipped)
         const capGeo = new THREE.SphereGeometry(0.06, 8, 8);
         const cap1 = new THREE.Mesh(capGeo, bodyMat.clone());
         const cap2 = new THREE.Mesh(capGeo, bodyMat.clone());
@@ -150,7 +144,6 @@
         cap2.position.y = -0.175;
         bacterium.add(cap1, cap2);
 
-        // Position: some near macrophages (being engulfed), rest drifting
         const engulfed = i < 5;
         let px, py, pz;
         if (engulfed) {
@@ -207,7 +200,7 @@
         depthWrite: false
       })));
 
-      // ─── Resize ──────────────────────────────
+      // ─── Resize ──────────────────────────
       const resizeObs = new ResizeObserver(() => {
         const w = canvas.clientWidth, h = canvas.clientHeight;
         if (w > 0 && h > 0) {
@@ -218,7 +211,7 @@
       });
       resizeObs.observe(canvas);
 
-      // ─── Animation Loop ───────────────────────
+      // ─── Animation Loop ───────────────────
       let frameId;
       let time = 0;
 
@@ -226,25 +219,20 @@
         frameId = requestAnimationFrame(animate);
         time += 0.016;
 
-        // Granuloma pulsation
         const pulse = 1 + 0.04 * Math.sin(time * 0.8);
         necrosis.scale.setScalar(pulse);
         innerGlow.intensity = 1.0 + 0.5 * Math.sin(time * 0.8);
 
-        // Macrophage ring slow rotation
         macrophages.rotation.y = time * 0.12;
         macrophages.rotation.z = Math.sin(time * 0.08) * 0.15;
 
-        // Lymphocyte ring rotation (opposite direction)
         lymphocytes.rotation.y = -time * 0.08;
         lymphocytes.rotation.x = Math.sin(time * 0.05) * 0.1;
 
-        // Fibrosis shell rotation
         fibrosis.rotation.y = time * 0.04;
         fibrosis2.rotation.y = -time * 0.03;
         fibrosis2.rotation.z = time * 0.02;
 
-        // Bacteria rotation and drift
         bacteriaData.forEach(b => {
           b.mesh.rotation.x += b.rotSpeed.x;
           b.mesh.rotation.y += b.rotSpeed.y;
@@ -252,17 +240,14 @@
 
           if (!b.engulfed) {
             b.mesh.position.add(b.driftSpeed);
-            // Bounce back
             if (Math.abs(b.mesh.position.x) > 7) b.driftSpeed.x *= -1;
             if (Math.abs(b.mesh.position.y) > 4) b.driftSpeed.y *= -1;
             if (Math.abs(b.mesh.position.z) > 7) b.driftSpeed.z *= -1;
           } else {
-            // Engulfed bacteria subtly move inside macrophage
             b.mesh.position.y += Math.sin(time * 2 + b.driftSpeed.x * 100) * 0.002;
           }
         });
 
-        // Camera slow orbit
         const orbitRadius = 12;
         camera.position.x = Math.sin(time * 0.1) * orbitRadius * 0.3;
         camera.position.z = Math.cos(time * 0.1) * orbitRadius;
