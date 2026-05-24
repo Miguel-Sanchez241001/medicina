@@ -11,9 +11,6 @@
 
   /**
    * Initialize a Three.js scene on a canvas element
-   * @param {string} canvasId - ID of the canvas element
-   * @param {number} bgColor - Background color as hex number
-   * @returns {Object|null} - {scene, camera, renderer, animate, dispose} or null on failure
    */
   function initScene(canvasId, bgColor) {
     if (typeof THREE === 'undefined') {
@@ -116,11 +113,6 @@
 
   /**
    * Create a particle system
-   * @param {number} count - Number of particles
-   * @param {number} color - Particle color (hex)
-   * @param {number} spread - Spread radius
-   * @param {number} [size=0.05] - Particle size
-   * @returns {THREE.Points} - Particle mesh
    */
   function createParticleSystem(count, color, spread, size) {
     const geometry = new THREE.BufferGeometry();
@@ -176,11 +168,6 @@
 
   /**
    * Create a sphere mesh
-   * @param {number} radius
-   * @param {number} color
-   * @param {boolean} wireframe
-   * @param {Object} [materialOptions]
-   * @returns {THREE.Mesh}
    */
   function createSphere(radius, color, wireframe, materialOptions) {
     const geometry = new THREE.SphereGeometry(radius, 32, 16);
@@ -203,11 +190,6 @@
 
   /**
    * Create a tube along a path
-   * @param {THREE.Curve} path
-   * @param {number} radius
-   * @param {number} color
-   * @param {boolean} wireframe
-   * @returns {THREE.Mesh}
    */
   function createTube(path, radius, color, wireframe) {
     const geometry = new THREE.TubeGeometry(path, 64, radius, 12, false);
@@ -224,13 +206,6 @@
 
   /**
    * Add orbital particles around a center mesh
-   * @param {THREE.Scene} scene
-   * @param {THREE.Object3D} centerMesh
-   * @param {number} count
-   * @param {number} color
-   * @param {number} speed
-   * @param {number} orbitRadius
-   * @returns {THREE.Group}
    */
   function addOrbitalParticles(scene, centerMesh, count, color, speed, orbitRadius) {
     const group = new THREE.Group();
@@ -277,7 +252,6 @@
 
   /**
    * Dispose scene and free GPU resources
-   * @param {THREE.WebGLRenderer} renderer
    */
   function disposeScene(renderer) {
     if (renderer) renderer.dispose();
@@ -285,10 +259,6 @@
 
   /**
    * Create ambient + directional lighting
-   * @param {THREE.Scene} scene
-   * @param {number} ambientIntensity
-   * @param {number} dirIntensity
-   * @param {number} dirColor
    */
   function addLighting(scene, ambientIntensity, dirIntensity, dirColor) {
     const ambient = new THREE.AmbientLight(0xffffff, ambientIntensity || 0.4);
