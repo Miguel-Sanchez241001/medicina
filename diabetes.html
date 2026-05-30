@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Módulo Descompensaciones Metabólicas — Síndrome Metabólico, Diabetes Mellitus y Cetoacidosis Diabética. Fisiopatología 3D, diagnóstico y tratamiento. MediLearn." />
+  <title>Descompensaciones Metabólicas — MediLearn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <style>
+    :root { --module-color: #6C5CE7; }
+    .accent-module { color: var(--module-color); }
+    .border-module { border-top-color: var(--module-color) !important; }
+  </style>
+</head>
+<body>
+  <div id="scroll-progress" role="progressbar" aria-label="Progreso de página"></div>
+
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <a href="index.html" class="nav-logo" aria-label="MediLearn — Inicio">
+      <div class="nav-logo-icon">M</div>
+      <span class="nav-logo-text">Medi<span>Learn</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="asma.html" class="nav-link">Asma</a>
+      <a href="epoc.html" class="nav-link">EPOC</a>
+      <a href="tbc.html" class="nav-link">TBC</a>
+      <a href="colecistitis.html" class="nav-link">Colecistitis</a>
+      <a href="diabetes.html" class="nav-link active">Diabetes</a>
+      <a href="urgencias.html" class="nav-link">Urgencias</a>
+      <a href="quiz.html" class="nav-link nav-cta">Quiz Clínico</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menú móvil"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="nav-mobile">
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="asma.html" class="nav-link">Asma Bronquial</a>
+    <a href="epoc.html" class="nav-link">EPOC</a>
+    <a href="tbc.html" class="nav-link">Tuberculosis</a>
+    <a href="colecistitis.html" class="nav-link">Colecistitis</a>
+    <a href="diabetes.html" class="nav-link">Diabetes Mellitus</a>
+    <a href="urgencias.html" class="nav-link">Urgencias Endocrinas</a>
+    <a href="quiz.html" class="nav-link">Quiz Clínico</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Módulo Descompensaciones Metabólicas">
+    <canvas id="diabetes-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="hero-badge-dot" style="background: var(--module-color);"></div>
+        Módulo — Endocrinología y Metabolismo
+      </div>
+      <h1 class="hero-title">Descompensaciones Metabólicas</h1>
+      <p class="hero-subtitle">Síndrome Metabólico&nbsp;&nbsp;|&nbsp;&nbsp;Diabetes Mellitus&nbsp;&nbsp;|&nbsp;&nbsp;Cetoacidosis Diabética</p>
+      <div class="hero-cta-group">
+        <a href="#module-content" class="btn btn-primary">Explorar Contenido</a>
+        <a href="quiz.html" class="btn btn-secondary">Casos Clínicos</a>
+      </div>
+    </div>
+  </section>
+
+  <main id="module-content">
+    <div class="container" style="padding-top: var(--space-3xl); padding-bottom: var(--space-4xl);">
+
+      <div class="tabs-container" role="tablist" aria-label="Secciones del módulo Diabetes">
+        <div class="tabs-header">
+          <button class="tab-btn active" role="tab" aria-selected="true">Fisiopatología</button>
+          <button class="tab-btn" role="tab" aria-selected="false">Clínica y Clasificación</button>
+          <button class="tab-btn" role="tab" aria-selected="false">Diagnóstico</button>
+          <button class="tab-btn" role="tab" aria-selected="false">Tratamiento</button>
+          <button class="tab-btn" role="tab" aria-selected="false">Ciclo y Complicaciones</button>
+        </div>
+
+        <!-- TAB 1: FISIOPATOLOGÍA -->
+        <div class="tab-panel active" role="tabpanel">
+          <h2 style="color: var(--module-color); margin-bottom: var(--space-xl);">Fisiopatología — Del SM a la DKA</h2>
+
+          <div class="patho-flow" aria-label="Cascada fisiopatológica">
+            <div class="patho-step">Obesidad Central</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Resistencia a Insulina</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Síndrome Metabólico</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Hiperglucemia Crónica</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Agotamiento Beta-Cell</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Diabetes Mellitus Tipo 2</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Deficiencia Grave Insulina</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Lipólisis + Cetogénesis</div>
+            <div class="patho-arrow">→</div>
+            <div class="patho-step">Cetoacidosis Diabética</div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h3 style="margin-bottom: var(--space-lg); font-size: var(--font-size-xl);">Células y Componentes Clave</h3>
+          <div class="grid-3" style="margin-bottom: var(--space-2xl);">
+            <div class="cell-card animated border-module">
+              <div class="cell-name accent-module">Célula Beta Pancreática</div>
+              <div class="cell-role">Produce y secreta insulina en respuesta a la glucosa. En DM tipo 2, la hiperglucemia crónica y la glucolipotoxicidad provocan disfunción progresiva y apoptosis. Representa el 65-80% de los islotes de Langerhans.</div>
+            </div>
+            <div class="cell-card animated" style="border-top-color: #FDCB6E;">
+              <div class="cell-name" style="color: #FDCB6E;">Adipocito / Tejido Graso</div>
+              <div class="cell-role">En la obesidad central, los adipocitos hipertrofiados liberan ácidos grasos libres (AGL) y adipocinas proinflamatorias (TNF-α, IL-6, resistina) que inhiben la señalización de insulina (IRS-1/PI3K/Akt) → resistencia insulínica.</div>
+            </div>
+            <div class="cell-card animated" style="border-top-color: #E17055;">
+              <div class="cell-name" style="color: #E17055;">Receptor GLUT-4</div>
+              <div class="cell-role">Transportador de glucosa insulino-dependiente en músculo y tejido adiposo. En resistencia insulínica, la señalización Akt→AS160 está bloqueada → GLUT-4 no se transloca a la membrana → glucosa no entra a la célula → hiperglucemia.</div>
+            </div>
+            <div class="cell-card animated" style="border-top-color: #74B9FF;">
+              <div class="cell-name" style="color: #74B9FF;">Hepatocito</div>
+              <div class="cell-role">Resistencia hepática a la insulina → gluconeogénesis no suprimida (↑ PEPCK, G6Pasa) → producción excesiva de glucosa en ayunas. En DKA: producción masiva de cuerpos cetónicos (acetoacetato, β-hidroxibutirato) por lipólisis descontrolada.</div>
+            </div>
+            <div class="cell-card animated" style="border-top-color: #A29BFE;">
+              <div class="cell-name" style="color: #A29BFE;">Mediadores Inflamatorios</div>
+              <div class="cell-role"><strong>TNF-α:</strong> bloquea IRS-1 por fosforilación en serina. <strong>IL-6:</strong> induce resistencia hepática. <strong>Adiponectina ↓:</strong> sensibilizador de insulina reducido en obesidad. <strong>Leptina ↑:</strong> hiperleptinemia con resistencia central.</div>
+            </div>
+            <div class="cell-card animated" style="border-top-color: #55EFC4;">
+              <div class="cell-name" style="color: #55EFC4;">Sistema Renina-Angiotensina</div>
+              <div class="cell-role">Angiotensina II activa NADPH oxidasa → estrés oxidativo → disfunción endotelial → HTA. Además, reduce la expresión de GLUT-4 y activa IKKβ que fosforila IRS-1 en serina, agravando la resistencia insulínica. Nexo entre HTA y DM en SM.</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <h3 style="margin-bottom: var(--space-lg); font-size: var(--font-size-xl);">DM Tipo 1 vs DM Tipo 2</h3>
+          <div class="grid-2" style="margin-bottom: var(--space-2xl);">
+            <div class="info-card animated">
+              <h4 style="color: var(--module-color); margin-bottom: var(--space-sm);">Diabetes Mellitus Tipo 1</h4>
+              <ul class="comparison-list">
+                <li><span style="color: var(--module-color);">Mecanismo:</span> Destrucción autoinmune de células beta (HLA-DR3/DR4, anti-GAD, anti-IA2, anti-insulina)</li>
+                <li><span style="color: var(--module-color);">Insulina:</span> Deficiencia absoluta → siempre requiere insulina exógena</li>
+                <li><span style="color: var(--module-color);">Inicio:</span> Niños y adultos jóvenes, frecuentemente agudo con DKA</li>
+                <li><span style="color: var(--module-color);">Péptido C:</span> Indetectable (no hay secreción endógena)</li>
+                <li><span style="color: var(--module-color);">Riesgo DKA:</span> Alto (sin insulina → cetosis rápida)</li>
+              </ul>
+            </div>
+            <div class="info-card animated">
+              <h4 style="color: #FDCB6E; margin-bottom: var(--space-sm);">Diabetes Mellitus Tipo 2</h4>
+              <ul class="comparison-list">
+                <li><span style="color: #FDCB6E;">Mecanismo:</span> Resistencia insulínica + fallo relativo de beta-cell. Sin autoinmunidad.</li>
+                <li><span style="color: #FDCB6E;">Insulina:</span> Deficiencia relativa inicial → progresión a insulinorrequirente</li>
+                <li><span style="color: #FDCB6E;">Inicio:</span> Adultos, habitualmente insidioso, asociado a obesidad y SM</li>
+                <li><span style="color: #FDCB6E;">Péptido C:</span> Normal o elevado inicialmente, disminuye con el tiempo</li>
+                <li><span style="color: #FDCB6E;">Riesgo DKA:</span> Bajo (salvo estrés severo); más frecuente Estado Hiperosmolar</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: CLÍNICA Y CLASIFICACIÓN -->
+        <div class="tab-panel" role="tabpanel">
+          <h2 style="color: var(--module-color); margin-bottom: var(--space-xl);">Clínica y Clasificación</h2>
+
+          <!-- Síndrome Metabólico — Criterios IDF -->
+          <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--space-md);">Síndrome Metabólico — Criterios IDF 2006</h3>
+          <div class="diagnosis-card animated" style="margin-bottom: var(--space-2xl);">
+            <p style="margin-bottom: var(--space-md); color: var(--text-secondary);">
+              Requiere <strong style="color: var(--module-color);">obesidad central obligatoria</strong> más ≥2 de los siguientes 4 componentes:
+            </p>
+            <div class="grid-2">
+              <div>
+                <div class="tag" style="background: rgba(108,92,231,0.2); color: var(--module-color); margin-bottom: var(--space-sm);">COMPONENTE OBLIGATORIO</div>
+                <ul class="comparison-list">
+                  <li><strong>Obesidad central:</strong> Perímetro abdominal ≥90 cm (H) / ≥80 cm (M) en latinoamericanos</li>
+                </ul>
+              </div>
+              <div>
+                <div class="tag" style="background: rgba(253,203,110,0.2); color: #FDCB6E; margin-bottom: var(--space-sm);">MÁS ≥2 COMPONENTES</div>
+                <ul class="comparison-list">
+                  <li>Triglicéridos ≥150 mg/dL o en tratamiento</li>
+                  <li>HDL &lt;40 mg/dL (H) / &lt;50 mg/dL (M) o en tratamiento</li>
+                  <li>PA ≥130/85 mmHg o en tratamiento antihipertensivo</li>
+                  <li>Glucosa ayunas ≥100 mg/dL o DM tipo 2 diagnosticada</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- DM Síntomas -->
+          <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--space-md);">Síntomas Cardinales de Diabetes Mellitus</h3>
+          <div class="grid-3" style="margin-bottom: var(--space-2xl);">
+            <div class="info-card animated">
+              <h4 style="color: var(--module-color); margin-bottom: var(--space-xs);">Poliuria</h4>
+              <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Diuresis osmótica por glucosuria (umbral renal ~180 mg/dL). Orinas frecuentes y abundantes, frecuentemente nocturnas. Causa deshidratación progresiva.</p>
+            </div>
+            <div class="info-card animated">
+              <h4 style="color: var(--module-color); margin-bottom: var(--space-xs);">Polidipsia</h4>
+              <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Sed intensa por deshidratación secundaria a la poliuria. Activación del centro hipotalámico de la sed por hiperosmolaridad plasmática y reducción del volumen intravascular.</p>
+            </div>
+            <div class="info-card animated">
+              <h4 style="color: var(--module-color); margin-bottom: var(--space-xs);">Pérdida de Peso</h4>
+              <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Catabolismo proteico y lipolisis por falta de insulina. Las células no captan glucosa → estado de "hambre intracelular" → gluconeogénesis a partir de músculo y grasa.</p>
+            </div>
+            <div class="info-card animated">
+              <h4 style="color: var(--module-color); margin-bottom: var(--space-xs);">Visión Borrosa</h4>
+              <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Cambios en la osmolaridad del cristalino por acumulación de sorbitol (vía del poliol). Reversible con normalización glucémica. No confundir con retinopatía diabética crónica.</p>
+            </div>
+            <div class="info-card animated">
+              <h4 style="color: var(--module-color); margin-bottom: var(--space-xs);">Polifagia</h4>
+              <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Hambre persistente a pesar de comer, por incapacidad de usar glucosa intracelularmente. Las células envían señal de hambre al hipotálamo. Más frecuente en DM tipo 1 de inicio agudo.</p>
+            </div>
+            <div class="info-card animated">
+              <h4 style="color: var(--module-color); margin-bottom: var(--space-xs);">Fatiga</h4>
+              <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">Déficit energético celular por glucopenia intracelular. Las células musculares no pueden oxidar glucosa eficientemente → reducción de ATP → astenia, cansancio fácil, especialmente postprandial.</p>
+            </div>
+          </div>
+
+          <!-- DKA vs EHH -->
+          <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--space-md);">DKA vs Estado Hiperosmolar Hiperglucémico (EHH)</h3>
+          <div style="overflow-x: auto; margin-bottom: var(--space-2xl);">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Parámetro</th>
+                  <th style="color: var(--module-color);">DKA</th>
+                  <th style="color: #FDCB6E;">EHH</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Glucosa</td><td>&gt;250 mg/dL (puede ser menor)</td><td>&gt;600 mg/dL</td></tr>
+                <tr><td>pH arterial</td><td>&lt;7.30</td><td>&gt;7.30 (normal)</td></tr>
+                <tr><td>Bicarbonato</td><td>&lt;18 mEq/L</td><td>&gt;18 mEq/L (normal)</td></tr>
+                <tr><td>Anión Gap</td><td>Elevado (&gt;12)</td><td>Normal o ligeramente elevado</td></tr>
+                <tr><td>Cetonemia</td><td>Positiva (≥3 mmol/L)</td><td>Ausente o leve</td></tr>
+                <tr><td>Osmolaridad</td><td>Variable (290-320)</td><td>&gt;320 mOsm/kg</td></tr>
+                <tr><td>Deshidratación</td><td>Moderada (3-5 L)</td><td>Severa (8-10 L)</td></tr>
+                <tr><td>Alteración conciencia</td><td>Leve a moderada</td><td>Frecuente (estupor, coma)</td></tr>
+                <tr><td>Tipo DM</td><td>Principalmente DM1</td><td>Principalmente DM2</td></tr>
+                <tr><td>Mortalidad</td><td>0.5-5%</td><td>10-20%</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- DKA Clinical Features -->
+          <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--space-md);">Clínica de la Cetoacidosis Diabética</h3>
+          <div class="grid-2">
+            <div class="info-card animated">
+              <h4 style="color: var(--module-color); margin-bottom: var(--space-sm);">Síntomas y Signos</h4>
+              <ul class="comparison-list">
+                <li><strong>Respiración de Kussmaul:</strong> respiración profunda y rápida compensadora de acidosis metabólica (↑ eliminación CO₂)</li>
+                <li><strong>Aliento cetónico:</strong> olor a acetona ("manzanas fermentadas") por eliminación pulmonar de acetona</li>
+                <li><strong>Dolor abdominal:</strong> pseudo-abdomen agudo por hipopotasemia y gastroparesia. Cede con tratamiento.</li>
+                <li><strong>Nauseas / vómitos:</strong> empeoran la deshidratación y la hipopotasemia</li>
+                <li><strong>Deshidratación:</strong> mucosas secas, taquicardia, hipotensión ortostática</li>
+                <li><strong>Alteración del sensorio:</strong> desde somnolencia hasta coma en casos graves</li>
+              </ul>
+            </div>
+            <div class="info-card animated">
+              <h4 style="color: #E17055; margin-bottom: var(--space-sm);">Factores Precipitantes</h4>
+              <ul class="comparison-list">
+                <li><strong>Infecciones (40%):</strong> neumonía, ITU — las más frecuentes. Activan citocinas que antagonizan insulina.</li>
+                <li><strong>Omisión de insulina (25%):</strong> causa directa más evitable. Educación del paciente crucial.</li>
+                <li><strong>Debut diabético (15%):</strong> primera manifestación de DM tipo 1 no diagnosticada.</li>
+                <li><strong>Estrés (IAM, ACV):</strong> catecolaminas y glucagón elevan glucemia.</li>
+                <li><strong>Fármacos:</strong> corticoides, tiazidas, antipsicóticos atípicos, SGLT-2i (DKA euglucémica).</li>
+                <li><strong>Alcohol/drogas:</strong> supresión de insulina, gluconeogénesis aumentada.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: DIAGNÓSTICO -->
+        <div class="tab-panel" role="tabpanel">
+          <h2 style="color: var(--module-color); margin-bottom: var(--space-xl);">Diagnóstico</h2>
+
+          <!-- DM Diagnostic Criteria -->
+          <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--space-md);">Criterios Diagnósticos — ADA 2024 / OPS</h3>
+          <div class="grid-2" style="margin-bottom: var(--space-2xl);">
+            <div class="diagnosis-card animated">
+              <div class="tag" style="background: rgba(108,92,231,0.2); color: var(--module-color); margin-bottom: var(--space-sm);">DIABETES MELLITUS</div>
+              <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-sm);">Cualquiera de los siguientes (confirmar con 2ª prueba si asintomático):</p>
+              <ul class="comparison-list">
+                <li><strong>Glucemia en ayunas ≥126 mg/dL</strong> (8h sin ingesta)</li>
+                <li><strong>Glucemia 2h post-PTOG ≥200 mg/dL</strong> (carga 75g glucosa)</li>
+                <li><strong>HbA1c ≥6.5%</strong> (método estandarizado NGSP/DCCT)</li>
+                <li><strong>Glucemia ≥200 mg/dL</strong> en cualquier momento + síntomas clásicos (no requiere confirmación)</li>
+              </ul>
+            </div>
+            <div class="diagnosis-card animated">
+              <div class="tag" style="background: rgba(253,203,110,0.2); color: #FDCB6E; margin-bottom: var(--space-sm);">PREDIABETES</div>
+              <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-sm);">Cualquiera de:</p>
+              <ul class="comparison-list">
+                <li><strong>Glucemia ayunas 100–125 mg/dL</strong> → Glucemia en Ayunas Alterada (GAA)</li>
+                <li><strong>Glucemia 2h PTOG 140–199 mg/dL</strong> → Intolerancia a la Glucosa (ITG)</li>
+                <li><strong>HbA1c 5.7–6.4%</strong></li>
+              </ul>
+              <p style="color: var(--text-muted); font-size: var(--font-size-xs); margin-top: var(--space-sm);">Riesgo 10-23% de progresión anual a DM. Tamizaje cada 1-3 años.</p>
+            </div>
+          </div>
+
+          <!-- DKA Lab -->
+          <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--space-md);">Exámenes en DKA — Panel Completo</h3>
+          <div style="overflow-x: auto; margin-bottom: var(--space-2xl);">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Examen</th>
+                  <th>Hallazgo en DKA</th>
+                  <th>Significado clínico</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Glucemia</strong></td>
+                  <td style="color: var(--module-color);">&gt;250 mg/dL</td>
+                  <td>Criterio diagnóstico (puede ser menor en DKA euglucémica por SGLT-2i)</td>
+                </tr>
+                <tr>
+                  <td><strong>pH venoso/arterial</strong></td>
+                  <td style="color: #E17055;">&lt;7.30 (severa &lt;7.0)</td>
+                  <td>Acidosis metabólica por acumulación de cuerpos cetónicos</td>
+                </tr>
+                <tr>
+                  <td><strong>Bicarbonato</strong></td>
+                  <td style="color: #E17055;">&lt;18 mEq/L (severa &lt;10)</td>
+                  <td>Consumido para tamponar el exceso de ácidos</td>
+                </tr>
+                <tr>
+                  <td><strong>Anión Gap</strong></td>
+                  <td style="color: #E17055;">&gt;12 mEq/L</td>
+                  <td>Elevado por cetoácidos (acetoacetato y β-hidroxibutirato)</td>
+                </tr>
+                <tr>
+                  <td><strong>Cetonemia (β-OHB)</strong></td>
+                  <td style="color: var(--module-color);">≥3 mmol/L</td>
+                  <td>Diagnóstico confirmatorio. Target &lt;0.6 mmol/L con tratamiento.</td>
+                </tr>
+                <tr>
+                  <td><strong>Potasio sérico</strong></td>
+                  <td style="color: #FDCB6E;">Variable (normal-alto inicial, luego bajo)</td>
+                  <td>K+ inicial falsamente normal por acidosis (sale de células). Con insulina → hipopotasemia grave → arritmias.</td>
+                </tr>
+                <tr>
+                  <td><strong>Sodio</strong></td>
+                  <td>Bajo (pseudohiponatremia)</td>
+                  <td>Dilución por atracción osmótica del agua. Corregir: Na real = Na medido + 1.6 × (Glc-100)/100</td>
+                </tr>
+                <tr>
+                  <td><strong>Creatinina / Urea</strong></td>
+                  <td>Elevadas</td>
+                  <td>Deshidratación → falla prerrenal. Normaliza con rehidratación.</td>
+                </tr>
+                <tr>
+                  <td><strong>Hemograma</strong></td>
+                  <td>Leucocitosis (10.000-15.000)</td>
+                  <td>Respuesta de estrés, no necesariamente infección. &gt;25.000 sugiere proceso infeccioso.</td>
+                </tr>
+                <tr>
+                  <td><strong>ECG</strong></td>
+                  <td>Cambios por K+</td>
+                  <td>Hipopotasemia: onda U, aplanamiento T. Hiperpotasemia: QRS ancho, T picuda. Monitoreo continuo.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Differential Diagnosis -->
+          <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--space-md);">Diagnóstico Diferencial</h3>
+          <div class="grid-3">
+            <div class="info-card animated">
+              <h4 style="color: var(--module-color);">DKA</h4>
+              <ul class="comparison-list" style="font-size: var(--font-size-sm);">
+                <li>Glucosa &gt;250, pH &lt;7.3, HCO₃ &lt;18</li>
+                <li>Cetonemia ≥3, AG &gt;12</li>
+                <li>Kussmaul + aliento cetónico</li>
+                <li>DM1 &gt; DM2</li>
+              </ul>
+            </div>
+            <div class="info-card animated">
+              <h4 style="color: #FDCB6E;">EHH</h4>
+              <ul class="comparison-list" style="font-size: var(--font-size-sm);">
+                <li>Glucosa &gt;600, Osm &gt;320</li>
+                <li>Sin cetosis significativa</li>
+                <li>pH normal, coma frecuente</li>
+                <li>DM2, adulto mayor</li>
+              </ul>
+            </div>
+            <div class="info-card animated">
+              <h4 style="color: #00B894;">Hipoglicemia</h4>
+              <ul class="comparison-list" style="font-size: var(--font-size-sm);">
+                <li>Glucosa &lt;70 mg/dL</li>
+                <li>Síntomas adrenérgicos + neuroglucopénicos</li>
+                <li>Sin cetosis ni acidosis</li>
+                <li>Ver módulo Urgencias Endocrinas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: TRATAMIENTO -->
+        <div class="tab-panel" role="tabpanel">
+          <h2 style="color: var(--module-color); margin-bottom: var(--space-xl);">Tratamiento</h2>
+
+          <!-- DM2 Step Therapy -->
+          <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--space-lg);">DM Tipo 2 — Escalera Terapéutica ADA 2024</h3>
+          <div class="stepper" style="margin-bottom: var(--space-3xl);" aria-label="Escalera terapéutica DM tipo 2">
+            <div class="stepper-item animated">
+              <div class="stepper-number" style="background: var(--module-color);">1</div>
+              <div class="stepper-content">
+                <h4 class="stepper-title">Cambio de Estilo de Vida + Metformina</h4>
+                <p class="stepper-desc">Dieta mediterránea, actividad física ≥150 min/semana, pérdida ponderal ≥5%. Metformina 500 mg/12h (titular hasta 2000 mg/día). Actúa: ↓ gluconeogénesis hepática (AMPK), ↓ absorción intestinal glucosa. HbA1c meta &lt;7%.</p>
+              </div>
+            </div>
+            <div class="stepper-item animated">
+              <div class="stepper-number" style="background: #5a4bd1;">2</div>
+              <div class="stepper-content">
+                <h4 class="stepper-title">+ SGLT-2 inhibidor o GLP-1 RA (si ECV o IRC)</h4>
+                <p class="stepper-desc">Empagliflozina/Dapagliflozina (SGLT-2i): ↓ reabsorción renal glucosa, cardioprotector, nefroprotector. Semaglutida/Liraglutida (GLP-1 RA): ↑ secreción insulina glucosa-dependiente, ↓ apetito, beneficio CV. Primera elección con enfermedad cardiovascular establecida o IRC.</p>
+              </div>
+            </div>
+            <div class="stepper-item animated">
+              <div class="stepper-number" style="background: #4a3bc1;">3</div>
+              <div class="stepper-content">
+                <h4 class="stepper-title">+ DPP-4 inhibidor o Sulfonilurea</h4>
+                <p class="stepper-desc">Sitagliptina (DPP-4i): potencia incretinas, peso neutro, bien tolerado. Glibenclamida (SU): estimula secreción insulina pancreática directamente → riesgo hipoglicemia. SU solo si limitaciones económicas o intolerancia a otros. Monitoreo de hipoglicemia.</p>
+              </div>
+            </div>
+            <div class="stepper-item animated">
+              <div class="stepper-number" style="background: #3a2bb1;">4</div>
+              <div class="stepper-content">
+                <h4 class="stepper-title">+ Insulina Basal</h4>
+                <p class="stepper-desc">Insulina glargina/detemir 10 UI/noche. Indicación: HbA1c &gt;10%, fracaso terapéutico, debut con síntomas severos, embarazo. Titular: ↑ 2 UI cada 3 días hasta glucemia ayunas 80-130 mg/dL. Transición a régimen bolo-basal si necesario.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- DKA Protocol -->
+          <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--space-lg);">Protocolo DKA — Urgencias</h3>
+          <div class="stepper" aria-label="Protocolo tratamiento DKA">
+            <div class="stepper-item animated">
+              <div class="stepper-number" style="background: #E17055;">1</div>
+              <div class="stepper-content">
+                <h4 class="stepper-title">Rehidratación Agresiva IV</h4>
+                <p class="stepper-desc">SSF 0.9% 1 L en primera hora. Luego 250-500 mL/h según estado hemodinámico. Cuando glucemia &lt;250 mg/dL: cambiar a SSG 5% para evitar hipoglicemia. Meta: débito urinario 0.5-1 mL/kg/h. Total 4-6 L en 24h (DKA leve) hasta 6-10 L (EHH).</p>
+              </div>
+            </div>
+            <div class="stepper-item animated">
+              <div class="stepper-number" style="background: #d4604a;">2</div>
+              <div class="stepper-content">
+                <h4 class="stepper-title">Reposición de Potasio (ANTES de insulina si K+ &lt;3.3)</h4>
+                <p class="stepper-desc"><strong style="color: #E17055;">CRÍTICO:</strong> NO iniciar insulina si K+ &lt;3.3 mEq/L (riesgo arritmia ventricular fatal). Reponer: 20-40 mEq/h hasta K+ &gt;3.3. Si K+ 3.3-5.0: 20-30 mEq/L de fluidos IV. Meta K+ 4-5 mEq/L. Monitoreo continuo ECG y electrolitos c/2h.</p>
+              </div>
+            </div>
+            <div class="stepper-item animated">
+              <div class="stepper-number" style="background: #c4503a;">3</div>
+              <div class="stepper-content">
+                <h4 class="stepper-title">Insulina Regular IV en infusión continua</h4>
+                <p class="stepper-desc">Insulina regular 0.1 UI/kg/h IV (sin bolo inicial en mayoría). Si no hay bomba: 0.1 UI/kg/h IM. Meta: descenso glucemia 50-75 mg/dL/hora. NO reducir infusión por glucemia, sino por desaparición de cetosis (HCO₃ &gt;18, AG normal, β-OHB &lt;0.6). Transición a SC cuando paciente come.</p>
+              </div>
+            </div>
+            <div class="stepper-item animated">
+              <div class="stepper-number" style="background: #b4402a;">4</div>
+              <div class="stepper-content">
+                <h4 class="stepper-title">Monitoreo y Tratamiento de la Causa</h4>
+                <p class="stepper-desc">Glucemia c/1h, electrolitos c/2h, gases c/4h, cetonemia c/2h. ECG continuo. Buscar y tratar causa precipitante (antibióticos si infección). Bicarbonato: solo si pH &lt;6.9 (50-100 mEq en 2h). Fosfato: reponer si &lt;1 mg/dL con síntomas. No usar HCO₃ rutinariamente (empeora hipopotasemia).</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Drug Cards -->
+          <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--space-lg);">Fármacos Clave</h3>
+          <div class="grid-2">
+            <div class="drug-card animated">
+              <div class="drug-icon" style="background: rgba(108,92,231,0.15);">💊</div>
+              <div>
+                <div class="drug-name">Metformina</div>
+                <div class="drug-class">Biguanida — Primera línea DM2</div>
+                <div class="drug-detail">Dosis: 500-2000 mg/día VO con comidas | Mecanismo: ↓ gluconeogénesis hepática (AMPK), ↓ absorción intestinal glucosa | CI: TFG &lt;30 mL/min (acidosis láctica), contraste yodado (suspender 48h), alcoholismo | Sin riesgo hipoglicemia en monoterapia</div>
+              </div>
+            </div>
+            <div class="drug-card animated">
+              <div class="drug-icon" style="background: rgba(253,203,110,0.15);">💉</div>
+              <div>
+                <div class="drug-name">Empagliflozina</div>
+                <div class="drug-class">SGLT-2 Inhibidor — Cardioprotector</div>
+                <div class="drug-detail">Dosis: 10-25 mg/día VO | Mecanismo: inhibe cotransportador sodio-glucosa en túbulo proximal → glucosuria | Beneficios adicionales: ↓ mortalidad CV 38% (EMPA-REG), ↓ hospitalización IC, nefroprotección | Riesgo: infecciones genitales, DKA euglucémica (suspender 3-4 días antes cirugía)</div>
+              </div>
+            </div>
+            <div class="drug-card animated">
+              <div class="drug-icon" style="background: rgba(116,185,255,0.15);">🔬</div>
+              <div>
+                <div class="drug-name">Semaglutida</div>
+                <div class="drug-class">GLP-1 Receptor Agonista — Mayor reducción HbA1c</div>
+                <div class="drug-detail">Dosis: 0.5-1 mg/semana SC (Ozempic) o 7-14 mg/día VO | Mecanismo: activa receptor GLP-1 → ↑ insulina glucosa-dep., ↓ glucagón, ↑ saciedad | ↓ HbA1c 1.5-2%, pérdida peso 4-6 kg | Beneficio CV (SUSTAIN-6) | Efectos: náuseas, vómitos. CI: pancreatitis, NEM tipo 2, cáncer medular tiroides</div>
+              </div>
+            </div>
+            <div class="drug-card animated">
+              <div class="drug-icon" style="background: rgba(225,112,85,0.15);">⚡</div>
+              <div>
+                <div class="drug-name">Insulina Regular</div>
+                <div class="drug-class">Insulina de acción corta — DKA / Posprandial</div>
+                <div class="drug-detail">Inicio: 30-60 min | Pico: 2-4h | Duración: 6-8h | Uso en DKA: 0.1 UI/kg/h IV infusión continua | Uso prandial: 15-30 min antes comida | Almacenamiento: nevera 2-8°C (sin congelar) | Monitoreo: glucemia c/1h en DKA, c/4-6h en uso habitual. Puede causar hipopotasemia grave en DKA.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: CICLO Y COMPLICACIONES -->
+        <div class="tab-panel" role="tabpanel">
+          <h2 style="color: var(--module-color); margin-bottom: var(--space-xl);">Ciclo de la Enfermedad y Complicaciones</h2>
+
+          <!-- Timeline -->
+          <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--space-lg);">Progresión Natural</h3>
+          <div class="timeline" style="margin-bottom: var(--space-3xl);" aria-label="Progresión de la diabetes">
+            <div class="timeline-item animated">
+              <div class="timeline-marker" style="background: var(--module-color);"></div>
+              <div class="timeline-content">
+                <h4>Resistencia Insulínica Temprana</h4>
+                <p>Obesidad central, sedentarismo, genética. Hiperinsulinemia compensatoria. Normoglucemia. Asintomático. Presencia de Síndrome Metabólico. Detectable con HOMA-IR &gt;3.16. Reversible con cambio de estilo de vida.</p>
+              </div>
+            </div>
+            <div class="timeline-item animated">
+              <div class="timeline-marker" style="background: #FDCB6E;"></div>
+              <div class="timeline-content">
+                <h4>Prediabetes</h4>
+                <p>Glucemia ayunas 100-125 o HbA1c 5.7-6.4%. Agotamiento parcial de beta-cells. Ya existe daño microvascular incipiente (retinopatía, neuropatía subclínica). Intervención intensiva puede revertir en 50-60% (Programa de Prevención de Diabetes).</p>
+              </div>
+            </div>
+            <div class="timeline-item animated">
+              <div class="timeline-marker" style="background: #E17055;"></div>
+              <div class="timeline-content">
+                <h4>Diabetes Mellitus Establecida</h4>
+                <p>Criterios diagnósticos cumplidos. Inicio tratamiento farmacológico. Tamizaje de complicaciones: fondo de ojo, microalbuminuria, neuropatía, perfil lipídico, ECG. Meta HbA1c &lt;7% general (&lt;6.5% jóvenes sin complicaciones, &lt;8% adultos mayores frágiles).</p>
+              </div>
+            </div>
+            <div class="timeline-item animated">
+              <div class="timeline-marker" style="background: #E17055; opacity: 0.7;"></div>
+              <div class="timeline-content">
+                <h4>Descompensación Aguda (DKA / EHH)</h4>
+                <p>Precipitada por infección, omisión de insulina o debut. Emergencia metabólica. Mortalidad DKA 0.5-5%, EHH 10-20%. Con tratamiento adecuado recuperación en 24-48h. Requiere investigar y tratar causa precipitante.</p>
+              </div>
+            </div>
+            <div class="timeline-item animated">
+              <div class="timeline-marker" style="background: #636E72;"></div>
+              <div class="timeline-content">
+                <h4>Complicaciones Crónicas (años-décadas)</h4>
+                <p><strong>Microvasculares:</strong> Retinopatía (ceguera), nefropatía diabética (ERC → diálisis), neuropatía (pie diabético). <strong>Macrovasculares:</strong> IAM (riesgo ×2-4), ACV, arteriopatía periférica. <strong>Otras:</strong> disfunción eréctil, infecciones recurrentes, enfermedad periodontal.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prevention -->
+          <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--space-lg);">Prevención y Tamizaje</h3>
+          <div class="grid-3">
+            <div class="card card-accent animated">
+              <h4 style="color: var(--module-color); margin-bottom: var(--space-sm);">Prevención Primaria</h4>
+              <ul style="color: var(--text-secondary); font-size: var(--font-size-sm); line-height: 1.8; padding-left: var(--space-md);">
+                <li>Dieta mediterránea o DASH</li>
+                <li>Actividad física ≥150 min/semana</li>
+                <li>Pérdida peso ≥5-7% en prediabetes</li>
+                <li>Metformina si prediabetes + obeso + &lt;60 años</li>
+                <li>Control factores SM</li>
+              </ul>
+            </div>
+            <div class="card animated">
+              <h4 style="color: #FDCB6E; margin-bottom: var(--space-sm);">Tamizaje</h4>
+              <ul style="color: var(--text-secondary); font-size: var(--font-size-sm); line-height: 1.8; padding-left: var(--space-md);">
+                <li>≥35 años con sobrepeso/obesidad</li>
+                <li>Cualquier edad + HTA, dislipidemia, SM</li>
+                <li>Historia familiar 1er grado</li>
+                <li>DM gestacional previa</li>
+                <li>Repetir c/3 años si normal, c/1 año si prediabetes</li>
+              </ul>
+            </div>
+            <div class="card animated">
+              <h4 style="color: var(--green); margin-bottom: var(--space-sm);">Indicadores de Control</h4>
+              <ul style="color: var(--text-secondary); font-size: var(--font-size-sm); line-height: 1.8; padding-left: var(--space-md);">
+                <li><span style="color: var(--accent);">HbA1c &lt;7%</span> general</li>
+                <li><span style="color: var(--accent);">PA &lt;130/80 mmHg</span></li>
+                <li><span style="color: var(--accent);">LDL &lt;70 mg/dL</span> con ECV</li>
+                <li><span style="color: var(--accent);">Microalbuminuria:</span> &lt;30 mg/g</li>
+                <li><span style="color: var(--accent);">Fondo de ojo</span> c/1 año</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-logo">Medi<span>Learn</span></div>
+      <p class="footer-text">Plataforma de aprendizaje médico interactivo<br>Para uso educativo exclusivamente</p>
+      <nav class="footer-links">
+        <a href="index.html" class="footer-link">Inicio</a>
+        <a href="asma.html" class="footer-link">Asma</a>
+        <a href="epoc.html" class="footer-link">EPOC</a>
+        <a href="tbc.html" class="footer-link">TBC</a>
+        <a href="colecistitis.html" class="footer-link">Colecistitis</a>
+        <a href="diabetes.html" class="footer-link">Diabetes</a>
+        <a href="urgencias.html" class="footer-link">Urgencias</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="js/diabetes-3d.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
