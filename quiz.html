@@ -33,6 +33,8 @@
       <a href="epoc.html" class="nav-link">EPOC</a>
       <a href="tbc.html" class="nav-link">TBC</a>
       <a href="colecistitis.html" class="nav-link">Colecistitis</a>
+      <a href="diabetes.html" class="nav-link">Diabetes</a>
+      <a href="urgencias.html" class="nav-link">Urgencias</a>
       <a href="quiz.html" class="nav-link active nav-cta">Quiz Clínico</a>
     </div>
     <button class="nav-hamburger" aria-label="Menú móvil"><span></span><span></span><span></span></button>
@@ -44,17 +46,21 @@
     <a href="epoc.html" class="nav-link">EPOC</a>
     <a href="tbc.html" class="nav-link">Tuberculosis</a>
     <a href="colecistitis.html" class="nav-link">Colecistitis</a>
+    <a href="diabetes.html" class="nav-link">Diabetes Mellitus</a>
+    <a href="urgencias.html" class="nav-link">Urgencias Endocrinas</a>
     <a href="quiz.html" class="nav-link">Quiz Clínico</a>
   </div>
 
   <header class="quiz-hero" role="banner">
     <div class="quiz-hero-title">Quiz Clínico</div>
-    <p class="quiz-hero-subtitle">20 casos clínicos reales con razonamiento diagnóstico detallado</p>
+    <p class="quiz-hero-subtitle">30 casos clínicos reales con razonamiento diagnóstico detallado</p>
     <div class="quiz-stats">
       <div class="quiz-stat"><div class="quiz-stat-dot" style="background: var(--accent);"></div>5 preguntas de Asma</div>
       <div class="quiz-stat"><div class="quiz-stat-dot" style="background: #F39C12;"></div>5 preguntas de EPOC</div>
       <div class="quiz-stat"><div class="quiz-stat-dot" style="background: var(--red);"></div>5 preguntas de Tuberculosis</div>
       <div class="quiz-stat"><div class="quiz-stat-dot" style="background: var(--green);"></div>5 preguntas de Colecistitis</div>
+      <div class="quiz-stat"><div class="quiz-stat-dot" style="background: #6C5CE7;"></div>5 preguntas de Diabetes</div>
+      <div class="quiz-stat"><div class="quiz-stat-dot" style="background: #00CEC9;"></div>5 preguntas de Urgencias Endocrinas</div>
     </div>
   </header>
 
@@ -63,11 +69,13 @@
       <div class="container">
         <div class="quiz-container">
           <div class="quiz-filters" role="group" aria-label="Filtrar preguntas por enfermedad">
-            <button class="quiz-filter-btn active" data-filter="todos" aria-pressed="true">Todos (20)</button>
+            <button class="quiz-filter-btn active" data-filter="todos" aria-pressed="true">Todos (30)</button>
             <button class="quiz-filter-btn" data-filter="asma" aria-pressed="false">Asma (5)</button>
             <button class="quiz-filter-btn" data-filter="epoc" aria-pressed="false">EPOC (5)</button>
             <button class="quiz-filter-btn" data-filter="tbc" aria-pressed="false">Tuberculosis (5)</button>
             <button class="quiz-filter-btn" data-filter="colecistitis" aria-pressed="false">Colecistitis (5)</button>
+            <button class="quiz-filter-btn" data-filter="diabetes" aria-pressed="false" style="--filter-color: #6C5CE7;">Diabetes (5)</button>
+            <button class="quiz-filter-btn" data-filter="urgencias" aria-pressed="false" style="--filter-color: #00CEC9;">Urgencias (5)</button>
           </div>
 
           <div class="quiz-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progreso del quiz">
@@ -79,7 +87,7 @@
               <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">Puntuación</p>
               <div class="quiz-score" id="quiz-score-display" aria-live="polite" aria-atomic="true">0 / 0</div>
             </div>
-            <div id="quiz-counter" class="quiz-counter" aria-live="polite">Pregunta 1 de 20</div>
+            <div id="quiz-counter" class="quiz-counter" aria-live="polite">Pregunta 1 de 30</div>
           </div>
 
           <div id="quiz-question-container" aria-live="polite"></div>

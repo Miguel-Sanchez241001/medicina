@@ -314,6 +314,160 @@ const quizData = [
     correctIndex: 1,
     explanation: 'La complicación más grave y temida de la colecistitis aguda sin tratamiento es la perforación de la pared vesicular (isquemia → necrosis → perforación), que conduce a peritonitis biliar química e infecciosa, sepsis grave y shock séptico. La mortalidad alcanza el 30-40%. Otras complicaciones incluyen: empiema vesicular, fístula bilioentérica (→ íleo biliar), Síndrome de Mirizzi (compresión colédoco) y gangrena vesicular. La colecistectomía temprana (24-72h) previene estas complicaciones.',
     reference: 'TG18 — Perforación vesicular: complicación fatal con mortalidad 30-40%. Indicación de cirugía urgente.'
+  },
+
+  // ─── DIABETES ────────────────────────────────
+  {
+    id: 21,
+    disease: 'diabetes',
+    scenario: 'Hombre de 52 años, obeso (IMC 31), asintomático, acude a chequeo anual. Glucemia en ayunas 132 mg/dL en la consulta de hoy. Se repite la prueba 5 días después y el resultado es 128 mg/dL. No presenta poliuria, polidipsia ni pérdida de peso.',
+    question: '¿Cuál es el diagnóstico correcto según los criterios ADA 2024?',
+    options: [
+      'Glucemia en ayunas alterada (prediabetes) — requiere una sola determinación alterada',
+      'Diabetes Mellitus tipo 2 — dos glucemias en ayunas ≥126 mg/dL confirman el diagnóstico',
+      'Normal — los valores están dentro del rango aceptable para su edad',
+      'Estado hiperosmolar hiperglucémico — glucemia >600 mg/dL necesaria para diagnóstico'
+    ],
+    correctIndex: 1,
+    explanation: 'Los criterios ADA 2024 establecen que la Diabetes Mellitus se diagnostica con glucemia en ayunas ≥126 mg/dL en dos ocasiones separadas (cuando el paciente está asintomático). En este caso, el paciente tiene 132 y 128 mg/dL en dos determinaciones → diagnóstico confirmado de DM tipo 2. Si hubiera síntomas clásicos (poliuria, polidipsia) + glucemia ≥200 mg/dL en cualquier momento, bastaría una sola determinación. La glucemia en ayunas alterada (prediabetes) corresponde a 100-125 mg/dL.',
+    reference: 'ADA Standards of Care 2024 — Criterios diagnósticos DM: glucemia ayunas ≥126 mg/dL en 2 ocasiones.'
+  },
+  {
+    id: 22,
+    disease: 'diabetes',
+    scenario: 'Mujer de 28 años con DM tipo 1 de 8 años de evolución llega a urgencias con náuseas, vómitos, dolor abdominal y respiración profunda y rápida. Glucemia: 680 mg/dL, pH: 7.38, HCO₃: 22 mEq/L, cetonuria negativa, osmolaridad calculada: 338 mOsm/kg.',
+    question: '¿Cuál es el diagnóstico más probable?',
+    options: [
+      'Cetoacidosis Diabética — glucemia >250 es suficiente para el diagnóstico',
+      'Estado Hiperosmolar Hiperglucémico — glucemia >600, osmolaridad >320, sin cetosis ni acidosis',
+      'Hipoglicemia severa — los síntomas abdominales son característicos',
+      'DKA con pH compensado — el pH puede ser normal en fase inicial'
+    ],
+    correctIndex: 1,
+    explanation: 'El Estado Hiperosmolar Hiperglucémico (EHH) se caracteriza por: glucemia >600 mg/dL, osmolaridad >320 mOsm/kg, pH normal (>7.30), HCO₃ normal o ligeramente reducido, y ausencia de cetosis significativa. A diferencia de la DKA, en el EHH hay suficiente insulina residual para inhibir la cetogénesis, pero no para controlar la glucemia. La deshidratación es más severa (8-10 L) y la alteración del sensorio es más frecuente. Afecta principalmente a DM tipo 2 adultos mayores.',
+    reference: 'ADA 2009 / Kitabchi AE — Diferenciación DKA vs EHH: criterios de glucemia, osmolaridad y pH.'
+  },
+  {
+    id: 23,
+    disease: 'diabetes',
+    scenario: 'Paciente con DKA severa llega a urgencias. Glucemia 480 mg/dL, pH 7.12, HCO₃ 8 mEq/L, anión gap 22. Al recibir los electrolitos: K+ = 2.9 mEq/L. El residente propone iniciar inmediatamente la infusión de insulina regular IV.',
+    question: '¿Cuál es la acción correcta respecto al inicio de insulina?',
+    options: [
+      'Iniciar insulina regular IV 0.1 UI/kg/h inmediatamente — la corrección de glucemia es prioridad',
+      'NO iniciar insulina hasta reponer K+ a >3.3 mEq/L — riesgo de arritmia ventricular fatal por hipopotasemia grave',
+      'Iniciar insulina IM ya que el acceso IV no está disponible de inmediato',
+      'Administrar bicarbonato primero para corregir el pH y luego comenzar insulina'
+    ],
+    correctIndex: 1,
+    explanation: 'Esta es una perla clínica CRÍTICA: la insulina no debe iniciarse si el K+ sérico es <3.3 mEq/L. La insulina desplaza el potasio al interior de las células (K+ entra con glucosa), pudiendo precipitar hipopotasemia severa con arritmias ventriculares fatales (torsades de pointes, FV). La acción correcta es reponer K+ a 20-40 mEq/h IV hasta que K+ >3.3 mEq/L, y solo entonces iniciar la infusión de insulina. El K+ inicial en DKA puede estar falsamente normal o elevado por acidosis, cayendo bruscamente con el tratamiento.',
+    reference: 'ADA DKA Protocol 2009 — Insulina contraindicada con K+ <3.3 mEq/L. Reponer potasio primero.'
+  },
+  {
+    id: 24,
+    disease: 'diabetes',
+    scenario: 'Mujer de 45 años con antecedentes familiares de DM tipo 2, perímetro abdominal 92 cm, PA 135/88 mmHg, triglicéridos 180 mg/dL, HDL 44 mg/dL y glucemia en ayunas 105 mg/dL. Refiere fatiga crónica y acantosis nigricans en cuello.',
+    question: '¿Cuántos componentes del Síndrome Metabólico (criterios IDF) presenta esta paciente y cuál es el diagnóstico?',
+    options: [
+      'Solo 2 componentes — no cumple criterios para síndrome metabólico (mínimo 3)',
+      'Síndrome Metabólico confirmado — obesidad central (obligatoria) + 3 componentes adicionales (HTA, TG elevados, GAA)',
+      'Solo tiene prediabetes — los demás hallazgos son variaciones normales',
+      'Hipertensión arterial esencial aislada — sin relación con los demás hallazgos'
+    ],
+    correctIndex: 1,
+    explanation: 'Según criterios IDF 2006, el SM requiere obesidad central (circunferencia abdominal ≥80 cm en mujeres latinoamericanas — OBLIGATORIA) más ≥2 componentes adicionales. Esta paciente tiene: ① Obesidad central (92 cm, ≥80) ② HTA (135/88, ≥130/85) ③ Triglicéridos elevados (180 mg/dL, ≥150) ④ Glucemia en ayunas alterada (105 mg/dL, ≥100). HDL 44 mg/dL está por debajo de <50 mg/dL para mujeres, sumando un 5to componente. La acantosis nigricans es signo cutáneo de resistencia insulínica.',
+    reference: 'IDF Consensus 2006 — Síndrome Metabólico: obesidad central obligatoria + ≥2 componentes adicionales.'
+  },
+  {
+    id: 25,
+    disease: 'diabetes',
+    scenario: 'Hombre de 58 años con DM tipo 2 de 3 años de diagnóstico, sin complicaciones cardiovasculares conocidas, HbA1c actual 7.8% con metformina 2000 mg/día a dosis máxima. TFG 72 mL/min/1.73m². Solicita consejo sobre el siguiente paso terapéutico.',
+    question: '¿Cuál es el siguiente escalón terapéutico más apropiado según las guías ADA 2024?',
+    options: [
+      'Iniciar insulina basal directamente — es la opción más efectiva para reducir HbA1c',
+      'Agregar SGLT-2 inhibidor (empagliflozina/dapagliflozina) o GLP-1 RA (semaglutida) como segunda línea',
+      'Suspender metformina y cambiar a sulfonilurea como monoterapia',
+      'Continuar metformina sola y reevaluar en 12 meses'
+    ],
+    correctIndex: 1,
+    explanation: 'Según las guías ADA 2024, cuando la metformina no logra la meta de HbA1c, el siguiente paso es agregar un segundo agente. En pacientes sin enfermedad cardiovascular establecida, el SGLT-2 inhibidor (empagliflozina, dapagliflozina) o el GLP-1 RA (semaglutida, liraglutida) son opciones preferidas por sus beneficios adicionales: reducción de peso, cardioprotección y nefroprotección. La TFG 72 mL/min permite el uso de SGLT-2i (se contraindica si TFG <30) y GLP-1 RA. La insulina basal se reserva para HbA1c >10% o fracaso de múltiples agentes orales.',
+    reference: 'ADA Standards of Care 2024 — Escalera terapéutica DM2: SGLT-2i o GLP-1 RA como segunda línea preferida.'
+  },
+
+  // ─── URGENCIAS ENDOCRINAS ────────────────────
+  {
+    id: 26,
+    disease: 'urgencias',
+    scenario: 'Mujer de 34 años con DM tipo 1 es encontrada inconsciente por su esposo en casa. Tenía previsto hacer ejercicio y no comió antes. La glucometría capillar muestra 32 mg/dL. Está inconsciente, no puede tragar. El esposo tiene en casa el kit de glucagón prescrito.',
+    question: '¿Cuál es el manejo inmediato correcto para este episodio?',
+    options: [
+      'Administrar jugo de naranja por vía oral aunque esté inconsciente — es la forma más rápida',
+      'Glucagón 1 mg IM o intranasal (Baqsimi 3 mg) — corrección hipoglicemia en paciente inconsciente sin acceso IV',
+      'Trasladar directamente al hospital sin intervención para evitar complicaciones',
+      'Insulina rápida IV para estabilizar primero la glucemia antes del glucagón'
+    ],
+    correctIndex: 1,
+    explanation: 'En hipoglicemia severa con alteración de conciencia, NUNCA administrar nada por vía oral (riesgo broncoaspiración). El tratamiento de elección es: ① Si hay acceso IV: Dextrosa 50% (D50W) 25-50 mL IV en bolo. ② Si no hay acceso IV (domicilio, prehospitalario): Glucagón 1 mg IM en deltoides/muslo o Glucagón intranasal (Baqsimi) 3 mg. El glucagón activa la glucogenólisis hepática elevando la glucemia en 10-15 minutos. Contraindicado en hipoglicemia por alcohol (glucógeno hepático agotado) o inanición severa.',
+    reference: 'ADA 2024 / Triada de Whipple — Manejo hipoglicemia severa: glucagón IM/IN en inconsciente sin acceso IV.'
+  },
+  {
+    id: 27,
+    disease: 'urgencias',
+    scenario: 'Varón de 62 años con DM tipo 2 de 15 años, HbA1c crónica 11%, neuropatía periférica documentada. Consulta por úlcera plantar 1 cm en pie derecho con eritema circundante de 3 cm, tejido desvitalizado central, afebril, FC 78 lpm, leucocitos 9800/µL, sin signos sistémicos. Rx de pie: sin cambios óseos evidentes.',
+    question: '¿Cuál es la clasificación IWGDF/IDSA y el manejo inicial más apropiado?',
+    options: [
+      'Leve (Grado 2) — ATB oral ambulatorio (amoxicilina-clavulanato) + curetaje + descarga del pie',
+      'Grave (Grado 4) — requiere hospitalización urgente con vancomicina IV por sospecha MRSA',
+      'Moderada (Grado 3) — hospitalización con piperacilina-tazobactam IV por eritema >2 cm',
+      'No es infección — solo es úlcera neuropática sin signos de infección activa'
+    ],
+    correctIndex: 2,
+    explanation: 'Eritema >2 cm alrededor de la úlcera clasifica como infección MODERADA (Grado 3 IDSA/IWGDF), aunque no haya signos sistémicos. La infección moderada implica extensión más allá de piel superficial o eritema significativo, requiriendo hospitalización y antibióticos IV. Pip-Tazo 4.5 g c/8h IV cubre el espectro habitual (S. aureus MSSA, estreptococo, gram negativos, anaerobios). La Rx normal NO descarta osteomielitis (visible solo con >30-50% pérdida ósea). Si no mejora en 48-72h: RM de pie para evaluar osteomielitis.',
+    reference: 'IWGDF/IDSA 2023 — Infección moderada: eritema >2 cm o infección profunda sin signos sistémicos. Hospitalización + ATB IV.'
+  },
+  {
+    id: 28,
+    disease: 'urgencias',
+    scenario: 'Hombre de 45 años con antecedente de hipertiroidismo de Graves conocido (sin tratamiento regular) es llevado a urgencias por agitación intensa. Al examen: T° 39.8°C, FC 148 lpm con ritmo irregular, PA 95/60 mmHg, diaforesis profusa, temblor fino generalizado y confusión marcada. Se calcula score de Burch-Wartofsky.',
+    question: '¿Cuál es el diagnóstico y el primer fármaco que debe administrarse?',
+    options: [
+      'Sepsis — iniciar antibióticos de amplio espectro y cultivos antes de cualquier otro tratamiento',
+      'Crisis tirotóxica (score ≥45) — PRIMERO Propiltiouracilo (PTU) 200 mg, luego 1 hora después el iodo',
+      'Crisis tirotóxica — PRIMERO iodo para bloquear rápidamente la liberación de T3/T4',
+      'Fibrilación auricular con respuesta ventricular rápida — cardioversión eléctrica urgente'
+    ],
+    correctIndex: 1,
+    explanation: 'Score B-W: T°39.8 (25pts) + FC148 (25pts) + FA (10pts) + confusión (20pts) + hipotensión (10pts) + factor precipitante (10pts) = 100pts → Crisis tirotóxica confirmada (≥45). El orden de tratamiento es CRÍTICO: ① PTU 200mg c/4h PRIMERO (bloquea síntesis + inhibe conversión T4→T3) → ② 1 HORA DESPUÉS: iodo (Lugol 10 gotas c/8h) para inhibir liberación hormonal. Si se da iodo antes del antitiroideo, el iodo sirve de sustrato y paradójicamente aumenta la síntesis hormonal (efecto Wolff-Chaikoff no establecido).',
+    reference: 'Burch HB, Wartofsky L 1993 — Score ≥45: crisis confirmada. Orden: antitiroideos → iodo (1h después) → BB → corticoides.'
+  },
+  {
+    id: 29,
+    disease: 'urgencias',
+    scenario: '¿Por qué el iodo debe administrarse exactamente 1 hora DESPUÉS del antitiroideo (PTU/metimazol) en el tratamiento de la crisis tirotóxica, y no antes ni simultáneamente?',
+    question: '¿Cuál es la razón fisiopatológica correcta para este intervalo obligatorio?',
+    options: [
+      'Para dar tiempo a que el paciente absorba el antitiroideo por vía oral antes de añadir otro fármaco',
+      'El iodo es un sustrato para síntesis de hormona tiroidea — si se da antes que el antitiroideo, la peroxidasa tiroidea lo usa para fabricar MÁS T3/T4 (Efecto Jod-Basedow paradójico)',
+      'El iodo destruye el tejido tiroideo y necesita que el antitiroideo lo proteja previamente',
+      'Es un requisito de farmacovigilancia sin base fisiopatológica demostrada'
+    ],
+    correctIndex: 1,
+    explanation: 'La peroxidasa tiroidea (TPO) necesita iodo como sustrato para sintetizar T3/T4. Si se administra iodo ANTES del antitiroideo, la TPO (aún activa) usa el iodo exógeno para fabricar MÁS hormonas tiroideas → empeoramiento paradójico (efecto Jod-Basedow). Al dar el PTU/metimazol PRIMERO por 1 hora, se bloquea la peroxidasa tiroidea → luego el iodo puede inhibir la LIBERACIÓN de hormonas preformadas (efecto Wolff-Chaikoff) sin riesgo de mayor síntesis. Este es uno de los errores terapéuticos más peligrosos en endocrinología de urgencias.',
+    reference: 'Endocrine Society Guidelines 2016 — Crisis tirotóxica: PTU/MMI → iodo (1h después). Base: inhibir TPO antes de dar sustrato.'
+  },
+  {
+    id: 30,
+    disease: 'urgencias',
+    scenario: 'Paciente con DM tipo 2 de 10 años presenta úlcera infectada en el talón. El médico de urgencias toma un hisopo de la superficie de la úlcera para cultivo y el resultado muestra Staphylococcus epidermidis, Candida albicans y flora mixta entérica. Se inicia tratamiento dirigido pero la infección progresa a los 5 días.',
+    question: '¿Cuál fue el error diagnóstico-microbiológico y cuál es la técnica de cultivo correcta según las guías IWGDF 2023?',
+    options: [
+      'No hubo error — el cultivo con hisopo superficial es el gold standard para úlceras diabéticas',
+      'El hisopo superficial captura flora contaminante de la piel, no el patógeno profundo — el cultivo correcto es biopsia tisular estéril por curetaje del fondo de la úlcera o aspirado de pus',
+      'El error fue no añadir antifúngico empírico — la Candida siempre debe cubrirse en pie diabético',
+      'El hisopo debió tomarse con mayor profundidad frotando más fuerte la úlcera'
+    ],
+    correctIndex: 1,
+    explanation: 'El hisopo superficial es INADECUADO para cultivo de pie diabético infectado porque recoge flora contaminante de la piel (S. epidermidis, Candida, flora mixta) que puede no ser el agente causal de la infección profunda. La técnica correcta según IWGDF 2023 es: ① Biopsia tisular estéril por curetaje del fondo de la úlcera (tras desbridamiento) — gold standard para infección de tejidos blandos. ② Aspirado de pus con jeringa estéril si hay absceso. ③ Biopsia ósea percutánea o intraoperatoria para osteomielitis. Un cultivo incorrecto lleva a antibioticoterapia inapropiada y progresión de la infección.',
+    reference: 'IWGDF Infection Guidelines 2023 — Cultivo correcto: biopsia tisular estéril. No usar hisopo superficial.'
   }
 ];
 
@@ -324,8 +478,8 @@ let currentQuiz = [];
 let currentIndex = 0;
 let score = 0;
 let answered = false;
-let diseaseScores = { asma: 0, epoc: 0, tbc: 0, colecistitis: 0 };
-let diseaseTotal = { asma: 0, epoc: 0, tbc: 0, colecistitis: 0 };
+let diseaseScores = { asma: 0, epoc: 0, tbc: 0, colecistitis: 0, diabetes: 0, urgencias: 0 };
+let diseaseTotal = { asma: 0, epoc: 0, tbc: 0, colecistitis: 0, diabetes: 0, urgencias: 0 };
 
 // ============================================
 // Load Quiz
@@ -343,8 +497,8 @@ function loadQuiz(disease) {
   currentIndex = 0;
   score = 0;
   answered = false;
-  diseaseScores = { asma: 0, epoc: 0, tbc: 0, colecistitis: 0 };
-  diseaseTotal = { asma: 0, epoc: 0, tbc: 0, colecistitis: 0 };
+  diseaseScores = { asma: 0, epoc: 0, tbc: 0, colecistitis: 0, diabetes: 0, urgencias: 0 };
+  diseaseTotal = { asma: 0, epoc: 0, tbc: 0, colecistitis: 0, diabetes: 0, urgencias: 0 };
 
   // Count totals per disease
   currentQuiz.forEach(q => {
@@ -382,7 +536,9 @@ function renderQuestion() {
     asma: 'ASMA',
     epoc: 'EPOC',
     tbc: 'TUBERCULOSIS',
-    colecistitis: 'COLECISTITIS'
+    colecistitis: 'COLECISTITIS',
+    diabetes: 'DIABETES',
+    urgencias: 'URGENCIAS ENDOCRINAS'
   };
 
   container.innerHTML = `
@@ -562,7 +718,9 @@ function showResults() {
     asma: 'Asma',
     epoc: 'EPOC',
     tbc: 'Tuberculosis',
-    colecistitis: 'Colecistitis'
+    colecistitis: 'Colecistitis',
+    diabetes: 'Diabetes',
+    urgencias: 'Urgencias Endocrinas'
   };
 
   resultsEl.innerHTML = `
